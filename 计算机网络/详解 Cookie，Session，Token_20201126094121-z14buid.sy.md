@@ -39,7 +39,7 @@ document.cookie = "name=xiaoming; age=12 "
 
 HTML5 提供了两种本地存储的方式 sessionStorage 和 localStorage；
 
-![img](https://user-gold-cdn.xitu.io/2019/6/13/16b4fb158b9ac13b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![img](assets\1)
 
 # session
 
