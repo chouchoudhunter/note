@@ -40,7 +40,7 @@
 
 * ### 微任务（`micro-task`）
 
-  process.nextTick、Promise、MutationObserver 等
+  process.nextTick(Node 执行完所有同步任务，接下来就会执行process.nextTick的任务队列)、Promise、MutationObserver 等
 
 * ### 宏任务（`macro-task`）
 
