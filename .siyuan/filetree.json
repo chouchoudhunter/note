@@ -331,6 +331,31 @@
     {
       "name": "README.md",
       "path": "/README.md"
+    },
+    {
+      "name": "daily note",
+      "path": "/daily note/",
+      "isDir": true,
+      "children": [
+        {
+          "name": "2021",
+          "path": "/daily note/2021/",
+          "isDir": true,
+          "children": [
+            {
+              "name": "02",
+              "path": "/daily note/2021/02/",
+              "isDir": true,
+              "children": [
+                {
+                  "name": "2021-02-23.md",
+                  "path": "/daily note/2021/02/2021-02-23.md"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
