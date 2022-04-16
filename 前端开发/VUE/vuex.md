@@ -1,8 +1,10 @@
 # Vuex
 
+## 一、简单介绍
+
 解决不同组件之间的数据共享，组件里数据持久化
 
-> 定义 vuex
+### 1.定义 vuex
 
 ```javascript
 import Vue frome 'vue'
@@ -36,9 +38,9 @@ const store=new Vuex.Store{
 export default store;
 ```
 
-> 使用 vuex
+### 2.使用 vuex
 
-1. 引入 store
+1. 引入 store或在main.js挂载
 
    ```javascript
    import store from '../vuex/store.js';
@@ -51,16 +53,16 @@ export default store;
    		    return {   
    		       msg:'我是一个home组件',
    			value1: null,
-
+   
    		    }
    		},
    		store,
    		methods:{
    		    incCount(){
-
+   
    			this.$store.commit('incCount');   /*触发 state里面的数据*/
    		    }
-
+   
    		}
    	    }
    ```
@@ -75,5 +77,54 @@ export default store;
    this.$store.commit('incCount');
    ```
 
+## 二、建议使用方法
 
-{: id="20201026214657-yj0d2wk" type="doc"}
+### 1.目录结构
+
+![image-20220408160312541](assets/image-20220408160312541.png)
+
+### 2.index.js
+
+```javascript
+import Vuex from 'vuex'
+import Vue from 'vue'
+import getters from './getters'
+Vue.use(Vuex)
+
+ const.moduleFiles=require.context('./modules', true, /\.js$/)//引入目录下所有模块
+ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
+   // 根据文件名设置模块名
+   const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1')
+   const value = modulesFiles(modulePath)
+   modules[moduleName] = value.default
+   return modules
+ }, {})
+ 
+ const store = new Vuex.Store({
+   modules,
+   getters
+ })
+ 
+ export default store
+```
+
+### 3.getters.js
+
+```javascript
+const getters = {
+
+}
+export default getters
+```
+
+4.main.js
+
+```javascript
+import store from './store'
+
+const app = new Vue({
+    ...App,
+	store
+})
+```
+

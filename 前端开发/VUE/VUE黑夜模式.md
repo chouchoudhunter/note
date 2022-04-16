@@ -22,3 +22,4 @@ window.document.documentElement.setAttribute('data-theme', 'light')
 
 # uni-app 解决方案
 
+vuex
