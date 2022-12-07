@@ -2,6 +2,12 @@
   "promptDelete": false,
   "attachmentFolderPath": "./assets",
   "showUnsupportedFiles": false,
-  "userIgnoreFilters": null,
+  "userIgnoreFilters": [
+    "我的/书籍/",
+    "我的/日记/",
+    "我的/游戏/",
+    "我的/影视/",
+    "README"
+  ],
   "alwaysUpdateLinks": true
 }

@@ -2,9 +2,9 @@
   "obsidian-emoji-toolbar:emoji-picker:open-picker": [
     {
       "modifiers": [
-        "Shift"
+        "Mod"
       ],
-      "key": "E"
+      "key": "Numpad0"
     }
   ]
 }

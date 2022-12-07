@@ -2,5 +2,7 @@
   "accentColor": "",
   "baseFontSize": 17,
   "cssTheme": "Minimal",
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "interfaceFontFamily": "阿里巴巴普惠体",
+  "textFontFamily": "阿里巴巴普惠体"
 }

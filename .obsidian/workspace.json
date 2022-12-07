@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "663c1dcb71147a34",
+        "id": "1f8002068c18cd7b",
         "type": "tabs",
         "children": [
           {
-            "id": "3f1403d85967da9e",
+            "id": "42642db39af47565",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "编程/LeetCode/Javascript/回文数.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "编程/LeetCode/Javascript/回文数.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "编程/LeetCode/Javascript/回文数.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "编程/LeetCode/Javascript/回文数.md"
               }
             }
           },
@@ -136,33 +136,25 @@
               "type": "calendar",
               "state": {}
             }
-          },
-          {
-            "id": "f8c3bef9fb05d604",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {}
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 353.5
+    "width": 320.5
   },
-  "active": "3f1403d85967da9e",
+  "active": "42642db39af47565",
   "lastOpenFiles": [
+    "AI&爬虫/yolo/疑难杂症.md",
+    "README.md",
+    "前端开发/再学Javascript/web网络安全/XSS CSRF XS-LEAKS_20210706153613-e66tq6n.sy.md",
+    "编程/LeetCode/Javascript/回文数_20210706153613-j8brpv7.sy.md",
+    "前端开发/node/node脚本/json转csv_20210706153613-rgl4p96.sy.md",
     "我的/书籍.md",
     "我的/书籍/Y的悲剧.md",
     "未命名.md",
     "模板/页面模板/书籍.md",
-    "我的/书籍/未命名.md",
-    "我的/书籍/十角馆事件.md 1.md",
-    "我的/书籍/十角馆事件.md.md",
-    "我的/书籍/三体.md",
-    "我的/书籍-阅读清单.md",
-    "我的/游戏.md"
+    "我的/书籍/未命名.md"
   ]
 }
