@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "1f8002068c18cd7b",
+        "id": "fa7fb296d679e324",
         "type": "tabs",
         "children": [
           {
-            "id": "42642db39af47565",
+            "id": "50d27bfec67a9564",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "编程/LeetCode/Javascript/回文数.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -48,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#鸭哥聊Java",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "编程/LeetCode/Javascript/回文数.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编程/LeetCode/Javascript/回文数.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "编程/LeetCode/Javascript/回文数.md"
-              }
+              "state": {}
             }
           },
           {
@@ -138,23 +130,23 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
     "width": 320.5
   },
-  "active": "42642db39af47565",
+  "active": "44f68cf6e3fca989",
   "lastOpenFiles": [
-    "AI&爬虫/yolo/疑难杂症.md",
+    "我的/日记/2022-12-08.md",
+    "我的/日记/2022-12-07.md",
+    "项目/LoTai App/看板.md",
     "README.md",
-    "前端开发/再学Javascript/web网络安全/XSS CSRF XS-LEAKS_20210706153613-e66tq6n.sy.md",
-    "编程/LeetCode/Javascript/回文数_20210706153613-j8brpv7.sy.md",
-    "前端开发/node/node脚本/json转csv_20210706153613-rgl4p96.sy.md",
-    "我的/书籍.md",
-    "我的/书籍/Y的悲剧.md",
-    "未命名.md",
-    "模板/页面模板/书籍.md",
-    "我的/书籍/未命名.md"
+    "我的/书籍-清单.md",
+    "我的/影视.md",
+    "我的/游戏.md",
+    "后端开发/linux配置相关/配置javaweb环境.md",
+    "后端开发/linux配置相关/配置mysql.md",
+    "后端开发/linux配置相关/linux初始化配置.md"
   ]
 }
