@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "af99ba66bdf0637e",
+    "type": "split",
+    "children": [
+      {
+        "id": "663c1dcb71147a34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3f1403d85967da9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "我的/书籍.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2bc4e95fcdd36a7b",
+    "type": "split",
+    "children": [
+      {
+        "id": "56fc7b6f66638dfa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "44f68cf6e3fca989",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "079538154566cfb1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f267e803d068d2b9",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 217.5
+  },
+  "right": {
+    "id": "a3ff39451e8b89fa",
+    "type": "split",
+    "children": [
+      {
+        "id": "18676d7e7d50c84c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "83db692af31d3bd8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "我的/书籍.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0f3c63c97b699afd",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "我的/书籍.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1f1e0ab70d707f98",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false
+              }
+            }
+          },
+          {
+            "id": "4830708efb988fea",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "我的/书籍.md"
+              }
+            }
+          },
+          {
+            "id": "8ee06d99905334b7",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "f8c3bef9fb05d604",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 353.5
+  },
+  "active": "3f1403d85967da9e",
+  "lastOpenFiles": [
+    "我的/书籍/Y的悲剧.md",
+    "我的/书籍.md",
+    "未命名.md",
+    "模板/页面模板/书籍.md",
+    "我的/书籍/未命名.md",
+    "我的/书籍/十角馆事件.md 1.md",
+    "我的/书籍/十角馆事件.md.md",
+    "我的/书籍/三体.md",
+    "我的/书籍-阅读清单.md",
+    "我的/游戏.md"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "choices": [],
+  "macros": [
+    {
+      "name": "test",
+      "id": "9536831e-a6f0-4d68-bd76-66b34af16471",
+      "commands": [],
+      "runOnStartup": false
+    }
+  ],
+  "inputPrompt": "single-line",
+  "devMode": false
+}

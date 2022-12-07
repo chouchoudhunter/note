@@ -39,8 +39,6 @@ document.cookie = "name=xiaoming; age=12 "
 
 HTML5 提供了两种本地存储的方式 sessionStorage 和 localStorage；
 
-![img](assets\1)
-
 # session
 
 ## 什么是 session
