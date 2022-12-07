@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "我的/书籍.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "我的/书籍.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "我的/书籍.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "我的/书籍.md"
+                "file": "README.md"
               }
             }
           },
@@ -154,8 +154,8 @@
   },
   "active": "3f1403d85967da9e",
   "lastOpenFiles": [
-    "我的/书籍/Y的悲剧.md",
     "我的/书籍.md",
+    "我的/书籍/Y的悲剧.md",
     "未命名.md",
     "模板/页面模板/书籍.md",
     "我的/书籍/未命名.md",
