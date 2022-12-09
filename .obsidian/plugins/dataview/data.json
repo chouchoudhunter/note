@@ -10,13 +10,13 @@
   "defaultDateFormat": "yyyy-MMMM-dd, ",
   "defaultDateTimeFormat": "yyyy-MMMM-dd a h:mm ",
   "maxRecursiveRenderDepth": 4,
-  "tableIdColumnName": "File",
+  "tableIdColumnName": "项",
   "tableGroupColumnName": "Group",
   "allowHtml": true,
   "inlineQueryPrefix": "=",
   "inlineJsQueryPrefix": "$=",
   "inlineQueriesInCodeblocks": true,
-  "enableDataviewJs": false,
+  "enableDataviewJs": true,
   "enableInlineDataviewJs": false,
   "prettyRenderInlineFields": true
 }

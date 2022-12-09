@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "fa7fb296d679e324",
+        "id": "e2cf44a33a7b7202",
         "type": "tabs",
         "children": [
           {
-            "id": "50d27bfec67a9564",
+            "id": "8f0d6a5f042b140a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "前端开发/Javascript/Null与Undefined的区别.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -44,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#鸭哥聊Java",
+                "query": "tag:#准备",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -72,8 +76,34 @@
     "type": "split",
     "children": [
       {
+        "id": "ed4cafd0b878a381",
+        "type": "tabs",
+        "dimension": 71.0431654676259,
+        "children": [
+          {
+            "id": "4830708efb988fea",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "前端开发/Javascript/Null与Undefined的区别.md"
+              }
+            }
+          },
+          {
+            "id": "8ee06d99905334b7",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
         "id": "18676d7e7d50c84c",
         "type": "tabs",
+        "dimension": 28.9568345323741,
         "children": [
           {
             "id": "83db692af31d3bd8",
@@ -81,6 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "前端开发/Javascript/Null与Undefined的区别.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "前端开发/Javascript/Null与Undefined的区别.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,19 +146,38 @@
             }
           },
           {
-            "id": "4830708efb988fea",
+            "id": "8d3ca34c0ce0a35f",
             "type": "leaf",
             "state": {
-              "type": "outline",
-              "state": {}
-            }
-          },
-          {
-            "id": "8ee06d99905334b7",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
+              "type": "localgraph",
+              "state": {
+                "file": "前端开发/Javascript/Null与Undefined的区别.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.6554983534946917,
+                  "close": true
+                }
+              }
             }
           }
         ],
@@ -136,17 +187,17 @@
     "direction": "horizontal",
     "width": 320.5
   },
-  "active": "44f68cf6e3fca989",
+  "active": "8f0d6a5f042b140a",
   "lastOpenFiles": [
-    "我的/日记/2022-12-08.md",
-    "我的/日记/2022-12-07.md",
-    "项目/LoTai App/看板.md",
+    "前端开发/Javascript/变量存储.md",
     "README.md",
+    "我的/书籍.md",
+    "后端开发/PHP/TP5.x/封装标准化Api接口.md",
+    "前端开发/Javascript/TDZ暂时死区详解.md",
+    "前端开发/Javascript/this解析.md",
     "我的/书籍-清单.md",
-    "我的/影视.md",
+    "我的/影视-清单.md",
     "我的/游戏.md",
-    "后端开发/linux配置相关/配置javaweb环境.md",
-    "后端开发/linux配置相关/配置mysql.md",
-    "后端开发/linux配置相关/linux初始化配置.md"
+    "我的/游戏-清单.md"
   ]
 }

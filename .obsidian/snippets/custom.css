@@ -1,0 +1,24 @@
+.card-rate{
+    display: flex;
+}
+.card-rate .emoji{
+    object-fit: contain !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+    font-size: 18px;
+}
+.card-desc{
+    /* display: block;
+    min-height: 50px; */
+}
+.card-status{
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.card-status a:first-child{
+    border-color: rgb(52, 125, 226);
+}
+.card-status a{
+    display: inline-block;
+    margin: 2px 0;
+    color: #9fa5b3;
+}

@@ -4,5 +4,10 @@
   "cssTheme": "Minimal",
   "theme": "obsidian",
   "interfaceFontFamily": "阿里巴巴普惠体",
-  "textFontFamily": "阿里巴巴普惠体"
+  "textFontFamily": "阿里巴巴普惠体",
+  "translucency": false,
+  "nativeMenus": false,
+  "enabledCssSnippets": [
+    "custom"
+  ]
 }

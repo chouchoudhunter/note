@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "migrated": true,
+    "iconPacksPath": ".obsidian/plugins/obsidian-icon-folder/icons",
+    "fontSize": 16,
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "🌸",
+      "🐐",
+      "🍀",
+      "⛺",
+      "🐥"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    }
+  },
+  "AI&爬虫": "✈",
+  "项目": "🥯",
+  "游戏开发": "🎲",
+  "我的": "🎥",
+  "随笔": "📔",
+  "前端开发": "🐥",
+  "模板": "⛺",
+  "后端开发": "🍀",
+  "编程": "🐐",
+  "README.md": "🌸"
+}

@@ -17,6 +17,10 @@
     {
       "folder": "我的/书籍",
       "template": "模板/页面模板/书籍.md"
+    },
+    {
+      "folder": "我的/游戏",
+      "template": "模板/页面模板/游戏.md"
     }
   ],
   "syntax_highlighting": true,
