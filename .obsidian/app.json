@@ -9,5 +9,6 @@
     "我的/影视/",
     "README"
   ],
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "showFrontmatter": false
 }

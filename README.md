@@ -3,7 +3,6 @@
 记录我的所有学习的笔记 😄
 
 # 技能
-
 ```dataviewjs
 
 function getChartData(url='前端开发'){
@@ -73,9 +72,9 @@ temp.append(block1)
 temp.append(block2)
 this.container.append(temp)
 ```
-
+# 我的
 ```dataviewjs  
-const pages = dv.pages('"前端开发"')
+const pages = dv.pages('"我的"')
 const labels=[]
 const numbers=[]
 console.log(pages)
@@ -96,31 +95,39 @@ for(let e of pages){
 	}
 }
 const chartData = {
-	type:'doughnut',
+	type:'bar',
 	data:{
 		labels: labels,
 		datasets: [{
-		    label: 'My First Dataset',
-		    data: numbers,
-			backgroundColor: [
-				'rgb(255, 99, 132)',
-				'rgb(54, 162, 235)',
-				'rgb(54, 162, 35)',
-				'rgb(255, 205, 86)'
-			],
-			hoverOffset: 4
-		}]
+            label: '书籍',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            borderColor: 'rgb(75, 192, 192)',
+            backgroundColor:'rgba(255, 99, 132, 0.5)',
+            stack:'group1'
+        },
+        {
+            label: '游戏',
+            data: [85, 79, 100, 101, 76, 75, 60],
+            borderColor: 'rgb(175, 92, 92)',
+            backgroundColor:'rgba(153, 102, 255, 0.5)'
+        },        
+        {
+            label: '影视',
+            data: [185, 179, 200, 201, 176, 175, 160],
+            borderColor: 'rgb(125, 42, 192)',
+            backgroundColor:'rgba(255, 205, 86, 0.5)'
+        },        
+        {
+            label: '日记',
+            data: [185, 179, 200, 201, 176, 175, 160],
+            borderColor: 'rgb(125, 42, 192)',
+            backgroundColor:'rgba(255, 205, 86, 0.5)'
+        }]
 	}
 };
 var temp=document.createElement("div")
-temp.style="display:flex"
 var block1=document.createElement("div")
-block1.style="width:50%"
-var block2=document.createElement("div")
-block2.style="width:50%"
 window.renderChart(chartData, block1);
-window.renderChart(chartData, block2);
 temp.append(block1)
-temp.append(block2)
 this.container.append(temp)
 ```
