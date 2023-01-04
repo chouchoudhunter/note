@@ -1,3 +1,6 @@
+.embed-title{
+    display: none !important;
+}
 .card-rate{
     display: flex;
 }

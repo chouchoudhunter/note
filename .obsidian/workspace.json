@@ -4,18 +4,43 @@
     "type": "split",
     "children": [
       {
-        "id": "74ddd70cd9a661da",
+        "id": "482119c5c3513278",
         "type": "tabs",
         "children": [
           {
-            "id": "5dda56724e61e0db",
+            "id": "8a86a8945299d61a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "canvas",
+              "state": {
+                "file": "前端开发/flutter/Dart 知识框架.canvas",
+                "viewState": {
+                  "x": -19.5,
+                  "y": -509.75,
+                  "zoom": 0,
+                  "snapToGrid": false
+                }
+              }
+            }
+          },
+          {
+            "id": "3b2c522cd8686909",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "前端开发/flutter/Dart 知识框架.canvas",
+                "viewState": {
+                  "x": -19.5,
+                  "y": -277.25,
+                  "zoom": 0,
+                  "snapToGrid": false
+                }
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -44,7 +69,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "正则",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 217.5
+    "width": 249
   },
   "right": {
     "id": "a3ff39451e8b89fa",
@@ -81,7 +106,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "前端开发/flutter/Dart 知识框架.canvas"
+              }
             }
           },
           {
@@ -105,6 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "前端开发/flutter/Dart 知识框架.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,6 +149,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "前端开发/flutter/Dart 知识框架.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,6 +172,7 @@
             "state": {
               "type": "localgraph",
               "state": {
+                "file": "前端开发/flutter/Dart 知识框架.canvas",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -165,7 +195,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.1846232622585812,
+                  "scale": 0.12102024442731862,
                   "close": true
                 }
               }
@@ -176,8 +206,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 320.5,
-    "collapsed": true
+    "width": 304.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -191,17 +220,17 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "5dda56724e61e0db",
+  "active": "3b2c522cd8686909",
   "lastOpenFiles": [
-    "后端开发/JAVA/spring-boot/修改启动Banner.md",
-    "后端开发/JAVA/spring-boot/使用idea自带httpclient.md",
-    "后端开发/JAVA/spring-boot/日志输出优化.md",
-    "后端开发/JAVA/spring-boot/热更新配置.md",
-    "后端开发/JAVA/spring-boot/配置mybatis.md",
-    "后端开发/JAVA/idea常用设置.md",
-    "随笔/账号.md",
-    "随笔/assets/$0EETJER9O8D$A}_W0FUM]M.png",
-    "README.md",
-    "我的/书籍.md"
+    "前端开发/flutter/Dart 知识框架.canvas",
+    "模板/页面模板/游戏.md",
+    "前端开发/flutter/Dart语言基础/数据类型.md",
+    "前端开发/flutter/Dart语言基础/变量声明.md",
+    "前端开发/flutter/Dart语言基础/数据类型/数组(List).md",
+    "前端开发/flutter/Dart语言基础/数据类型/键值对(Map).md",
+    "前端开发/flutter/Dart语言基础/数据类型/集合(Set).md",
+    "前端开发/flutter/Dart语言基础/数据类型/字符串(String).md",
+    "前端开发/flutter/Dart语言基础/数据类型/数字(num).md",
+    "前端开发/flutter/Dart语言基础/函数.md"
   ]
 }
