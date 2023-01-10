@@ -8,39 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8a86a8945299d61a",
+            "id": "ca89133be742c4d5",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "前端开发/flutter/Dart 知识框架.canvas",
-                "viewState": {
-                  "x": -19.5,
-                  "y": -509.75,
-                  "zoom": 0,
-                  "snapToGrid": false
-                }
-              }
-            }
-          },
-          {
-            "id": "3b2c522cd8686909",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "前端开发/flutter/Dart 知识框架.canvas",
-                "viewState": {
-                  "x": -19.5,
-                  "y": -277.25,
-                  "zoom": 0,
-                  "snapToGrid": false
-                }
+                "file": "前端开发/flutter/Dart语言基础/库.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "前端开发/flutter/Dart 知识框架.canvas"
+                "file": "前端开发/flutter/Dart语言基础/库.md"
               }
             }
           },
@@ -132,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "前端开发/flutter/Dart 知识框架.canvas",
+                "file": "前端开发/flutter/Dart语言基础/库.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "前端开发/flutter/Dart 知识框架.canvas",
+                "file": "前端开发/flutter/Dart语言基础/库.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -172,7 +151,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "前端开发/flutter/Dart 知识框架.canvas",
+                "file": "前端开发/flutter/Dart语言基础/库.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -220,17 +199,17 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "3b2c522cd8686909",
+  "active": "ca89133be742c4d5",
   "lastOpenFiles": [
-    "前端开发/flutter/Dart 知识框架.canvas",
-    "模板/页面模板/游戏.md",
+    "前端开发/flutter/Dart语言基础/类.md",
+    "前端开发/flutter/Dart语言基础/函数.md",
+    "前端开发/flutter/Dart语言基础/库.md",
     "前端开发/flutter/Dart语言基础/数据类型.md",
+    "前端开发/flutter/Dart语言基础/mei.md",
     "前端开发/flutter/Dart语言基础/变量声明.md",
-    "前端开发/flutter/Dart语言基础/数据类型/数组(List).md",
-    "前端开发/flutter/Dart语言基础/数据类型/键值对(Map).md",
-    "前端开发/flutter/Dart语言基础/数据类型/集合(Set).md",
-    "前端开发/flutter/Dart语言基础/数据类型/字符串(String).md",
-    "前端开发/flutter/Dart语言基础/数据类型/数字(num).md",
-    "前端开发/flutter/Dart语言基础/函数.md"
+    "前端开发/flutter/Dart语言基础/泛型.md",
+    "前端开发/flutter/Dart语言基础/元数据.md",
+    "前端开发/flutter/Dart语言基础/运算符.md",
+    "前端开发/flutter/Dart 知识框架.canvas"
   ]
 }
