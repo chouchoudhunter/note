@@ -21,6 +21,10 @@
     {
       "folder": "我的/游戏",
       "template": "模板/页面模板/游戏.md"
+    },
+    {
+      "folder": "我的/影视",
+      "template": "模板/页面模板/影视.md"
     }
   ],
   "syntax_highlighting": true,

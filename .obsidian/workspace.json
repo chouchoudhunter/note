@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "482119c5c3513278",
+        "id": "92e04aae8e19d25c",
         "type": "tabs",
         "children": [
           {
-            "id": "ca89133be742c4d5",
+            "id": "78727adfde526dda",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "前端开发/flutter/Dart语言基础/库.md",
+                "file": "前端开发/Javascript/数组常用处理方法.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 249
+    "width": 272.5
   },
   "right": {
     "id": "a3ff39451e8b89fa",
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "前端开发/flutter/Dart语言基础/库.md"
+                "file": "前端开发/Javascript/数组常用处理方法.md"
               }
             }
           },
@@ -111,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "前端开发/flutter/Dart语言基础/库.md",
+                "file": "前端开发/Javascript/数组常用处理方法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "前端开发/flutter/Dart语言基础/库.md",
+                "file": "前端开发/Javascript/数组常用处理方法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +151,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "前端开发/flutter/Dart语言基础/库.md",
+                "file": "前端开发/Javascript/数组常用处理方法.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -174,14 +174,13 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.12102024442731862,
+                  "scale": 0.6554983534946921,
                   "close": true
                 }
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -189,27 +188,68 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:新建白板": false,
       "templater-obsidian:Templater": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
-      "canvas:Create new canvas": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "audio-recorder:开始/结束录音": false
+      "audio-recorder:开始/结束录音": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ca89133be742c4d5",
+  "active": "78727adfde526dda",
   "lastOpenFiles": [
-    "前端开发/flutter/Dart语言基础/类.md",
-    "前端开发/flutter/Dart语言基础/函数.md",
-    "前端开发/flutter/Dart语言基础/库.md",
-    "前端开发/flutter/Dart语言基础/数据类型.md",
-    "前端开发/flutter/Dart语言基础/mei.md",
-    "前端开发/flutter/Dart语言基础/变量声明.md",
-    "前端开发/flutter/Dart语言基础/泛型.md",
-    "前端开发/flutter/Dart语言基础/元数据.md",
-    "前端开发/flutter/Dart语言基础/运算符.md",
-    "前端开发/flutter/Dart 知识框架.canvas"
+    "前端开发/Javascript/js 原型.md",
+    "前端开发/Javascript/js小知识点/TDZ暂时死区详解.md",
+    "前端开发/Javascript/js垃圾回收机制.md",
+    "前端开发/Javascript/ES6小记.md",
+    "前端开发/Javascript/数组常用处理方法.md",
+    "前端开发/Javascript/js题目整理/前端基础题  高频面试题.md",
+    "前端开发/Javascript/js小知识点/Null与Undefined的区别.md",
+    "前端开发/Javascript/js深拷贝浅拷贝.md",
+    "前端开发/Javascript/js小知识点/EventLoop.md",
+    "前端开发/Javascript/js小知识点/JS 变量存储.md",
+    "前端开发/Javascript/js小知识点/柯里化和偏函数.md",
+    "前端开发/Javascript/assets/20201117103703-yktnfup.png",
+    "前端开发/Javascript/js小知识点/构造函数.md",
+    "前端开发/Javascript/变量存储.md",
+    "前端开发/Javascript/js小知识点/this解析.md",
+    "前端开发/Javascript/js小知识点/assets/1aeccc9a0d5cbc288b3b42245a32b5ff_MD5.jpg",
+    "前端开发/Javascript/js小知识点/assets/0aa7368106558ce56b3cde87d37c08ab_MD5.jpg",
+    "前端开发/Javascript/js小知识点/assets/796321cea303e344ef6c305e588e3ae1_MD5.jpg",
+    "前端开发/Javascript/js小知识点/assets/46efb1cd4731de67ebc7e42c860cad48_MD5.jpg",
+    "前端开发/Javascript/js小知识点/assets/6b04910983f6910eddac41b1eeb8f089_MD5.png",
+    "前端开发/Javascript/js小知识点/assets/e2386e8662a1b1ba6592a16682bdad15_MD5.jpg",
+    "前端开发/Javascript/js小知识点/assets/b9cc249ce156c5e248ac93f7f89937c5_MD5.jpg",
+    "前端开发/Javascript/js小知识点/assets/e38e8d94b7499a3395bb9f01463a73e9_MD5.jpg",
+    "前端开发/Javascript/js小知识点/assets/2ea0ec245e1fc03435196761e3aecfe1_MD5.jpg",
+    "前端开发/Javascript/js小知识点/assets/5f620d8f2dc305b6e8efc5260edcad36_MD5.jpg-watermark",
+    "前端开发/Javascript/js小知识点/assets/c537e33b99daa2c85d9bd29fb61429cd_MD5.jpg-watermark",
+    "前端开发/Javascript/js小知识点/assets/e2870cdf1ec6106320314249415e7c71_MD5.png-watermark",
+    "前端开发/Javascript/js小知识点/assets/e5796a549636c2dcbb6bada29c28f5e2_MD5.jpg-watermark",
+    "前端开发/Javascript/js小知识点/assets/a0ea33c7320603f8fc64de40c41b2fda_MD5.jpg-watermark",
+    "前端开发/Javascript/js小知识点/assets/47eca5b4b69a95468861d5a3b2ac21c5_MD5.jpg-watermark",
+    "前端开发/Javascript/js小知识点/assets/7acfc122f1e03bf729c72048f1af12c5_MD5.jpg-watermark",
+    "前端开发/Javascript/js小知识点/assets/7401803b01ba25fb02d4a39555d70caa_MD5.jpg-watermark",
+    "前端开发/Javascript/js小知识点/assets/9a4516642bd7da41eefe8cf6bf9b1850_MD5.jpg-watermark",
+    "前端开发/Javascript/js小知识点/assets/45fd1c7668e753afa4504da837643b9c_MD5.jpg-watermark",
+    "前端开发/Flutter/第三方包/状态管理-GetX/介绍、Snackbar、Dialog、BottomSheet、Navigation、Obx.md",
+    "前端开发/Flutter/第三方包/状态管理-GetX/Cli使用以及常用命令.md",
+    "前端开发/Flutter/Dart语言基础/类.md",
+    "前端开发/Flutter/Dart语言基础/变量声明.md",
+    "我的/书籍.md",
+    "前端开发/Flutter/安卓相关/权限.md",
+    "测试/数学计划.md",
+    "测试/示例.md",
+    "测试/测试.canvas",
+    "测试/回锅肉买材料.md",
+    "测试/未命名.canvas",
+    "我的/日记/2023-02-24.md",
+    "我的/日记/2023-01-01.md",
+    "我的/书籍/未水电费水电费.md",
+    "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "前端开发/Flutter/测试.canvas"
   ]
 }

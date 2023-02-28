@@ -54,7 +54,6 @@
 new Promise(function (resolve) {
   console.log(1)
 })
-复制代码
 ```
 
 上面这段实例代码的 `1` ，是直接输出的，属于同步任务，虽然它确实在 `Promise` 中
@@ -132,6 +131,3 @@ console.log(2)    //setTimeout
 ```
 
 所以，答案一眼就能看的出来是 ` 1 3 6 4 5 2`
-
-
-{: id="20201117103700-kf5qie8" type="doc"}

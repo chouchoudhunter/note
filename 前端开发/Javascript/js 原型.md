@@ -28,7 +28,7 @@ let obj3 = new A('bar');
 
 以上代码最终都产生了 `{foo: 'bar'}` 这个对象。对象下有一个叫 `foo` 的属性，它的值为 `bar`。那么它在堆中是如何存储的呢？
 
-![JavaScript 下对象的存储](https://user-gold-cdn.xitu.io/2019/12/9/16ee850f391b7f82?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![[Pasted image 20230228214432.jpg]]
 
 看过了 [`JS 变量存储？栈 & 堆？NONONO!`](https://blog.acohome.cn/js-variable-in-memory/) 相信大家对于上图应该不陌生。
 

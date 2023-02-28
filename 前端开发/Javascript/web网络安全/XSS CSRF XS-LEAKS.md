@@ -51,16 +51,15 @@ Web 安全是老生常谈的话题，但是常说常新，今天就再次梳（c
 
 那还不是非常的`so easy`，反手就可以写出一条`XSS`的链接出来：
 
-```
+```javascript
 http://abcd.com?q=<script>alert(document.cookie)</script>
-复制代码
 ```
 
 这样网页会把`q`参数中的 script 标签插入到 DOM 中执行，进而弹出提示框。
 
 思路肯定是没问题的，不过你可能会发现不起效果，这是因为浏览器针对`script`等一些危险标签的插入做了拦截过滤，当然了这难不倒我们，毕竟咱们也不能把我要干坏事写在脸上，这不尊重对手，所以咱们换种委婉一点的写法就行了：
 
-```
+```javascript
 http://abcd.com?q=<img src="" onerror="alert(document.cookie)" />
 复制代码
 ```
@@ -252,16 +251,15 @@ XS-Leaks 利用了浏览器缓存的漏洞实现了攻击，但是其实不仅�
 ![](20201124172917-s38k1b6.png)
 该响应中将请求头`X-Forwarded-Host`的值直接拼接到 meta 标签的 content 属性中，由此产生了 XSS 攻击的漏洞，因此我们通过发起一个如下请求：
 
-```js copyable
+```javascript copyable
 GET /en?dontpoisoneveryone=1 HTTP/1.1
 Host: www.redhat.com
 X-Forwarded-Host: a."><script>alert(1)</script>
-复制代码
 ```
 
 服务器就会返回如下响应，并缓存到缓存服务器中：
 
-```js copyable
+```javascript copyable
 HTTP/1.1 200 OK
 Cache-Control: public, no-cache
 …
@@ -277,7 +275,7 @@ Cache-Control: public, no-cache
 
 尽管已经有这么多的措施来应对和抵御 Web 的各种攻击，但依旧有一个又一个的安全漏洞被黑客们发现和攻破，强如 Google，页面简洁如 Google Search 的网站，依然在 2019 年遭到了 XSS 攻击。而这次攻击却只需要一行代码：
 
-```js copyable
+```javascript copyable
 <noscript><p title="</noscript><img src=x onerror=alert(1)>">
 复制代码
 ```
