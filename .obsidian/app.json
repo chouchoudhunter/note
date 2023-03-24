@@ -1,7 +1,7 @@
 {
   "promptDelete": false,
   "attachmentFolderPath": "./assets",
-  "showUnsupportedFiles": false,
+  "showUnsupportedFiles": true,
   "userIgnoreFilters": [
     "我的/书籍/",
     "我的/日记/",
@@ -10,5 +10,12 @@
     "README"
   ],
   "alwaysUpdateLinks": true,
-  "showFrontmatter": false
+  "showFrontmatter": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }

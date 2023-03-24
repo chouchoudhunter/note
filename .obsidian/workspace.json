@@ -8,18 +8,29 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5ba9e2af0565333a",
+            "id": "77cfa2a4176b25dd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "前端开发/Flutter/Flutter基础/布局组件.md",
+                "file": "随笔/备忘录.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "cccc6236b35ee88e",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.16"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -86,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "前端开发/Flutter/Flutter基础/布局组件.md"
+                "file": "随笔/备忘录.md"
               }
             }
           },
@@ -111,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "前端开发/Flutter/Flutter基础/布局组件.md",
+                "file": "随笔/备忘录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "前端开发/Flutter/Flutter基础/布局组件.md",
+                "file": "随笔/备忘录.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +162,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "前端开发/Flutter/Flutter基础/布局组件.md",
+                "file": "随笔/备忘录.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -180,7 +191,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -189,46 +201,55 @@
   "left-ribbon": {
     "hiddenItems": {
       "canvas:新建白板": false,
-      "templater-obsidian:Templater": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "audio-recorder:开始/结束录音": false,
+      "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5ba9e2af0565333a",
+  "active": "cccc6236b35ee88e",
   "lastOpenFiles": [
+    "随笔/Blender.py",
+    "随笔/assets/f8176e05f786512c064f677467714779_MD5.png",
+    "随笔/assets/66ce32a8156412281818a66dfa7515bc_MD5.png",
+    "前端开发/Flutter/Flutter基础/生命周期.md",
+    "前端开发/Flutter/Dart语言基础/类.md",
+    "前端开发/Flutter/Dart语言基础/函数.md",
+    "前端开发/Flutter/Flutter基础/动画.md",
+    "前端开发/Flutter/Flutter基础/assets/Pasted image 20230323020113.png",
+    "前端开发/Flutter/Flutter基础/assets/Pasted image 20230323020053.png",
+    "前端开发/Flutter/第三方包/状态管理-GetX/介绍、Snackbar、Dialog、BottomSheet、Navigation、Obx.md",
+    "随笔/动画插件.md",
+    "前端开发/Flutter/第三方包/状态管理-GetX/Cli使用以及常用命令.md",
+    "随笔/散乱灵感.md",
+    "随笔/assets/page_bg_schinese.gif",
+    "随笔/assets/page_bg_schinese.gif.crdownload",
+    "随笔/assets/Pasted image 20230322141010.png",
+    "随笔/assets/640.jpeg",
+    "随笔/备忘录.md",
     "随笔/考研调剂学校清单.md",
+    "随笔/提升编程能力.md",
     "随笔/账号.md",
+    "随笔/assets/Pasted image 20230315131419.png",
+    "随笔/assets/Pasted image 20230315131238.png",
+    "随笔/assets/Pasted image 20230315125959.png",
+    "我的/日记/2023-03-14.md",
+    "README.md",
+    "前端开发/Flutter/Flutter基础/布局组件.md",
+    "前端开发/Flutter/Dart语言基础/库.md",
+    "前端开发/Flutter/Dart语言基础/变量声明.md",
+    "前端开发/Flutter/Dart语言基础/数据类型.md",
+    "前端开发/Flutter/Flutter基础/组件状态.md",
+    "前端开发/Flutter/Flutter基础/内容组件.md",
     "前端开发/Flutter/Futter配置相关/添加静态资源.md",
     "前端开发/Flutter/Futter配置相关/更换源.md",
     "前端开发/Javascript/数组常用处理方法.md",
     "前端开发/Javascript/js 原型.md",
     "前端开发/Javascript/js小知识点/TDZ暂时死区详解.md",
-    "前端开发/Javascript/js垃圾回收机制.md",
-    "前端开发/Javascript/ES6小记.md",
-    "前端开发/Javascript/js题目整理/前端基础题  高频面试题.md",
-    "前端开发/Javascript/js小知识点/Null与Undefined的区别.md",
-    "前端开发/Javascript/js深拷贝浅拷贝.md",
-    "前端开发/Javascript/js小知识点/EventLoop.md",
-    "前端开发/Javascript/js小知识点/JS 变量存储.md",
-    "前端开发/Javascript/js小知识点/柯里化和偏函数.md",
-    "前端开发/Javascript/assets/20201117103703-yktnfup.png",
-    "前端开发/Javascript/js小知识点/构造函数.md",
-    "前端开发/Javascript/变量存储.md",
-    "前端开发/Javascript/js小知识点/this解析.md",
-    "前端开发/Javascript/js小知识点/assets/1aeccc9a0d5cbc288b3b42245a32b5ff_MD5.jpg",
-    "前端开发/Javascript/js小知识点/assets/0aa7368106558ce56b3cde87d37c08ab_MD5.jpg",
-    "前端开发/Javascript/js小知识点/assets/796321cea303e344ef6c305e588e3ae1_MD5.jpg",
-    "前端开发/Javascript/js小知识点/assets/46efb1cd4731de67ebc7e42c860cad48_MD5.jpg",
-    "前端开发/Javascript/js小知识点/assets/6b04910983f6910eddac41b1eeb8f089_MD5.png",
-    "前端开发/Javascript/js小知识点/assets/e2386e8662a1b1ba6592a16682bdad15_MD5.jpg",
-    "前端开发/Javascript/js小知识点/assets/b9cc249ce156c5e248ac93f7f89937c5_MD5.jpg",
-    "前端开发/Javascript/js小知识点/assets/e38e8d94b7499a3395bb9f01463a73e9_MD5.jpg",
-    "前端开发/Javascript/js小知识点/assets/2ea0ec245e1fc03435196761e3aecfe1_MD5.jpg",
     "前端开发/Javascript/js小知识点/assets/5f620d8f2dc305b6e8efc5260edcad36_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/c537e33b99daa2c85d9bd29fb61429cd_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/e2870cdf1ec6106320314249415e7c71_MD5.png-watermark",
@@ -238,15 +259,6 @@
     "前端开发/Javascript/js小知识点/assets/7acfc122f1e03bf729c72048f1af12c5_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/7401803b01ba25fb02d4a39555d70caa_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/9a4516642bd7da41eefe8cf6bf9b1850_MD5.jpg-watermark",
-    "前端开发/Javascript/js小知识点/assets/45fd1c7668e753afa4504da837643b9c_MD5.jpg-watermark",
-    "前端开发/Flutter/第三方包/状态管理-GetX/介绍、Snackbar、Dialog、BottomSheet、Navigation、Obx.md",
-    "前端开发/Flutter/第三方包/状态管理-GetX/Cli使用以及常用命令.md",
-    "前端开发/Flutter/Dart语言基础/类.md",
-    "前端开发/Flutter/Dart语言基础/变量声明.md",
-    "我的/书籍.md",
-    "前端开发/Flutter/安卓相关/权限.md",
-    "测试/数学计划.md",
-    "测试/示例.md",
     "测试/测试.canvas",
     "测试/未命名.canvas",
     "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
