@@ -33,7 +33,7 @@ __export(main_exports, {
   default: () => QuickAdd
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian34 = require("obsidian");
+var import_obsidian35 = require("obsidian");
 
 // src/quickAddSettingsTab.ts
 var import_obsidian30 = require("obsidian");
@@ -4446,7 +4446,7 @@ function create_each_block2(key_1, ctx) {
   const if_block_creators = [create_if_block4, create_else_block];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
-    if (ctx2[23].type !== "Multi" /* Multi */)
+    if (ctx2[23].type !== "Multi")
       return 0;
     return 1;
   }
@@ -4713,20 +4713,12 @@ function create_fragment10(ctx) {
   let t0;
   let select;
   let option0;
-  let t1_value = "Template" /* Template */ + "";
-  let t1;
   let option0_value_value;
   let option1;
-  let t2_value = "Capture" /* Capture */ + "";
-  let t2;
   let option1_value_value;
   let option2;
-  let t3_value = "Macro" /* Macro */ + "";
-  let t3;
   let option2_value_value;
   let option3;
-  let t4_value = "Multi" /* Multi */ + "";
-  let t4;
   let option3_value_value;
   let t5;
   let button;
@@ -4739,25 +4731,25 @@ function create_fragment10(ctx) {
       t0 = space();
       select = element("select");
       option0 = element("option");
-      t1 = text(t1_value);
+      option0.textContent = `${"Template"}`;
       option1 = element("option");
-      t2 = text(t2_value);
+      option1.textContent = `${"Capture"}`;
       option2 = element("option");
-      t3 = text(t3_value);
+      option2.textContent = `${"Macro"}`;
       option3 = element("option");
-      t4 = text(t4_value);
+      option3.textContent = `${"Multi"}`;
       t5 = space();
       button = element("button");
       button.textContent = "Add Choice";
       attr(input, "type", "text");
       attr(input, "placeholder", "Name");
-      option0.__value = option0_value_value = "Template" /* Template */;
+      option0.__value = option0_value_value = "Template";
       option0.value = option0.__value;
-      option1.__value = option1_value_value = "Capture" /* Capture */;
+      option1.__value = option1_value_value = "Capture";
       option1.value = option1.__value;
-      option2.__value = option2_value_value = "Macro" /* Macro */;
+      option2.__value = option2_value_value = "Macro";
       option2.value = option2.__value;
-      option3.__value = option3_value_value = "Multi" /* Multi */;
+      option3.__value = option3_value_value = "Multi";
       option3.value = option3.__value;
       attr(select, "id", "addChoiceTypeSelector");
       attr(select, "class", "svelte-1newuee");
@@ -4773,13 +4765,9 @@ function create_fragment10(ctx) {
       append(div, t0);
       append(div, select);
       append(select, option0);
-      append(option0, t1);
       append(select, option1);
-      append(option1, t2);
       append(select, option2);
-      append(option2, t3);
       append(select, option3);
-      append(option3, t4);
       select_option(select, ctx[1]);
       append(div, t5);
       append(div, button);
@@ -4901,7 +4889,7 @@ var Choice = class {
 // src/types/choices/TemplateChoice.ts
 var TemplateChoice = class extends Choice {
   constructor(name) {
-    super(name, "Template" /* Template */);
+    super(name, "Template");
     this.templatePath = "";
     this.fileNameFormat = { enabled: false, format: "" };
     this.folder = {
@@ -4930,7 +4918,7 @@ var TemplateChoice = class extends Choice {
 // src/types/choices/MacroChoice.ts
 var MacroChoice = class extends Choice {
   constructor(name) {
-    super(name, "Macro" /* Macro */);
+    super(name, "Macro");
     this.macroId = "";
   }
 };
@@ -4938,7 +4926,7 @@ var MacroChoice = class extends Choice {
 // src/types/choices/CaptureChoice.ts
 var CaptureChoice = class extends Choice {
   constructor(name) {
-    super(name, "Capture" /* Capture */);
+    super(name, "Capture");
     this.appendLink = false;
     this.captureTo = "";
     this.captureToActiveFile = false;
@@ -4952,6 +4940,7 @@ var CaptureChoice = class extends Choice {
       enabled: false,
       after: "",
       insertAtEnd: false,
+      considerSubsections: false,
       createIfNotFound: false,
       createIfNotFoundLocation: "top"
     };
@@ -4973,7 +4962,7 @@ var CaptureChoice = class extends Choice {
 // src/types/choices/MultiChoice.ts
 var MultiChoice = class extends Choice {
   constructor(name) {
-    super(name, "Multi" /* Multi */);
+    super(name, "Multi");
     this.choices = [];
   }
   addChoice(choice) {
@@ -6744,7 +6733,7 @@ var TextInputSuggest = class {
               return;
             }
             state.styles.popper.width = targetWidth;
-            instance18.update();
+            void instance18.update();
           },
           phase: "beforeWrite",
           requires: ["computeStyles"]
@@ -8814,7 +8803,7 @@ var FolderList = class extends SvelteComponent {
 };
 var FolderList_default = FolderList;
 
-// src/utility.ts
+// src/utilityObsidian.ts
 var import_obsidian8 = require("obsidian");
 function getTemplater(app2) {
   return app2.plugins.plugins["templater-obsidian"];
@@ -8878,23 +8867,6 @@ function getUserScriptMemberAccess(fullMemberPath) {
     memberAccess: fullMemberArray.slice(1)
   };
 }
-function waitFor(ms) {
-  return new Promise((res) => setTimeout(res, ms));
-}
-function getLinesInString(input) {
-  const lines = [];
-  let tempString = input;
-  while (tempString.contains("\n")) {
-    const lineEndIndex = tempString.indexOf("\n");
-    lines.push(tempString.slice(0, lineEndIndex));
-    tempString = tempString.slice(lineEndIndex + 1);
-  }
-  lines.push(tempString);
-  return lines;
-}
-function escapeRegExp(text2) {
-  return text2.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-}
 async function openFile(app2, file, optional) {
   let leaf;
   if (optional.openInNewTab && optional.direction) {
@@ -8908,7 +8880,7 @@ async function openFile(app2, file, optional) {
   }
   if (optional?.mode) {
     const leafViewState = leaf.getViewState();
-    leaf.setViewState({
+    await leaf.setViewState({
       ...leafViewState,
       state: {
         ...leafViewState.state,
@@ -8955,10 +8927,10 @@ function excludeKeys(sourceObj, except) {
   return obj;
 }
 function getChoiceType(choice) {
-  const isTemplate = (choice2) => choice2.type === "Template" /* Template */;
-  const isMacro = (choice2) => choice2.type === "Macro" /* Macro */;
-  const isCapture = (choice2) => choice2.type === "Capture" /* Capture */;
-  const isMulti = (choice2) => choice2.type === "Multi" /* Multi */;
+  const isTemplate = (choice2) => choice2.type === "Template";
+  const isMacro = (choice2) => choice2.type === "Macro";
+  const isCapture = (choice2) => choice2.type === "Capture";
+  const isMulti = (choice2) => choice2.type === "Multi";
   return isTemplate(choice) || isMacro(choice) || isCapture(choice) || isMulti(choice);
 }
 
@@ -9131,9 +9103,7 @@ var Formatter = class {
           const nld = this.getNaturalLanguageDates();
           if (!nld || !nld.parseDate || typeof nld.parseDate !== "function")
             continue;
-          const parseAttempt = nld.parseDate(
-            this.variables.get(variableName)
-          );
+          const parseAttempt = nld.parseDate(this.variables.get(variableName));
           if (parseAttempt)
             this.variables.set(
               variableName,
@@ -9442,7 +9412,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
     });
     const formatDisplay = this.contentEl.createEl("span");
     const displayFormatter = new FileNameDisplayFormatter(this.app);
-    (async () => formatDisplay.textContent = await displayFormatter.format(
+    void (async () => formatDisplay.textContent = await displayFormatter.format(
       this.choice.fileNameFormat.format
     ))();
     const formatInput = new import_obsidian9.TextComponent(this.contentEl);
@@ -9663,8 +9633,8 @@ var QuickAddEngine = class {
   async fileExists(filePath) {
     return await this.app.vault.adapter.exists(filePath);
   }
-  async getFileByPath(filePath) {
-    const file = await this.app.vault.getAbstractFileByPath(filePath);
+  getFileByPath(filePath) {
+    const file = this.app.vault.getAbstractFileByPath(filePath);
     if (!file) {
       log.logError(`${filePath} not found`);
       throw new Error(`${filePath} not found`);
@@ -9682,12 +9652,11 @@ var QuickAddEngine = class {
     let dirName = "";
     if (dirMatch)
       dirName = dirMatch[1];
-    if (await this.app.vault.adapter.exists(dirName)) {
-      return await this.app.vault.create(filePath, fileContent);
-    } else {
+    const dir = app.vault.getAbstractFileByPath(dirName);
+    if (!dir || !(dir instanceof import_obsidian10.TFolder)) {
       await this.createFolder(dirName);
-      return await this.app.vault.create(filePath, fileContent);
     }
+    return await this.app.vault.create(filePath, fileContent);
   }
 };
 
@@ -9763,12 +9732,14 @@ var GenericInfoDialog = class extends import_obsidian12.Modal {
     if (String.isString(this.text))
       this.contentEl.createEl("p", { text: this.text });
     else if (Array.isArray(this.text))
-      this.text.forEach((line) => this.contentEl.createEl("p", { text: line }));
+      this.text.forEach(
+        (line) => this.contentEl.createEl("p", { text: line })
+      );
     const buttonsDiv = this.contentEl.createDiv();
     const noButton = new import_obsidian12.ButtonComponent(buttonsDiv).setButtonText("OK").onClick(() => this.close());
     Object.assign(buttonsDiv.style, {
-      "display": "flex",
-      "justifyContent": "flex-end"
+      display: "flex",
+      justifyContent: "flex-end"
     });
     noButton.buttonEl.focus();
   }
@@ -10211,7 +10182,7 @@ var SelectLinkOnActiveLineCommand = class extends EditorCommand {
   constructor() {
     super("Select link on active line" /* SelectLinkOnActiveLine */);
   }
-  static async run(app2) {
+  static run(app2) {
     const activeView = EditorCommand.getActiveMarkdownView(app2);
     const { line: lineNumber } = activeView.editor.getCursor();
     const line = activeView.editor.getLine(lineNumber);
@@ -10228,6 +10199,25 @@ var SelectLinkOnActiveLineCommand = class extends EditorCommand {
     );
   }
 };
+
+// src/utility.ts
+function waitFor(ms) {
+  return new Promise((res) => setTimeout(res, ms));
+}
+function getLinesInString(input) {
+  const lines = [];
+  let tempString = input;
+  while (tempString.includes("\n")) {
+    const lineEndIndex = tempString.indexOf("\n");
+    lines.push(tempString.slice(0, lineEndIndex));
+    tempString = tempString.slice(lineEndIndex + 1);
+  }
+  lines.push(tempString);
+  return lines;
+}
+function escapeRegExp(text2) {
+  return text2.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
 
 // src/engine/MacroChoiceEngine.ts
 var MacroChoiceEngine = class extends QuickAddChoiceEngine {
@@ -10261,7 +10251,7 @@ var MacroChoiceEngine = class extends QuickAddChoiceEngine {
   async executeCommands(commands2) {
     for (const command of commands2) {
       if (command?.type === "Obsidian" /* Obsidian */)
-        await this.executeObsidianCommand(command);
+        this.executeObsidianCommand(command);
       if (command?.type === "UserScript" /* UserScript */)
         await this.executeUserScript(command);
       if (command?.type === "Choice" /* Choice */)
@@ -10293,13 +10283,24 @@ var MacroChoiceEngine = class extends QuickAddChoiceEngine {
     if (userScript.settings) {
       this.userScriptCommand = command;
     }
-    await this.userScriptDelegator(userScript);
+    try {
+      await this.userScriptDelegator(userScript);
+    } catch (error) {
+      log.logError(
+        `failed to run user script ${command.name}. Error:
+
+${error.message}`
+      );
+    }
     if (this.userScriptCommand)
       this.userScriptCommand = null;
   }
   async runScriptWithSettings(userScript, command) {
     if (typeof userScript !== "function" && userScript.entry && typeof userScript.entry === "function") {
-      return await this.onExportIsFunction(userScript.entry, command.settings);
+      return await this.onExportIsFunction(
+        userScript.entry,
+        command.settings
+      );
     }
     if (typeof userScript === "function") {
       return await this.onExportIsFunction(userScript, command.settings);
@@ -10336,8 +10337,16 @@ var MacroChoiceEngine = class extends QuickAddChoiceEngine {
     this.output = await userScript(this.params, settings || {});
   }
   async onExportIsObject(obj) {
+    if (Object.keys(obj).length === 0) {
+      throw new Error(
+        `user script in macro for '${this.choice.name}' is an empty object`
+      );
+    }
     if (this.userScriptCommand && obj.entry !== null) {
-      await this.runScriptWithSettings(obj, this.userScriptCommand);
+      await this.runScriptWithSettings(
+        obj,
+        this.userScriptCommand
+      );
       return;
     }
     try {
@@ -10385,10 +10394,10 @@ var MacroChoiceEngine = class extends QuickAddChoiceEngine {
         await PasteCommand.run(this.app);
         break;
       case "Select active line" /* SelectActiveLine */:
-        await SelectActiveLineCommand.run(this.app);
+        SelectActiveLineCommand.run(this.app);
         break;
       case "Select link on active line" /* SelectLinkOnActiveLine */:
-        await SelectLinkOnActiveLineCommand.run(this.app);
+        SelectLinkOnActiveLineCommand.run(this.app);
         break;
     }
   }
@@ -11423,7 +11432,7 @@ var InputPrompt = class {
 // src/gui/InputSuggester/inputSuggester.ts
 var import_obsidian19 = require("obsidian");
 var InputSuggester = class extends import_obsidian19.FuzzySuggestModal {
-  constructor(app2, displayItems, items) {
+  constructor(app2, displayItems, items, options = {}) {
     super(app2);
     this.displayItems = displayItems;
     this.items = items;
@@ -11439,10 +11448,21 @@ var InputSuggester = class extends import_obsidian19.FuzzySuggestModal {
       const { value } = this.inputEl;
       this.inputEl.value = values[selectedItem].item ?? value;
     });
+    if (options.placeholder)
+      this.setPlaceholder(options.placeholder);
+    if (options.limit)
+      this.limit = options.limit;
+    if (options.emptyStateText)
+      this.emptyStateText = options.emptyStateText;
     this.open();
   }
-  static Suggest(app2, displayItems, items) {
-    const newSuggester = new InputSuggester(app2, displayItems, items);
+  static Suggest(app2, displayItems, items, options = {}) {
+    const newSuggester = new InputSuggester(
+      app2,
+      displayItems,
+      items,
+      options
+    );
     return newSuggester.promise;
   }
   getItemText(item) {
@@ -11559,7 +11579,10 @@ var CompleteFormatter = class extends Formatter {
     return await InputSuggester.Suggest(
       this.app,
       suggestedValuesArr,
-      suggestedValuesArr
+      suggestedValuesArr,
+      {
+        placeholder: `Enter value for ${variableName}`
+      }
     );
   }
   async getMacroValue(macroName) {
@@ -11839,12 +11862,13 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
     }
     this.addTaskSetting();
     this.addPrependSetting();
+    this.addAppendLinkSetting();
+    this.addInsertAfterSetting();
     if (!this.choice.captureToActiveFile) {
-      this.addAppendLinkSetting();
-      this.addInsertAfterSetting();
       this.addOpenFileSetting();
-      if (this.choice.openFile)
+      if (this.choice.openFile) {
         this.addOpenFileInNewTabSetting();
+      }
     }
     this.addFormatSetting();
   }
@@ -11867,7 +11891,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
       const captureToFileContainer = captureToContainer.createDiv("captureToFileContainer");
       const formatDisplay = captureToFileContainer.createEl("span");
       const displayFormatter = new FileNameDisplayFormatter(this.app);
-      (async () => formatDisplay.textContent = await displayFormatter.format(
+      void (async () => formatDisplay.textContent = await displayFormatter.format(
         this.choice.captureTo
       ))();
       const formatInput = new import_obsidian22.TextComponent(captureToFileContainer);
@@ -11941,7 +11965,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
     });
     const insertAfterFormatDisplay = this.contentEl.createEl("span");
     const displayFormatter = new FormatDisplayFormatter(this.app, this.plugin);
-    (async () => insertAfterFormatDisplay.innerText = await displayFormatter.format(
+    void (async () => insertAfterFormatDisplay.innerText = await displayFormatter.format(
       this.choice.insertAfter.after
     ))();
     insertAfterInput = new import_obsidian22.TextComponent(this.contentEl);
@@ -11965,6 +11989,29 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
         (toggle) => toggle.setValue(this.choice.insertAfter?.insertAtEnd).onChange(
           (value) => this.choice.insertAfter.insertAtEnd = value
         )
+      );
+      const considerSubsectionsSetting = new import_obsidian22.Setting(
+        this.contentEl
+      );
+      considerSubsectionsSetting.setName("Consider subsections").setDesc(
+        "Enabling this will insert the text at the end of the section & its subsections, rather than just at the end of the target section.A section is defined by a heading, and its subsections are all the headings inside that section."
+      ).addToggle(
+        (toggle) => toggle.setValue(this.choice.insertAfter?.considerSubsections).onChange((value) => {
+          if (!value) {
+            this.choice.insertAfter.considerSubsections = false;
+            return;
+          }
+          const targetIsHeading = this.choice.insertAfter.after.startsWith("#");
+          if (targetIsHeading) {
+            this.choice.insertAfter.considerSubsections = value;
+          } else {
+            this.choice.insertAfter.considerSubsections = false;
+            log.logError(
+              "'Consider subsections' can only be enabled if the insert after line starts with a # (heading)."
+            );
+            this.display();
+          }
+        })
       );
       const createLineIfNotFound = new import_obsidian22.Setting(this.contentEl);
       createLineIfNotFound.setName("Create line if not found").setDesc("Creates the 'insert after' line if it is not found.").addToggle((toggle) => {
@@ -12006,7 +12053,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
     new FormatSyntaxSuggester(this.app, textField.inputEl, this.plugin);
     const formatDisplay = this.contentEl.createEl("span");
     const displayFormatter = new FormatDisplayFormatter(this.app, this.plugin);
-    (async () => formatDisplay.innerText = await displayFormatter.format(
+    void (async () => formatDisplay.innerText = await displayFormatter.format(
       this.choice.format.format
     ))();
   }
@@ -12836,7 +12883,7 @@ var UserScriptSettingsModal = class extends import_obsidian23.Modal {
   }
   addDropdown(name, options, value) {
     new import_obsidian23.Setting(this.contentEl).setName(name).addDropdown((dropdown) => {
-      options.forEach((item) => dropdown.addOption(item, item));
+      options.forEach((item) => void dropdown.addOption(item, item));
       dropdown.setValue(value);
       dropdown.onChange((value2) => this.command.settings[name] = value2);
     });
@@ -12857,7 +12904,7 @@ var UserScriptSettingsModal = class extends import_obsidian23.Modal {
     input.inputEl.style.width = "100%";
     input.inputEl.style.height = "100px";
     input.inputEl.style.marginBottom = "1em";
-    (async () => formatDisplay.innerText = await displayFormatter.format(value))();
+    void (async () => formatDisplay.innerText = await displayFormatter.format(value))();
   }
 };
 
@@ -13375,12 +13422,12 @@ function instance16($$self, $$props, $$invalidate) {
   }
   function getChoiceBuilder(choice) {
     switch (choice.type) {
-      case "Template" /* Template */:
+      case "Template":
         return new TemplateChoiceBuilder(app2, choice, plugin);
-      case "Capture" /* Capture */:
+      case "Capture":
         return new CaptureChoiceBuilder(app2, choice, plugin);
-      case "Macro" /* Macro */:
-      case "Multi" /* Multi */:
+      case "Macro":
+      case "Multi":
       default:
         break;
     }
@@ -13545,6 +13592,20 @@ var NestedChoiceCommand2 = class extends Command {
 };
 
 // src/gui/MacroGUIs/MacroBuilder.ts
+function getChoicesAsList(nestedChoices) {
+  const arr = [];
+  const recursive = (choices) => {
+    choices.forEach((choice) => {
+      if (choice.type === "Multi") {
+        recursive(choice.choices);
+      } else {
+        arr.push(choice);
+      }
+    });
+  };
+  recursive(nestedChoices);
+  return arr;
+}
 var MacroBuilder = class extends import_obsidian25.Modal {
   constructor(app2, plugin, macro, choices) {
     super(app2);
@@ -13553,7 +13614,7 @@ var MacroBuilder = class extends import_obsidian25.Modal {
     this.choices = [];
     this.macro = macro;
     this.svelteElements = [];
-    this.choices = choices;
+    this.choices = getChoicesAsList(choices);
     this.plugin = plugin;
     this.waitForClose = new Promise(
       (resolve) => this.resolvePromise = resolve
@@ -13606,9 +13667,7 @@ var MacroBuilder = class extends import_obsidian25.Modal {
     let input;
     const addObsidianCommandFromInput = () => {
       const value = input.getValue();
-      const obsidianCommand = this.commands.find(
-        (v) => v.name === value
-      );
+      const obsidianCommand = this.commands.find((v) => v.name === value);
       if (!obsidianCommand) {
         log.logError(
           `Could not find Obsidian command with name "${value}"`
@@ -13947,7 +14006,7 @@ var MacroChoiceBuilder = class extends ChoiceBuilder {
     const createMacroButton = new import_obsidian26.ButtonComponent(
       createMacroButtonContainer
     );
-    createMacroButton.setIcon("plus").setCta().setTooltip("Create Macro").onClick(async () => {
+    createMacroButton.setIcon("plus").setCta().setTooltip("Create Macro").onClick(() => {
       try {
         const macro = settingsStore.createMacro(this.choice.name);
         this.choice.macroId = macro.id;
@@ -14094,28 +14153,11 @@ var MacrosManager = class extends import_obsidian28.Modal {
         configureButton.setClass("mod-cta");
         configureButton.buttonEl.style.marginRight = "0";
         configureButton.setButtonText("Configure").onClick(async (evt) => {
-          const getReachableChoices = (choices) => {
-            const reachableChoices2 = [];
-            choices.forEach((choice) => {
-              if (choice.type === "Multi" /* Multi */)
-                reachableChoices2.push(
-                  ...getReachableChoices(
-                    choice.choices
-                  )
-                );
-              if (choice.type !== "Multi" /* Multi */)
-                reachableChoices2.push(choice);
-            });
-            return reachableChoices2;
-          };
-          const reachableChoices = getReachableChoices(
-            this.choices
-          );
           const newMacro = await new MacroBuilder(
             this.app,
             this.plugin,
             macro,
-            reachableChoices
+            this.choices
           ).waitForClose;
           if (newMacro) {
             this.updateMacro(newMacro);
@@ -14266,6 +14308,27 @@ function create_fragment17(ctx) {
     }
   };
 }
+function deleteChoiceHelper(id, value) {
+  if (value.type === "Multi") {
+    value.choices = value.choices.filter((v) => deleteChoiceHelper(id, v));
+  }
+  return value.id !== id;
+}
+function updateChoiceHelper(oldChoice, newChoice) {
+  if (oldChoice.id === newChoice.id) {
+    oldChoice = { ...oldChoice, ...newChoice };
+    return oldChoice;
+  }
+  if (oldChoice.type === "Multi") {
+    const multiChoice = oldChoice;
+    const multiChoiceChoices = multiChoice.choices.map((c) => updateChoiceHelper(c, newChoice));
+    return {
+      ...multiChoice,
+      choices: multiChoiceChoices
+    };
+  }
+  return oldChoice;
+}
 function instance17($$self, $$props, $$invalidate) {
   let { choices = [] } = $$props;
   let { macros = [] } = $$props;
@@ -14285,19 +14348,19 @@ function instance17($$self, $$props, $$invalidate) {
   function addChoiceToList(event) {
     const { name, type } = event.detail;
     switch (type) {
-      case "Template" /* Template */:
+      case "Template":
         const templateChoice = new TemplateChoice(name);
         $$invalidate(0, choices = [...choices, templateChoice]);
         break;
-      case "Capture" /* Capture */:
+      case "Capture":
         const captureChoice = new CaptureChoice(name);
         $$invalidate(0, choices = [...choices, captureChoice]);
         break;
-      case "Macro" /* Macro */:
+      case "Macro":
         const macroChoice = new MacroChoice(name);
         $$invalidate(0, choices = [...choices, macroChoice]);
         break;
-      case "Multi" /* Multi */:
+      case "Multi":
         const multiChoice = new MultiChoice(name);
         $$invalidate(0, choices = [...choices, multiChoice]);
         break;
@@ -14306,8 +14369,8 @@ function instance17($$self, $$props, $$invalidate) {
   }
   async function deleteChoice(e) {
     const choice = e.detail.choice;
-    const hasOwnMacro = choice.type === "Macro" /* Macro */ && macros.some((macro) => macro.name === choice.name);
-    const isMulti = choice.type === "Multi" /* Multi */;
+    const hasOwnMacro = choice.type === "Macro" && macros.some((macro) => macro.name === choice.name);
+    const isMulti = choice.type === "Multi";
     const userConfirmed = await GenericYesNoPrompt.Prompt(app2, `Confirm deletion of choice`, `Please confirm that you wish to delete '${choice.name}'.
             ${isMulti ? "Deleting this choice will delete all (" + choice.choices.length + ") choices inside it!" : ""}
             ${hasOwnMacro ? "Deleting this choice will delete the macro associated with it!" : ""}
@@ -14322,16 +14385,10 @@ function instance17($$self, $$props, $$invalidate) {
     plugin.removeCommandForChoice(choice);
     saveChoices(choices);
   }
-  function deleteChoiceHelper(id, value) {
-    if (value.type === "Multi" /* Multi */) {
-      value.choices = value.choices.filter((v) => deleteChoiceHelper(id, v));
-    }
-    return value.id !== id;
-  }
   async function configureChoice(e) {
     const { choice: oldChoice } = e.detail;
     let updatedChoice;
-    if (oldChoice.type === "Multi" /* Multi */) {
+    if (oldChoice.type === "Multi") {
       updatedChoice = oldChoice;
       const name = await GenericInputPrompt.Prompt(app2, `Rename ${oldChoice.name}`, "", oldChoice.name);
       if (!name)
@@ -14372,50 +14429,35 @@ function instance17($$self, $$props, $$invalidate) {
       throw new Error("Invalid choice type");
     let newChoice;
     switch (choice.type) {
-      case "Template" /* Template */:
+      case "Template":
         newChoice = new TemplateChoice(`${choice.name} (copy)`);
         break;
-      case "Capture" /* Capture */:
+      case "Capture":
         newChoice = new CaptureChoice(`${choice.name} (copy)`);
         break;
-      case "Macro" /* Macro */:
+      case "Macro":
         newChoice = new MacroChoice(`${choice.name} (copy)`);
         break;
-      case "Multi" /* Multi */:
+      case "Multi":
         newChoice = new MultiChoice(`${choice.name} (copy)`);
         break;
     }
-    if (choice.type !== "Multi" /* Multi */) {
+    if (choice.type !== "Multi") {
       Object.assign(newChoice, excludeKeys(choice, ["id", "name"]));
     } else {
       newChoice.choices = choice.choices.map((c) => duplicateChoice(c));
     }
     return newChoice;
   }
-  function updateChoiceHelper(oldChoice, newChoice) {
-    if (oldChoice.id === newChoice.id) {
-      oldChoice = { ...oldChoice, ...newChoice };
-      return oldChoice;
-    }
-    if (oldChoice.type === "Multi" /* Multi */) {
-      const multiChoice = oldChoice;
-      const multiChoiceChoices = multiChoice.choices.map((c) => updateChoiceHelper(c, newChoice));
-      return {
-        ...multiChoice,
-        choices: multiChoiceChoices
-      };
-    }
-    return oldChoice;
-  }
   function getChoiceBuilder(choice) {
     switch (choice.type) {
-      case "Template" /* Template */:
+      case "Template":
         return new TemplateChoiceBuilder(app2, choice, plugin);
-      case "Capture" /* Capture */:
+      case "Capture":
         return new CaptureChoiceBuilder(app2, choice, plugin);
-      case "Macro" /* Macro */:
+      case "Macro":
         return new MacroChoiceBuilder(app2, choice, macros, settingsStore.getState().choices);
-      case "Multi" /* Multi */:
+      case "Multi":
       default:
         break;
     }
@@ -14493,11 +14535,14 @@ var DEFAULT_SETTINGS = {
   inputPrompt: "single-line",
   devMode: false,
   templateFolderPath: "",
+  announceUpdates: true,
+  version: "0.0.0",
   migrations: {
     migrateToMacroIDFromEmbeddedMacro: false,
     useQuickAddTemplateFolder: false,
     incrementFileNameSettingMoveToDefaultBehavior: false,
-    mutualExclusionInsertAfterAndWriteToBottomOfFile: false
+    mutualExclusionInsertAfterAndWriteToBottomOfFile: false,
+    setVersionAfterUpdateModalRelease: false
   }
 };
 var QuickAddSettingsTab = class extends import_obsidian30.PluginSettingTab {
@@ -14512,6 +14557,20 @@ var QuickAddSettingsTab = class extends import_obsidian30.PluginSettingTab {
     this.addChoicesSetting();
     this.addUseMultiLineInputPromptSetting();
     this.addTemplateFolderPathSetting();
+    this.addAnnounceUpdatesSetting();
+  }
+  addAnnounceUpdatesSetting() {
+    const setting = new import_obsidian30.Setting(this.containerEl);
+    setting.setName("Announce Updates");
+    setting.setDesc(
+      "Display release notes when a new version is installed. This includes new features, demo videos, and bug fixes."
+    );
+    setting.addToggle((toggle) => {
+      toggle.setValue(settingsStore.getState().announceUpdates);
+      toggle.onChange((value) => {
+        settingsStore.setState({ announceUpdates: value });
+      });
+    });
   }
   hide() {
     if (this.choiceView)
@@ -14527,11 +14586,11 @@ var QuickAddSettingsTab = class extends import_obsidian30.PluginSettingTab {
         app: this.app,
         plugin: this.plugin,
         choices: settingsStore.getState().choices,
-        saveChoices: async (choices) => {
+        saveChoices: (choices) => {
           settingsStore.setState({ choices });
         },
         macros: settingsStore.getState().macros,
-        saveMacros: async (macros) => {
+        saveMacros: (macros) => {
           settingsStore.setState({ macros });
         }
       }
@@ -14561,7 +14620,7 @@ var QuickAddSettingsTab = class extends import_obsidian30.PluginSettingTab {
       "Path to the folder where templates are stored. Used to suggest template files when configuring QuickAdd."
     );
     setting.addText((text2) => {
-      text2.setPlaceholder("templates/").setValue(settingsStore.getState().templateFolderPath).onChange(async (value) => {
+      text2.setPlaceholder("templates/").setValue(settingsStore.getState().templateFolderPath).onChange((value) => {
         settingsStore.setState({ templateFolderPath: value });
       });
       new GenericTextSuggester(
@@ -14636,7 +14695,7 @@ var StartupMacroEngine = class extends MacroChoiceEngine {
   async run() {
     this.macros.forEach((macro) => {
       if (macro.runOnStartup) {
-        this.executeCommands(macro.commands);
+        void this.executeCommands(macro.commands);
       }
     });
   }
@@ -14808,6 +14867,139 @@ var TemplateChoiceEngine = class extends TemplateEngine {
   }
 };
 
+// src/formatters/helpers/getEndOfSection.ts
+function isSameHeading(heading1, heading2) {
+  return heading1.line === heading2.line;
+}
+function getMarkdownHeadings(bodyLines) {
+  const headers = [];
+  bodyLines.forEach((line, index) => {
+    const match = line.match(/^(#+)[\s]?(.*)$/);
+    if (!match)
+      return;
+    headers.push({
+      level: match[1].length,
+      text: match[2],
+      line: index
+    });
+  });
+  return headers;
+}
+function getEndOfSection(lines, targetLine, shouldConsiderSubsections = false) {
+  const headings = getMarkdownHeadings(lines);
+  const targetHeading = headings.find(
+    (heading) => heading.line === targetLine
+  );
+  const targetIsHeading = !!targetHeading;
+  if (!targetIsHeading && shouldConsiderSubsections) {
+    throw new Error(
+      `Target line ${targetLine} is not a heading, but we are trying to find the end of its section.`
+    );
+  }
+  if (!targetIsHeading && !shouldConsiderSubsections) {
+    const nextEmptyStringIdx = findNextIdx(
+      lines,
+      targetLine,
+      (str) => str.trim() === ""
+    );
+    if (nextEmptyStringIdx !== null && nextEmptyStringIdx > targetLine) {
+      return nextEmptyStringIdx - 1;
+    }
+    return targetLine;
+  }
+  const lastLineInBodyIdx = lines.length - 1;
+  const endOfSectionLineIdx = getEndOfSectionLineByHeadings(
+    targetHeading,
+    headings,
+    lines,
+    shouldConsiderSubsections
+  );
+  const lastNonEmptyLineInSectionIdx = findPriorIdx(
+    lines,
+    endOfSectionLineIdx,
+    (str) => str.trim() !== ""
+  );
+  if (lastNonEmptyLineInSectionIdx !== null) {
+    if (lastNonEmptyLineInSectionIdx < targetLine) {
+      return targetLine;
+    }
+    if (lastNonEmptyLineInSectionIdx + 1 === lastLineInBodyIdx) {
+      return endOfSectionLineIdx;
+    }
+    if (lastNonEmptyLineInSectionIdx === 0) {
+      return lastNonEmptyLineInSectionIdx + 1;
+    }
+    return lastNonEmptyLineInSectionIdx;
+  }
+  return endOfSectionLineIdx;
+}
+function getEndOfSectionLineByHeadings(targetHeading, headings, lines, shouldConsiderSubsections) {
+  const targetHeadingIdx = headings.findIndex(
+    (heading) => isSameHeading(heading, targetHeading)
+  );
+  const targetHeadingIsLastHeading = targetHeadingIdx === headings.length - 1;
+  const lastLineInBodyIdx = lines.length - 1;
+  if (targetHeadingIsLastHeading) {
+    return lastLineInBodyIdx;
+  }
+  const [nextHigherOrSameLevelHeadingIndex, foundHigherOrSameLevelHeading] = findNextHigherOrSameLevelHeading(targetHeading, headings);
+  const higherLevelSectionIsLastHeading = foundHigherOrSameLevelHeading && nextHigherOrSameLevelHeadingIndex === headings.length;
+  if (higherLevelSectionIsLastHeading) {
+    return lastLineInBodyIdx;
+  }
+  if (foundHigherOrSameLevelHeading && shouldConsiderSubsections) {
+    const nextHigherLevelHeadingLineIdx = headings[nextHigherOrSameLevelHeadingIndex].line;
+    return nextHigherLevelHeadingLineIdx - 1;
+  }
+  if (foundHigherOrSameLevelHeading && !shouldConsiderSubsections) {
+    return headings[targetHeadingIdx + 1].line;
+  }
+  if (!shouldConsiderSubsections && !foundHigherOrSameLevelHeading) {
+    const nextHeading = findNextHeading(targetHeading.line, headings);
+    if (nextHeading === null) {
+      return lastLineInBodyIdx;
+    }
+    return nextHeading;
+  }
+  return lastLineInBodyIdx;
+}
+function findNextHigherOrSameLevelHeading(targetHeading, headings) {
+  const targetHeadingIdx = headings.findIndex(
+    (heading) => isSameHeading(heading, targetHeading)
+  );
+  const nextSameOrHigherLevelHeadingIdx = findNextIdx(
+    headings,
+    targetHeadingIdx,
+    (heading) => heading.level <= targetHeading.level
+  );
+  if (nextSameOrHigherLevelHeadingIdx === null) {
+    return [-1, false];
+  }
+  return [nextSameOrHigherLevelHeadingIdx, true];
+}
+function findNextHeading(fromIdxInBody, headings) {
+  const nextheading = headings.findIndex(
+    (heading) => heading.line > fromIdxInBody
+  );
+  return nextheading === -1 ? null : nextheading;
+}
+function findPriorIdx(items, fromIdx, condition) {
+  for (let i = fromIdx - 1; i >= 0; i--) {
+    if (condition(items[i])) {
+      return i;
+    }
+  }
+  return null;
+}
+function findNextIdx(items, fromIdx, condition) {
+  for (let i = fromIdx + 1; i < items.length; i++) {
+    if (condition(items[i])) {
+      return i;
+    }
+  }
+  return null;
+}
+
 // src/formatters/captureChoiceFormatter.ts
 var CaptureChoiceFormatter = class extends CompleteFormatter {
   constructor(app2, plugin, choiceExecutor) {
@@ -14827,7 +15019,7 @@ var CaptureChoiceFormatter = class extends CompleteFormatter {
       formatted,
       this.file
     );
-    if (!templaterFormatted)
+    if (!await templaterFormatted)
       return formatted;
     return templaterFormatted;
   }
@@ -14850,7 +15042,7 @@ var CaptureChoiceFormatter = class extends CompleteFormatter {
     if (this.choice.insertAfter.enabled) {
       return await this.insertAfterHandler(formatted);
     }
-    const frontmatterEndPosition = this.file ? await this.getFrontmatterEndPosition(this.file) : null;
+    const frontmatterEndPosition = this.file ? this.getFrontmatterEndPosition(this.file) : null;
     if (!frontmatterEndPosition)
       return `${formatted}${this.fileContent}`;
     return this.insertTextAfterPositionInBody(
@@ -14875,7 +15067,7 @@ var CaptureChoiceFormatter = class extends CompleteFormatter {
       `\\s*${escapeRegExp(targetString.replace("\\n", ""))}\\s*`
     );
     const fileContentLines = getLinesInString(this.fileContent);
-    const targetPosition = fileContentLines.findIndex(
+    let targetPosition = fileContentLines.findIndex(
       (line) => targetRegex.test(line)
     );
     const targetNotFound = targetPosition === -1;
@@ -14886,33 +15078,14 @@ var CaptureChoiceFormatter = class extends CompleteFormatter {
       log.logError("unable to find insert after line in file.");
     }
     if (this.choice.insertAfter?.insertAtEnd) {
-      const nextHeaderPositionAfterTargetPosition = fileContentLines.slice(targetPosition + 1).findIndex((line) => /^#+ |---/.test(line));
-      const foundNextHeader = nextHeaderPositionAfterTargetPosition !== -1;
-      let endOfSectionIndex = null;
-      if (foundNextHeader) {
-        for (let i = nextHeaderPositionAfterTargetPosition + targetPosition; i > targetPosition; i--) {
-          const lineIsNewline = /^[\s\n ]*$/.test(
-            fileContentLines[i]
-          );
-          if (!lineIsNewline) {
-            endOfSectionIndex = i;
-            break;
-          }
-        }
-        if (!endOfSectionIndex)
-          endOfSectionIndex = targetPosition;
-        return this.insertTextAfterPositionInBody(
-          formatted,
-          this.fileContent,
-          endOfSectionIndex
-        );
-      } else {
-        return this.insertTextAfterPositionInBody(
-          formatted,
-          this.fileContent,
-          fileContentLines.length - 1
-        );
-      }
+      if (!this.file)
+        throw new Error("Tried to get sections without file.");
+      const endOfSectionIndex = getEndOfSection(
+        fileContentLines,
+        targetPosition,
+        !!this.choice.insertAfter.considerSubsections
+      );
+      targetPosition = endOfSectionIndex ?? fileContentLines.length - 1;
     }
     return this.insertTextAfterPositionInBody(
       formatted,
@@ -14927,7 +15100,7 @@ var CaptureChoiceFormatter = class extends CompleteFormatter {
     const insertAfterLineAndFormatted = `${insertAfterLine}
 ${formatted}`;
     if (this.choice.insertAfter?.createIfNotFoundLocation === CREATE_IF_NOT_FOUND_TOP) {
-      const frontmatterEndPosition = this.file ? await this.getFrontmatterEndPosition(this.file) : -1;
+      const frontmatterEndPosition = this.file ? this.getFrontmatterEndPosition(this.file) : -1;
       return this.insertTextAfterPositionInBody(
         insertAfterLineAndFormatted,
         this.fileContent,
@@ -14939,8 +15112,8 @@ ${formatted}`;
 ${insertAfterLineAndFormatted}`;
     }
   }
-  async getFrontmatterEndPosition(file) {
-    const fileCache = await this.app.metadataCache.getFileCache(file);
+  getFrontmatterEndPosition(file) {
+    const fileCache = this.app.metadataCache.getFileCache(file);
     if (!fileCache || !fileCache.frontmatter) {
       log.logMessage("could not get frontmatter. Maybe there isn't any.");
       return -1;
@@ -15614,28 +15787,24 @@ var CaptureChoiceEngine = class extends QuickAddChoiceEngine {
   }
   async run() {
     try {
-      if (this.choice?.captureToActiveFile) {
-        await this.captureToActiveFile();
-        return;
-      }
-      const captureTo = this.choice.captureTo;
-      invariant(captureTo, () => {
-        return `Invalid capture to for ${this.choice.name}. ${captureTo.length === 0 ? "Capture path is empty." : `Capture path is not valid: ${captureTo}`}`;
-      });
-      const filePath = await this.formatFilePath(captureTo);
-      const content = await this.getCaptureContent();
+      const filePath = await this.getFormattedPathToCaptureTo();
+      const content = this.getCaptureContent();
       let getFileAndAddContentFn;
       if (await this.fileExists(filePath)) {
-        getFileAndAddContentFn = this.onFileExists;
+        getFileAndAddContentFn = this.onFileExists.bind(
+          this
+        );
       } else if (this.choice?.createFileIfItDoesntExist?.enabled) {
-        getFileAndAddContentFn = this.onCreateFileIfItDoesntExist;
+        getFileAndAddContentFn = this.onCreateFileIfItDoesntExist.bind(
+          this
+        );
       } else {
         log.logWarning(
           `The file ${filePath} does not exist and "Create file if it doesn't exist" is disabled.`
         );
         return;
       }
-      const { file, content: newFileContent } = await getFileAndAddContentFn.bind(this)(filePath, content);
+      const { file, content: newFileContent } = await getFileAndAddContentFn(filePath, content);
       await this.app.vault.modify(file, newFileContent);
       if (this.choice.appendLink) {
         const markdownLink = this.app.fileManager.generateMarkdownLink(
@@ -15656,7 +15825,7 @@ var CaptureChoiceEngine = class extends QuickAddChoiceEngine {
       log.logError(e);
     }
   }
-  async getCaptureContent() {
+  getCaptureContent() {
     let content;
     if (!this.choice.format.enabled)
       content = VALUE_SYNTAX;
@@ -15667,8 +15836,23 @@ var CaptureChoiceEngine = class extends QuickAddChoiceEngine {
 `;
     return content;
   }
+  async getFormattedPathToCaptureTo() {
+    if (this.choice.captureToActiveFile) {
+      const activeFile = this.app.workspace.getActiveFile();
+      invariant(
+        activeFile,
+        `Cannot capture to active file - no active file.`
+      );
+      return activeFile.path;
+    }
+    const captureTo = this.choice.captureTo;
+    invariant(captureTo, () => {
+      return `Invalid capture to for ${this.choice.name}. ${captureTo.length === 0 ? "Capture path is empty." : `Capture path is not valid: ${captureTo}`}`;
+    });
+    return await this.formatFilePath(captureTo);
+  }
   async onFileExists(filePath, content) {
-    const file = await this.getFileByPath(filePath);
+    const file = this.getFileByPath(filePath);
     if (!file)
       throw new Error("File not found");
     const formatted = await this.formatter.formatContentOnly(content);
@@ -15731,33 +15915,6 @@ This is in order to prevent data loss.`
     );
     return this.normalizeMarkdownFilePath("", formattedCaptureTo);
   }
-  async captureToActiveFile() {
-    const activeFile = this.app.workspace.getActiveFile();
-    if (!activeFile) {
-      log.logError("Cannot capture to active file - no active file.");
-      return;
-    }
-    let content = await this.getCaptureContent();
-    content = await this.formatter.formatContent(content, this.choice);
-    if (this.choice.format.enabled) {
-      content = await templaterParseTemplate(
-        this.app,
-        content,
-        activeFile
-      );
-    }
-    if (!content)
-      return;
-    if (this.choice.prepend) {
-      const fileContent = await this.app.vault.cachedRead(
-        activeFile
-      );
-      const newFileContent = `${fileContent}${content}`;
-      await this.app.vault.modify(activeFile, newFileContent);
-    } else {
-      appendToCurrentLine(content, this.app);
-    }
-  }
 };
 
 // src/gui/suggesters/choiceSuggester.ts
@@ -15779,7 +15936,7 @@ var ChoiceSuggester = class extends import_obsidian33.FuzzySuggestModal {
   }
   renderSuggestion(item, el) {
     el.empty();
-    import_obsidian33.MarkdownRenderer.renderMarkdown(item.item.name, el, "", this.plugin);
+    void import_obsidian33.MarkdownRenderer.renderMarkdown(item.item.name, el, "", this.plugin);
     el.classList.add("quickadd-choice-suggestion");
   }
   getItemText(item) {
@@ -15789,7 +15946,7 @@ var ChoiceSuggester = class extends import_obsidian33.FuzzySuggestModal {
     return this.choices;
   }
   async onChooseItem(item, evt) {
-    if (item.type === "Multi" /* Multi */)
+    if (item.type === "Multi")
       this.onChooseMultiType(item);
     else
       await this.choiceExecutor.execute(item);
@@ -15811,24 +15968,24 @@ var ChoiceExecutor = class {
   }
   async execute(choice) {
     switch (choice.type) {
-      case "Template" /* Template */: {
+      case "Template": {
         const templateChoice = choice;
         await this.onChooseTemplateType(templateChoice);
         break;
       }
-      case "Capture" /* Capture */: {
+      case "Capture": {
         const captureChoice = choice;
         await this.onChooseCaptureType(captureChoice);
         break;
       }
-      case "Macro" /* Macro */: {
+      case "Macro": {
         const macroChoice = choice;
         await this.onChooseMacroType(macroChoice);
         break;
       }
-      case "Multi" /* Multi */: {
+      case "Multi": {
         const multiChoice = choice;
-        await this.onChooseMultiType(multiChoice);
+        this.onChooseMultiType(multiChoice);
         break;
       }
       default:
@@ -15852,7 +16009,7 @@ var ChoiceExecutor = class {
     ).run();
   }
   async onChooseMacroType(macroChoice) {
-    const macroEngine = await new MacroChoiceEngine(
+    const macroEngine = new MacroChoiceEngine(
       this.app,
       this.plugin,
       macroChoice,
@@ -15865,7 +16022,7 @@ var ChoiceExecutor = class {
       this.variables.set(key, value);
     });
   }
-  async onChooseMultiType(multiChoice) {
+  onChooseMultiType(multiChoice) {
     ChoiceSuggester.Open(this.plugin, multiChoice.choices, this);
   }
 };
@@ -15875,7 +16032,7 @@ var migrateToMacroIDFromEmbeddedMacro_default = {
   description: "Migrate to macro ID from embedded macro in macro choices.",
   migrate: async (plugin) => {
     function convertMacroChoiceMacroToIdHelper(choice) {
-      if (choice.type === "Multi" /* Multi */) {
+      if (choice.type === "Multi") {
         let multiChoice = choice;
         const multiChoices = multiChoice.choices.map(
           convertMacroChoiceMacroToIdHelper
@@ -15883,7 +16040,7 @@ var migrateToMacroIDFromEmbeddedMacro_default = {
         multiChoice = { ...multiChoice, choices: multiChoices };
         return multiChoice;
       }
-      if (choice.type !== "Macro" /* Macro */)
+      if (choice.type !== "Macro")
         return choice;
       const macroChoice = choice;
       if (macroChoice.macro) {
@@ -15940,7 +16097,7 @@ function isMultiChoice(choice) {
   if (choice === null || typeof choice !== "object" || !("type" in choice) || !("choices" in choice)) {
     return false;
   }
-  return choice.type === "Multi" /* Multi */ && choice.choices !== void 0;
+  return choice.type === "Multi" && choice.choices !== void 0;
 }
 
 // src/migrations/isNestedChoiceCommand.ts
@@ -16001,7 +16158,7 @@ var incrementFileNameSettingMoveToDefaultBehavior_default = incrementFileNameSet
 
 // src/migrations/isCaptureChoice.ts
 function isCaptureChoice(choice) {
-  return choice.type === "Capture" /* Capture */;
+  return choice.type === "Capture";
 }
 
 // src/migrations/mutualExclusionInsertAfterAndWriteToBottomOfFile.ts
@@ -16045,12 +16202,22 @@ var mutualExclusionInsertAfterAndWriteToBottomOfFile = {
 };
 var mutualExclusionInsertAfterAndWriteToBottomOfFile_default = mutualExclusionInsertAfterAndWriteToBottomOfFile;
 
+// src/migrations/setVersionAfterUpdateModalRelease.ts
+var setVersionAfterUpdateModalRelease = {
+  description: "Set version to 0.14.0, which is the release version prior to the update modal release.",
+  migrate: async (_) => {
+    settingsStore.setState({ version: "0.14.0" });
+  }
+};
+var setVersionAfterUpdateModalRelease_default = setVersionAfterUpdateModalRelease;
+
 // src/migrations/migrate.ts
 var migrations = {
   migrateToMacroIDFromEmbeddedMacro: migrateToMacroIDFromEmbeddedMacro_default,
   useQuickAddTemplateFolder: useQuickAddTemplateFolder_default,
   incrementFileNameSettingMoveToDefaultBehavior: incrementFileNameSettingMoveToDefaultBehavior_default,
-  mutualExclusionInsertAfterAndWriteToBottomOfFile: mutualExclusionInsertAfterAndWriteToBottomOfFile_default
+  mutualExclusionInsertAfterAndWriteToBottomOfFile: mutualExclusionInsertAfterAndWriteToBottomOfFile_default,
+  setVersionAfterUpdateModalRelease: setVersionAfterUpdateModalRelease_default
 };
 async function migrate(plugin) {
   const migrationsToRun = Object.keys(migrations).filter(
@@ -16080,12 +16247,105 @@ QuickAdd will now revert to backup.`
       plugin.settings = backup;
     }
   }
-  plugin.saveSettings();
+  void plugin.saveSettings();
 }
 var migrate_default = migrate;
 
+// src/gui/UpdateModal/UpdateModal.ts
+var import_obsidian34 = require("obsidian");
+async function getReleaseNotesAfter(repoOwner, repoName, releaseTagName) {
+  const response = await fetch(
+    `https://api.github.com/repos/${repoOwner}/${repoName}/releases`
+  );
+  const releases = await response.json();
+  if (!response.ok && "message" in releases || !Array.isArray(releases)) {
+    throw new Error(
+      `Failed to fetch releases: ${releases.message ?? "Unknown error"}`
+    );
+  }
+  const startReleaseIdx = releases.findIndex(
+    (release) => release.tag_name === releaseTagName
+  );
+  if (startReleaseIdx === -1) {
+    throw new Error(`Could not find release with tag ${releaseTagName}`);
+  }
+  return releases.slice(0, startReleaseIdx).filter((release) => !release.draft && !release.prerelease);
+}
+function addExtraHashToHeadings(markdownText, numHashes = 1) {
+  const lines = markdownText.split("\n");
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].startsWith("#")) {
+      lines[i] = "#".repeat(numHashes) + lines[i];
+    }
+  }
+  return lines.join("\n");
+}
+var UpdateModal = class extends import_obsidian34.Modal {
+  constructor(previousQAVersion) {
+    super(app);
+    this.previousVersion = previousQAVersion;
+    this.releaseNotesPromise = getReleaseNotesAfter(
+      "chhoumann",
+      "quickadd",
+      previousQAVersion
+    );
+    this.releaseNotesPromise.then((releases) => {
+      this.releases = releases;
+      if (this.releases.length === 0) {
+        this.close();
+        return;
+      }
+      this.display();
+    }).catch((err) => {
+      log.logError(`Failed to fetch release notes: ${err}`);
+    });
+  }
+  onOpen() {
+    const { contentEl } = this;
+    contentEl.empty();
+    contentEl.createEl("h1", {
+      text: "Fetching release notes..."
+    });
+  }
+  onClose() {
+    const { contentEl } = this;
+    contentEl.empty();
+  }
+  display() {
+    const { contentEl } = this;
+    contentEl.empty();
+    contentEl.classList.add("quickadd-update-modal-container");
+    const header = `### New in QuickAdd v${this.releases[0].tag_name}
+`;
+    const text2 = `Thank you for using QuickAdd! If you like the plugin, please consider supporting me by buying me a coffee. With your sponsorship, I'll be able to contribute more to my existing projects, start new ones, and be more responsive to issues & feature requests.`;
+    const buymeacoffee = `<div class="quickadd-bmac-container"><a href="https://www.buymeacoffee.com/chhoumann" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 144px !important;" ></a></div>`;
+    const contentDiv = contentEl.createDiv("quickadd-update-modal");
+    const releaseNotes = this.releases.map((release) => release.body).join("\n---\n");
+    const andNow = `And now, here is everything new in QuickAdd since your last update (v${this.previousVersion}):`;
+    const feedbackForm = `I'd love to get your feedback on QuickAdd! Please fill out this <a href="https://forms.gle/WRq1ewcKK8qmkqps6">feedback form</a> to let me know what you think.`;
+    const markdownStr = `${header}
+${text2}
+${buymeacoffee}
+${feedbackForm}
+
+${andNow}
+
+---
+
+${addExtraHashToHeadings(
+      releaseNotes
+    )}`;
+    void import_obsidian34.MarkdownRenderer.renderMarkdown(
+      markdownStr,
+      contentDiv,
+      app.vault.getRoot().path,
+      null
+    );
+  }
+};
+
 // src/main.ts
-var QuickAdd = class extends import_obsidian34.Plugin {
+var QuickAdd = class extends import_obsidian35.Plugin {
   get api() {
     return QuickAddApi.GetApi(app, this, new ChoiceExecutor(app, this));
   }
@@ -16096,7 +16356,7 @@ var QuickAdd = class extends import_obsidian34.Plugin {
     settingsStore.setState(this.settings);
     this.unsubscribeSettingsStore = settingsStore.subscribe((settings) => {
       this.settings = settings;
-      this.saveSettings();
+      void this.saveSettings();
     });
     this.addCommand({
       id: "runQuickAdd",
@@ -16113,7 +16373,7 @@ var QuickAdd = class extends import_obsidian34.Plugin {
           return this.settings.devMode;
         }
         const id = this.manifest.id, plugins = this.app.plugins;
-        plugins.disablePlugin(id).then(() => plugins.enablePlugin(id));
+        void plugins.disablePlugin(id).then(() => plugins.enablePlugin(id));
       }
     });
     this.addCommand({
@@ -16124,16 +16384,10 @@ var QuickAdd = class extends import_obsidian34.Plugin {
           return this.settings.devMode;
         }
         console.log(`Test QuickAdd (dev)`);
-        const fn2 = async () => {
-          const activeView = await this.app.workspace.getActiveViewOfType(
-            import_obsidian34.MarkdownView
-          );
-          if (!activeView)
-            return false;
-          const x = this.app.workspace.getLeaf("tab");
-          x.openFile(activeView.file);
+        const fn2 = () => {
+          new UpdateModal("0.12.0").open();
         };
-        fn2();
+        void fn2();
       }
     });
     log.register(new ConsoleErrorLogger()).register(new GuiLogger(this));
@@ -16147,7 +16401,8 @@ var QuickAdd = class extends import_obsidian34.Plugin {
       ).run()
     );
     this.addCommandsForChoices(this.settings.choices);
-    migrate_default(this);
+    await migrate_default(this);
+    this.announceUpdate();
   }
   onunload() {
     console.log("Unloading QuickAdd");
@@ -16167,7 +16422,7 @@ var QuickAdd = class extends import_obsidian34.Plugin {
     choices.forEach((choice) => this.addCommandForChoice(choice));
   }
   addCommandForChoice(choice) {
-    if (choice.type === "Multi" /* Multi */) {
+    if (choice.type === "Multi") {
       this.addCommandsForChoices(choice.choices);
     }
     if (choice.command) {
@@ -16199,7 +16454,7 @@ var QuickAdd = class extends import_obsidian34.Plugin {
       if (choice[by] === targetPropertyValue) {
         return choice;
       }
-      if (choice.type === "Multi" /* Multi */) {
+      if (choice.type === "Multi") {
         const subChoice = this.getChoice(
           by,
           targetPropertyValue,
@@ -16221,5 +16476,17 @@ var QuickAdd = class extends import_obsidian34.Plugin {
     return this.app.vault.getFiles().filter(
       (file) => file.path.startsWith(this.settings.templateFolderPath)
     );
+  }
+  announceUpdate() {
+    const currentVersion = this.manifest.version;
+    const knownVersion = this.settings.version;
+    if (currentVersion === knownVersion)
+      return;
+    this.settings.version = currentVersion;
+    void this.saveSettings();
+    if (this.settings.announceUpdates === false)
+      return;
+    const updateModal = new UpdateModal(knownVersion);
+    updateModal.open();
   }
 };

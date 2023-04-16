@@ -4,10 +4,13 @@
   "inputPrompt": "single-line",
   "devMode": false,
   "templateFolderPath": "模板",
+  "announceUpdates": true,
+  "version": "0.18.1",
   "migrations": {
     "migrateToMacroIDFromEmbeddedMacro": true,
     "useQuickAddTemplateFolder": true,
     "incrementFileNameSettingMoveToDefaultBehavior": true,
-    "mutualExclusionInsertAfterAndWriteToBottomOfFile": true
+    "mutualExclusionInsertAfterAndWriteToBottomOfFile": true,
+    "setVersionAfterUpdateModalRelease": true
   }
 }
