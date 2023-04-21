@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c260ea330a1ab2b5",
+        "id": "a051b75fcbbffbe9",
         "type": "tabs",
         "children": [
           {
-            "id": "fb26a5d6ef2c0a9d",
+            "id": "001adc923addc5e2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "后端开发/PHP/laravel/配置开发环境.md",
-                "mode": "source",
-                "source": false
+                "file": "工作/未命名看板.md"
               }
             }
           }
@@ -86,7 +84,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端开发/PHP/laravel/配置开发环境.md"
+                "file": "工作/未命名看板.md"
               }
             }
           },
@@ -111,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端开发/PHP/laravel/配置开发环境.md",
+                "file": "工作/未命名看板.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "后端开发/PHP/laravel/配置开发环境.md",
+                "file": "工作/未命名看板.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +149,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "后端开发/PHP/laravel/配置开发环境.md",
+                "file": "工作/未命名看板.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -200,17 +198,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fb26a5d6ef2c0a9d",
+  "active": "44f68cf6e3fca989",
   "lastOpenFiles": [
-    "前端开发/VUE/配置开发环境.md",
+    "随笔/备忘录.md",
+    "工作/未命名看板.md",
+    "工作",
+    "随笔/未命名",
+    "随笔/老电脑用的.md",
+    "随笔/临时记录.md",
+    "随笔/散乱灵感.md",
     "后端开发/PHP/laravel/配置开发环境.md",
+    "前端开发/VUE/配置开发环境.md",
     "随笔/招聘会.md",
     "后端开发/PHP/laravel",
     "随笔/assets/Pasted image 20230410153250.png",
-    "随笔/临时记录.md",
-    "随笔/备忘录.md",
     "随笔/动画插件.md",
-    "随笔/散乱灵感.md",
     "随笔/心得.md",
     "随笔/账号.md",
     "随笔/写给五年后的自己.md",
@@ -239,16 +241,12 @@
     "前端开发/前端Tips/Git提交描述规范.md",
     "前端开发/Flutter/Flutter基础/布局组件.md",
     "前端开发/Flutter/Flutter基础/生命周期.md",
-    "前端开发/Flutter/Dart语言基础/运算符.md",
     "未命名.canvas",
-    "前端开发/Flutter/Futter配置相关/更换源.md",
     "随笔/Blender.py",
     "随笔/assets/page_bg_schinese.gif.crdownload",
     "前端开发/Javascript/js小知识点/assets/5f620d8f2dc305b6e8efc5260edcad36_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/c537e33b99daa2c85d9bd29fb61429cd_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/e2870cdf1ec6106320314249415e7c71_MD5.png-watermark",
-    "前端开发/Javascript/js小知识点/assets/e5796a549636c2dcbb6bada29c28f5e2_MD5.jpg-watermark",
-    "前端开发/Javascript/js小知识点/assets/a0ea33c7320603f8fc64de40c41b2fda_MD5.jpg-watermark",
     "测试/测试.canvas",
     "测试/未命名.canvas",
     "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
