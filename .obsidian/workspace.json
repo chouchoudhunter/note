@@ -8,31 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "81c73f63643d73a4",
+            "id": "fb26a5d6ef2c0a9d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "随笔/临时记录.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a588617c3051c395",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "随笔/招聘会.md",
+                "file": "后端开发/PHP/laravel/配置开发环境.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.5
+    "width": 283.5
   },
   "right": {
     "id": "a3ff39451e8b89fa",
@@ -99,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "随笔/招聘会.md"
+                "file": "后端开发/PHP/laravel/配置开发环境.md"
               }
             }
           },
@@ -124,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "随笔/招聘会.md",
+                "file": "后端开发/PHP/laravel/配置开发环境.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "随笔/招聘会.md",
+                "file": "后端开发/PHP/laravel/配置开发环境.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +151,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "随笔/招聘会.md",
+                "file": "后端开发/PHP/laravel/配置开发环境.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -213,11 +200,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a588617c3051c395",
+  "active": "fb26a5d6ef2c0a9d",
   "lastOpenFiles": [
+    "前端开发/VUE/配置开发环境.md",
+    "后端开发/PHP/laravel/配置开发环境.md",
+    "随笔/招聘会.md",
+    "后端开发/PHP/laravel",
     "随笔/assets/Pasted image 20230410153250.png",
     "随笔/临时记录.md",
-    "随笔/招聘会.md",
     "随笔/备忘录.md",
     "随笔/动画插件.md",
     "随笔/散乱灵感.md",
@@ -240,7 +230,6 @@
     "前端开发/Flutter/Dart语言基础/变量声明.md",
     "前端开发/Flutter/Dart语言基础/数据类型.md",
     "项目/lotai-anime-flutter/assets/Pasted image 20230328211928.png",
-    "项目/lotai-anime-flutter/assets/Pasted image 20230328211926.png",
     "我的/游戏-清单.md",
     "我的/书籍/替身.md",
     "我的/书籍.md",
@@ -254,14 +243,12 @@
     "未命名.canvas",
     "前端开发/Flutter/Futter配置相关/更换源.md",
     "随笔/Blender.py",
-    "前端开发/Flutter/Dart语言基础/类.md",
     "随笔/assets/page_bg_schinese.gif.crdownload",
     "前端开发/Javascript/js小知识点/assets/5f620d8f2dc305b6e8efc5260edcad36_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/c537e33b99daa2c85d9bd29fb61429cd_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/e2870cdf1ec6106320314249415e7c71_MD5.png-watermark",
     "前端开发/Javascript/js小知识点/assets/e5796a549636c2dcbb6bada29c28f5e2_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/a0ea33c7320603f8fc64de40c41b2fda_MD5.jpg-watermark",
-    "前端开发/Javascript/js小知识点/assets/47eca5b4b69a95468861d5a3b2ac21c5_MD5.jpg-watermark",
     "测试/测试.canvas",
     "测试/未命名.canvas",
     "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
