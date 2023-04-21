@@ -13,7 +13,7 @@
             "state": {
               "type": "kanban",
               "state": {
-                "file": "工作/未命名看板.md"
+                "file": "工作/工作计划.md"
               }
             }
           }
@@ -84,7 +84,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/未命名看板.md"
+                "file": "工作/工作计划.md"
               }
             }
           },
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/未命名看板.md",
+                "file": "工作/工作计划.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/未命名看板.md",
+                "file": "工作/工作计划.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +149,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "工作/未命名看板.md",
+                "file": "工作/工作计划.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -201,7 +201,7 @@
   "active": "44f68cf6e3fca989",
   "lastOpenFiles": [
     "随笔/备忘录.md",
-    "工作/未命名看板.md",
+    "工作/工作计划.md",
     "工作",
     "随笔/未命名",
     "随笔/老电脑用的.md",
