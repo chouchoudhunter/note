@@ -21,5 +21,3 @@ fs.writeFile(address, jsonData, function (err) {
 
 ```
 
-
-{: id="20201106102031-mhrchnv" type="doc"}

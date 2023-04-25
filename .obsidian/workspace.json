@@ -8,16 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "001adc923addc5e2",
+            "id": "14a0cd1a753a9a13",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "工作/工作计划.md"
+                "file": "前端开发/VUE/配置开发环境.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "71ea4b696c27848b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "前端开发/VUE/vuex.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "28c9a106cfee06a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "前端开发/node/nvm-node版本管理工具.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -84,7 +111,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/工作计划.md"
+                "file": "前端开发/VUE/vuex.md"
               }
             }
           },
@@ -109,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/工作计划.md",
+                "file": "前端开发/VUE/vuex.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/工作计划.md",
+                "file": "前端开发/VUE/vuex.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +176,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "工作/工作计划.md",
+                "file": "前端开发/VUE/vuex.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -200,15 +227,26 @@
   },
   "active": "44f68cf6e3fca989",
   "lastOpenFiles": [
-    "随笔/备忘录.md",
+    "前端开发/~$ue4笔记.docx",
+    "前端开发/VUE/VUE黑夜模式.md",
+    "前端开发/VUE/组件双向绑定.md",
+    "前端开发/VUE/数组和对象的检测问题.md",
+    "前端开发/VUE/生命周期.md",
+    "前端开发/VUE/配置开发环境.md",
+    "前端开发/VUE/常见错误.md",
+    "前端开发/node/nvm-node版本管理工具.md",
+    "前端开发/node/node脚本/json转csv.md",
+    "前端开发/node/常用node命令.md",
+    "前端开发/node/~$dejs笔记.docx",
+    "前端开发/node/常用Node模块.md",
+    "随笔/临时记录.md",
     "工作/工作计划.md",
+    "随笔/备忘录.md",
     "工作",
     "随笔/未命名",
     "随笔/老电脑用的.md",
-    "随笔/临时记录.md",
     "随笔/散乱灵感.md",
     "后端开发/PHP/laravel/配置开发环境.md",
-    "前端开发/VUE/配置开发环境.md",
     "随笔/招聘会.md",
     "后端开发/PHP/laravel",
     "随笔/assets/Pasted image 20230410153250.png",
@@ -227,26 +265,15 @@
     "随笔/assets/Pasted image 20230331185259.png",
     "随笔/assets/Pasted image 20230331185216.png",
     "随笔/assets/Pasted image 20230331185209.png",
-    "项目/lotai-anime-flutter/参考图.md",
     "项目/lotai-anime-flutter/assets/Pasted image 20230330220104.png",
-    "前端开发/Flutter/Dart语言基础/变量声明.md",
-    "前端开发/Flutter/Dart语言基础/数据类型.md",
     "项目/lotai-anime-flutter/assets/Pasted image 20230328211928.png",
-    "我的/游戏-清单.md",
-    "我的/书籍/替身.md",
-    "我的/书籍.md",
     "项目/lotai-anime-flutter/assets",
     "项目/lotai-anime-flutter",
-    "编程/Git/修改本地项目仓库地址.md",
-    "前端开发/前端Tips/Git提交描述规范.md",
-    "前端开发/Flutter/Flutter基础/布局组件.md",
-    "前端开发/Flutter/Flutter基础/生命周期.md",
     "未命名.canvas",
     "随笔/Blender.py",
     "随笔/assets/page_bg_schinese.gif.crdownload",
     "前端开发/Javascript/js小知识点/assets/5f620d8f2dc305b6e8efc5260edcad36_MD5.jpg-watermark",
     "前端开发/Javascript/js小知识点/assets/c537e33b99daa2c85d9bd29fb61429cd_MD5.jpg-watermark",
-    "前端开发/Javascript/js小知识点/assets/e2870cdf1ec6106320314249415e7c71_MD5.png-watermark",
     "测试/测试.canvas",
     "测试/未命名.canvas",
     "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
