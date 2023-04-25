@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "71ea4b696c27848b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "前端开发/VUE/vuex.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "28c9a106cfee06a7",
             "type": "leaf",
             "state": {
@@ -43,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -111,7 +98,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "前端开发/VUE/vuex.md"
+                "file": "前端开发/VUE/配置开发环境.md"
               }
             }
           },
@@ -136,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "前端开发/VUE/vuex.md",
+                "file": "前端开发/VUE/配置开发环境.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "前端开发/VUE/vuex.md",
+                "file": "前端开发/VUE/配置开发环境.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,7 +163,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "前端开发/VUE/vuex.md",
+                "file": "前端开发/VUE/配置开发环境.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -225,8 +212,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "44f68cf6e3fca989",
+  "active": "14a0cd1a753a9a13",
   "lastOpenFiles": [
+    "前端开发/VUE/vuex.md",
     "前端开发/~$ue4笔记.docx",
     "前端开发/VUE/VUE黑夜模式.md",
     "前端开发/VUE/组件双向绑定.md",
@@ -273,7 +261,6 @@
     "随笔/Blender.py",
     "随笔/assets/page_bg_schinese.gif.crdownload",
     "前端开发/Javascript/js小知识点/assets/5f620d8f2dc305b6e8efc5260edcad36_MD5.jpg-watermark",
-    "前端开发/Javascript/js小知识点/assets/c537e33b99daa2c85d9bd29fb61429cd_MD5.jpg-watermark",
     "测试/测试.canvas",
     "测试/未命名.canvas",
     "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
