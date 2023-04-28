@@ -13,19 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "前端开发/VUE/配置开发环境.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "28c9a106cfee06a7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "前端开发/node/nvm-node版本管理工具.md",
+                "file": "前端开发/VUE/常见配置文件.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "前端开发/VUE/配置开发环境.md"
+                "file": "前端开发/VUE/常见配置文件.md"
               }
             }
           },
@@ -123,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "前端开发/VUE/配置开发环境.md",
+                "file": "前端开发/VUE/常见配置文件.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "前端开发/VUE/配置开发环境.md",
+                "file": "前端开发/VUE/常见配置文件.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +151,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "前端开发/VUE/配置开发环境.md",
+                "file": "前端开发/VUE/常见配置文件.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -214,21 +202,25 @@
   },
   "active": "14a0cd1a753a9a13",
   "lastOpenFiles": [
+    "工作/后台网页模板修改点.md",
+    "前端开发/node/nvm-node版本管理工具.md",
+    "编程/Git/修改本地项目仓库地址.md",
+    "前端开发/前端Tips/开发过程遇到的问题.md",
+    "前端开发/VUE/常见配置文件.md",
+    "工作/工作计划.md",
+    "前端开发/VUE/配置开发环境.md",
     "前端开发/VUE/vuex.md",
     "前端开发/~$ue4笔记.docx",
     "前端开发/VUE/VUE黑夜模式.md",
     "前端开发/VUE/组件双向绑定.md",
     "前端开发/VUE/数组和对象的检测问题.md",
     "前端开发/VUE/生命周期.md",
-    "前端开发/VUE/配置开发环境.md",
     "前端开发/VUE/常见错误.md",
-    "前端开发/node/nvm-node版本管理工具.md",
     "前端开发/node/node脚本/json转csv.md",
     "前端开发/node/常用node命令.md",
     "前端开发/node/~$dejs笔记.docx",
     "前端开发/node/常用Node模块.md",
     "随笔/临时记录.md",
-    "工作/工作计划.md",
     "随笔/备忘录.md",
     "工作",
     "随笔/未命名",
@@ -242,10 +234,6 @@
     "随笔/心得.md",
     "随笔/账号.md",
     "随笔/写给五年后的自己.md",
-    "随笔/考研调剂学校清单.md",
-    "前端开发/Flutter/Flutter基础/动画.md",
-    "前端开发/Flutter/第三方包/状态管理-GetX/介绍、Snackbar、Dialog、BottomSheet、Navigation、Obx.md",
-    "前端开发/Flutter/Flutter基础/未命名.md",
     "随笔/assets/Pasted image 20230331185640.png",
     "随笔/assets/Pasted image 20230331185547.png",
     "随笔/assets/Pasted image 20230331185413.png",
