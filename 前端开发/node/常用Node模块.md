@@ -23,5 +23,3 @@
 * 简介：打印
 * 官网：[跳转](https://www.npmjs.com/package/print-js)
 
-
-{: id="20201030144614-49y2kuv" type="doc"}
