@@ -2,7 +2,7 @@
 
 php artisan make:controller OrderController
 创建Rest风格资源控制器（带有index、create、store、edit、update、destroy、show方法）
-
+![[Pasted image 20230505132337.png]]
 php artisan make:controller OrderController --resource
 创建模型
 

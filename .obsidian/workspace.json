@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a051b75fcbbffbe9",
+        "id": "4b24dbbac1f504a3",
         "type": "tabs",
         "children": [
           {
-            "id": "9184f1fd18d45b76",
+            "id": "ae2c18e04a4e518f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -62,6 +62,14 @@
             "type": "leaf",
             "state": {
               "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "14e12678ee5bb89d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
               "state": {}
             }
           }
@@ -130,7 +138,7 @@
               "state": {
                 "file": "后端开发/PHP/laravel/常用artisan命令.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -200,10 +208,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9184f1fd18d45b76",
+  "active": "ae2c18e04a4e518f",
   "lastOpenFiles": [
-    "后端开发/后端相关技术/Oauth2.md",
+    "后端开发/PHP/laravel/assets/Pasted image 20230505132337.png",
+    "后端开发/PHP/laravel/assets/Pasted image 20230505114926.png",
+    "后端开发/PHP/laravel/assets",
+    "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "后端开发/PHP/TP5.x/封装标准化Api接口.md",
+    "后端开发/PHP/TP5.x/异常处理封装.md",
     "后端开发/PHP/laravel/常用artisan命令.md",
+    "后端开发/后端相关技术/Oauth2.md",
     "前端开发/VUE/常见配置文件.md",
     "后端开发/树莓派/assets/Pasted image 20230418225725.png",
     "后端开发/树莓派/系统安装.md",
@@ -240,18 +254,12 @@
     "工作",
     "随笔/未命名",
     "随笔/老电脑用的.md",
-    "随笔/散乱灵感.md",
-    "后端开发/PHP/laravel/配置开发环境.md",
-    "随笔/招聘会.md",
     "后端开发/PHP/laravel",
     "随笔/assets/Pasted image 20230410153250.png",
     "随笔/assets/Pasted image 20230331185640.png",
-    "随笔/assets/Pasted image 20230331185547.png",
-    "项目/lotai-anime-flutter/assets",
     "未命名.canvas",
     "测试/测试.canvas",
     "测试/未命名.canvas",
-    "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "前端开发/Flutter/测试.canvas"
   ]
 }
