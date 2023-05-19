@@ -11,9 +11,11 @@
             "id": "1e0cf6f2122b0511",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "工作/统一认证平台.md"
+                "file": "后端开发/Nginx/vue history模式路由配置nginx.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -92,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/统一认证平台.md"
+                "file": "后端开发/Nginx/vue history模式路由配置nginx.md"
               }
             }
           },
@@ -117,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/统一认证平台.md",
+                "file": "后端开发/Nginx/vue history模式路由配置nginx.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/统一认证平台.md",
+                "file": "后端开发/Nginx/vue history模式路由配置nginx.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -157,7 +159,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "工作/统一认证平台.md",
+                "file": "后端开发/Nginx/vue history模式路由配置nginx.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -208,9 +210,12 @@
   },
   "active": "1e0cf6f2122b0511",
   "lastOpenFiles": [
-    "工作/工作计划.md",
+    "后端开发/Nginx/Laravel项目nginx配置.md",
+    "后端开发/Nginx/vue history模式路由配置nginx.md",
     "编程/Git/修改本地项目仓库地址.md",
+    "后端开发/Nginx",
     "工作/统一认证平台.md",
+    "工作/工作计划.md",
     "未命名.canvas",
     "项目/lotai书架/自定义源教程.md",
     "工作/未命名.md",
@@ -250,10 +255,8 @@
     "前端开发/node/node脚本/json转csv.md",
     "前端开发/node/常用node命令.md",
     "前端开发/node/~$dejs笔记.docx",
-    "前端开发/node/常用Node模块.md",
     "工作",
     "随笔/未命名",
-    "后端开发/PHP/laravel",
     "随笔/assets/Pasted image 20230410153250.png",
     "测试/测试.canvas",
     "测试/未命名.canvas",
