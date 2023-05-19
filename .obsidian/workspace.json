@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "31248bca51a5ac75",
+        "id": "88bc723b573284b7",
         "type": "tabs",
         "children": [
           {
-            "id": "1e0cf6f2122b0511",
+            "id": "713fe76d9b8b2694",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "后端开发/Nginx/vue history模式路由配置nginx.md",
-                "mode": "source",
-                "source": false
+                "file": "工作/统一认证平台.md"
               }
             }
           }
@@ -94,7 +92,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端开发/Nginx/vue history模式路由配置nginx.md"
+                "file": "工作/统一认证平台.md"
               }
             }
           },
@@ -119,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端开发/Nginx/vue history模式路由配置nginx.md",
+                "file": "工作/统一认证平台.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "后端开发/Nginx/vue history模式路由配置nginx.md",
+                "file": "工作/统一认证平台.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -159,7 +157,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "后端开发/Nginx/vue history模式路由配置nginx.md",
+                "file": "工作/统一认证平台.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -208,14 +206,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1e0cf6f2122b0511",
+  "active": "713fe76d9b8b2694",
   "lastOpenFiles": [
-    "后端开发/Nginx/Laravel项目nginx配置.md",
+    "工作/工作计划.md",
     "后端开发/Nginx/vue history模式路由配置nginx.md",
+    "后端开发/Nginx/Laravel项目nginx配置.md",
     "编程/Git/修改本地项目仓库地址.md",
     "后端开发/Nginx",
     "工作/统一认证平台.md",
-    "工作/工作计划.md",
     "未命名.canvas",
     "项目/lotai书架/自定义源教程.md",
     "工作/未命名.md",
