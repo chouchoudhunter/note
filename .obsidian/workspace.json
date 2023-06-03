@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4b24dbbac1f504a3",
+        "id": "88bc723b573284b7",
         "type": "tabs",
         "children": [
           {
-            "id": "ae2c18e04a4e518f",
+            "id": "713fe76d9b8b2694",
             "type": "leaf",
             "state": {
               "type": "kanban",
               "state": {
-                "file": "工作/工作计划.md"
+                "file": "工作/统一认证平台.md"
               }
             }
           }
@@ -46,7 +46,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "git",
+                "query": "常用正则",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -92,7 +92,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/工作计划.md"
+                "file": "工作/统一认证平台.md"
               }
             }
           },
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/工作计划.md",
+                "file": "工作/统一认证平台.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/工作计划.md",
+                "file": "工作/统一认证平台.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -157,7 +157,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "工作/工作计划.md",
+                "file": "工作/统一认证平台.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -233,28 +233,20 @@
     "后端开发/后端相关技术/assets",
     "后端开发/后端相关技术",
     "前端开发/node/nvm-node版本管理工具.md",
-    "编程/Git/修改本地项目仓库地址.md",
     "前端开发/前端Tips/开发过程遇到的问题.md",
     "前端开发/VUE/配置开发环境.md",
     "前端开发/VUE/vuex.md",
     "前端开发/~$ue4笔记.docx",
     "前端开发/VUE/VUE黑夜模式.md",
-    "前端开发/VUE/组件双向绑定.md",
     "前端开发/VUE/数组和对象的检测问题.md",
     "前端开发/VUE/生命周期.md",
     "前端开发/VUE/常见错误.md",
     "前端开发/node/node脚本/json转csv.md",
     "前端开发/node/常用node命令.md",
     "前端开发/node/~$dejs笔记.docx",
-    "前端开发/node/常用Node模块.md",
-    "随笔/临时记录.md",
-    "随笔/备忘录.md",
     "工作",
     "随笔/未命名",
-    "随笔/老电脑用的.md",
-    "后端开发/PHP/laravel",
     "随笔/assets/Pasted image 20230410153250.png",
-    "未命名.canvas",
     "测试/测试.canvas",
     "测试/未命名.canvas",
     "前端开发/Flutter/测试.canvas"
