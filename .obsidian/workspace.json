@@ -11,13 +11,26 @@
             "id": "713fe76d9b8b2694",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "工作/统一认证平台.md"
+                "file": "工作/统一认证平台.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5a5c523a975a0157",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.2.8"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -206,7 +219,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ae2c18e04a4e518f",
+  "active": "44f68cf6e3fca989",
   "lastOpenFiles": [
     "工作/后台网页模板修改点.md",
     "工作/工作计划.md",
