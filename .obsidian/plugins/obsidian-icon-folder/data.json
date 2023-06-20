@@ -19,18 +19,13 @@
       "bottom": 0,
       "left": 0
     },
-    "emojiStyle": "twemoji",
-    "iconInTabsEnabled": false
+    "emojiStyle": "twemoji"
   },
-  "AI&爬虫": "✈",
   "项目": "🥯",
   "游戏开发": "🎲",
   "我的": "🎥",
   "随笔": "📔",
-  "前端开发": "🐥",
   "模板": "⛺",
-  "后端开发": "🍀",
-  "编程": "🐐",
   "README.md": "🌸",
   "工作": "👨‍💼"
 }
