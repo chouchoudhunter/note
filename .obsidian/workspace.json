@@ -4,20 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "88bc723b573284b7",
+        "id": "fb59a84bc55b9146",
         "type": "tabs",
         "children": [
           {
-            "id": "713fe76d9b8b2694",
+            "id": "e0dad1e8374ad7e8",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "随笔/未命名看板.md"
+                "file": "后端开发/Nginx/Laravel项目nginx配置.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3e282e81f8c3152f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "随笔/临时记录.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -46,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "常用正则",
+                "query": "正则",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -92,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "随笔/未命名看板.md"
+                "file": "随笔/临时记录.md"
               }
             }
           },
@@ -101,6 +116,14 @@
             "type": "leaf",
             "state": {
               "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "42b30783fa71d330",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
               "state": {}
             }
           }
@@ -117,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "随笔/未命名看板.md",
+                "file": "随笔/临时记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "随笔/未命名看板.md",
+                "file": "随笔/临时记录.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -157,7 +180,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "随笔/未命名看板.md",
+                "file": "随笔/临时记录.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -203,23 +226,38 @@
       "command-palette:打开命令面板": false,
       "audio-recorder:开始/结束录音": false,
       "templater-obsidian:Templater": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-local-images-plus:Local Images Plus  0.15.7\r\nDownload media files": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "713fe76d9b8b2694",
+  "active": "44f68cf6e3fca989",
   "lastOpenFiles": [
-    "随笔/最近游玩游戏清单.md",
     "随笔/未命名看板.md",
-    "我的/游戏-清单.md",
-    "我的/影视-清单.md",
-    "工作/后台网页模板修改点.md",
+    "前端开发/Flutter/Dart语言基础/元数据.md",
+    "README.md",
+    "后端开发/Nginx/vue history模式路由配置nginx.md",
+    "后端开发/Nginx/Laravel项目nginx配置.md",
+    "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "未命名.canvas",
+    "前端开发/Flutter/Dart语言基础/数据类型.md",
+    "前端开发/Flutter/Flutter基础/布局组件.md",
+    "前端开发/Flutter/Dart语言基础/变量声明.md",
+    "前端开发/Flutter/Dart语言基础/泛型.md",
+    "前端开发/Flutter/Dart语言基础/函数.md",
+    "随笔/临时记录.md",
+    "我的/书籍.md",
+    "前端开发/CSS/Grid布局.md",
+    "前端开发/CSS",
+    "工作/统一认证平台.md",
     "工作/工作计划.md",
+    "编程/Git/修改本地项目仓库地址.md",
+    "后端开发/Nginx",
+    "项目/lotai书架/自定义源教程.md",
+    "工作/未命名.md",
+    "前端开发/VUE/组件双向绑定.md",
     "后端开发/PHP/laravel/常用artisan命令.md",
     "后端开发/PHP/laravel/assets/Pasted image 20230505132337.png",
     "后端开发/PHP/laravel/assets/Pasted image 20230505114926.png",
     "后端开发/PHP/laravel/assets",
-    "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "后端开发/PHP/TP5.x/封装标准化Api接口.md",
     "后端开发/PHP/TP5.x/异常处理封装.md",
     "后端开发/后端相关技术/Oauth2.md",
@@ -237,20 +275,9 @@
     "后端开发/后端相关技术/assets/3291d18863d84df1779c8cd5806a86fe_MD5.png",
     "后端开发/后端相关技术/assets",
     "后端开发/后端相关技术",
-    "前端开发/node/nvm-node版本管理工具.md",
-    "前端开发/前端Tips/开发过程遇到的问题.md",
-    "前端开发/VUE/配置开发环境.md",
-    "前端开发/VUE/vuex.md",
     "前端开发/~$ue4笔记.docx",
-    "前端开发/VUE/VUE黑夜模式.md",
-    "前端开发/VUE/数组和对象的检测问题.md",
-    "前端开发/VUE/生命周期.md",
-    "前端开发/VUE/常见错误.md",
-    "前端开发/node/node脚本/json转csv.md",
-    "前端开发/node/常用node命令.md",
     "前端开发/node/~$dejs笔记.docx",
     "工作",
-    "随笔/未命名",
     "随笔/assets/Pasted image 20230410153250.png",
     "测试/测试.canvas",
     "测试/未命名.canvas",
