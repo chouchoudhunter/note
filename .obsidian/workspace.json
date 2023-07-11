@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "随笔/临时记录.md",
+                "file": "编程开发/前端开发/VUE/组件双向绑定.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "随笔/临时记录.md"
+                "file": "编程开发/前端开发/VUE/组件双向绑定.md"
               }
             }
           },
@@ -127,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "随笔/临时记录.md",
+                "file": "编程开发/前端开发/VUE/组件双向绑定.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "随笔/临时记录.md",
+                "file": "编程开发/前端开发/VUE/组件双向绑定.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -167,7 +167,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "随笔/临时记录.md",
+                "file": "编程开发/前端开发/VUE/组件双向绑定.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -217,8 +217,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "44f68cf6e3fca989",
+  "active": "3e282e81f8c3152f",
   "lastOpenFiles": [
+    "编程开发/前端开发/Javascript/js小知识点/详解URLSearchParams.md",
+    "编程开发/基础知识/正则/正则表达式.md",
+    "编程开发/前端开发/xpath",
+    "编程开发/基础知识/正则",
+    "编程开发/基础知识/未命名.md",
+    "编程开发/前端开发/前端Tips/开发过程遇到的问题.md",
+    "工作/统一认证平台.md",
+    "编程开发/前端开发/Flutter/Dart语言基础/数据类型.md",
+    "服务器运维/OSS对象存储/MinIO部署.md",
+    "服务器运维/OSS对象存储",
+    "工作/后台网页模板修改点.md",
+    "随笔/临时记录.md",
     "编程开发/树莓派/assets/Pasted image 20230418225725.png",
     "编程开发/树莓派/版本图示.md",
     "编程开发/树莓派/系统安装.md",
@@ -231,13 +243,12 @@
     "服务器运维/Nginx/vue history模式路由配置nginx.md",
     "服务器运维/Nginx/Laravel项目nginx配置.md",
     "服务器运维/Nginx",
-    "编程开发/前端开发/前端Tips/Git/修改本地项目仓库地址.md",
-    "编程开发/前端开发/前端Tips/Git",
+    "编程开发/前端开发/Git/修改本地项目仓库地址.md",
+    "编程开发/前端开发/Git",
     "编程开发/前端开发/Git/修改本地项目仓库地址.md",
     "编程开发/前端开发/Git",
     "编程开发/AI&爬虫/yolo/疑难杂症.md",
     "编程开发/AI&爬虫/yolo",
-    "编程开发/AI&爬虫",
     "编程开发/前端开发/Flutter/第三方包/状态管理-GetX/assets/7bfc8045b601817055b6b263027d54fa_MD5.gif",
     "编程开发/前端开发/Flutter/第三方包/状态管理-GetX/assets/c3173bf2e032fffa1e0c3a093fbcfe51_MD5.gif",
     "编程开发/前端开发/Flutter/第三方包/状态管理-GetX/assets/8f977c276b68f4e4e844a6e234d0f33c_MD5.gif",
@@ -247,9 +258,6 @@
     "编程开发/前端开发/Flutter/第三方包/状态管理-GetX/assets/0327ae9258072dd8b5e79f04f2a48158_MD5.png",
     "编程开发/前端开发/Javascript/web网络安全/assets/20201124172917-tj1ecc8.png",
     "编程开发/前端开发/Javascript/web网络安全/assets/20201124172917-tfqjc62.png",
-    "编程开发/前端开发/Javascript/web网络安全/assets/20201124172917-s38k1b6.png",
-    "编程开发/前端开发/Javascript/js小知识点/assets/f9a771bd5682ea7595b00bc74e80e7a9_MD5.jpg-watermark",
-    "编程开发/前端开发/Javascript/js小知识点/assets/f3f6d619ad70dc2da7184973dccf14d2_MD5.jpg-watermark",
     "编程开发/前端开发/Flutter/第三方包/状态管理-GetX/介绍、Snackbar、Dialog、BottomSheet、Navigation、Obx.md",
     "编程开发/前端开发/Flutter/第三方包/状态管理-GetX/Cli使用以及常用命令.md",
     "编程开发/前端开发/node/node脚本/json转csv.md",
@@ -257,14 +265,6 @@
     "编程开发/前端开发/Javascript/js小知识点/柯里化和偏函数.md",
     "编程开发/前端开发/Javascript/js小知识点/构造函数.md",
     "编程开发/前端开发/Javascript/js小知识点/this解析.md",
-    "编程开发/前端开发/Javascript/js小知识点/TDZ暂时死区详解.md",
-    "编程开发/前端开发/Javascript/js小知识点/Null与Undefined的区别.md",
-    "编程开发/前端开发/Javascript/js小知识点/JS 变量存储.md",
-    "编程开发/前端开发/Javascript/js小知识点/EventLoop.md",
-    "编程开发/前端开发/Flutter/第三方包/状态管理-Provider.md",
-    "编程开发/前端开发/Flutter/第三方包/sqflite.md",
-    "编程开发/前端开发/Flutter/第三方包/shared_preferences.md",
-    "编程开发/前端开发/Flutter/第三方包/Dio.md",
     "编程开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "未命名.canvas",
