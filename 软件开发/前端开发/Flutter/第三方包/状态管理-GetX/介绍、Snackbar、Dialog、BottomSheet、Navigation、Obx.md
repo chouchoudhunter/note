@@ -94,7 +94,7 @@
 
 如果您运行了代码，那么恭喜你，你已经会用`GetX` 来展示`snackbar` 了。你将得到下面的结果：
 
-![[前端开发/Flutter/第三方包/状态管理-GetX/assets/622870be8da14a284fc89ebc314dd949_MD5.gif]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog/getx_snackbar.gif)
+![[622870be8da14a284fc89ebc314dd949_MD5.gif]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog/getx_snackbar.gif)
 
 ### Snackbar属性和说明
 
@@ -350,7 +350,7 @@ Form
 
 如果您运行了代码，那么恭喜你，你已经会用`GetX` 来展示`dialog` 了。你将得到下面的结果：
 
-[![[前端开发/Flutter/第三方包/状态管理-GetX/assets/7bfc8045b601817055b6b263027d54fa_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/get_dialog.gif)
+[![[7bfc8045b601817055b6b263027d54fa_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/get_dialog.gif)
 
 ### Dialog属性和说明
 
@@ -536,7 +536,7 @@ GlobalKey
 
 如果您运行了代码，那么恭喜你，你已经会用`GetX` 来展示`BottomSheet` 了。你将得到下面的结果：
 
-[![[前端开发/Flutter/第三方包/状态管理-GetX/assets/35554e588225e8ba3aafb7808a8e184b_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/get_bottomsheet1.gif)
+[![[35554e588225e8ba3aafb7808a8e184b_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/get_bottomsheet1.gif)
 
 ### BottomSheet属性和说明
 
@@ -652,7 +652,7 @@ bottomsheet退出时的动画时间
 
 #### 效果展示
 
-[![[前端开发/Flutter/第三方包/状态管理-GetX/assets/8f977c276b68f4e4e844a6e234d0f33c_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/getx_navigation_to.gif)
+[![[8f977c276b68f4e4e844a6e234d0f33c_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/getx_navigation_to.gif)
 
 ### Navigation—通过toNamed进行路由跳转
 
@@ -666,7 +666,7 @@ bottomsheet退出时的动画时间
 
 #### 效果展示
 
-[![[前端开发/Flutter/第三方包/状态管理-GetX/assets/8f977c276b68f4e4e844a6e234d0f33c_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/getx_navigation_to.gif)
+[![[8f977c276b68f4e4e844a6e234d0f33c_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/getx_navigation_to.gif)
 
 ## Obx响应式状态管理
 
@@ -705,7 +705,7 @@ bottomsheet退出时的动画时间
 
 #### 效果展示
 
-[![[前端开发/Flutter/第三方包/状态管理-GetX/assets/c3173bf2e032fffa1e0c3a093fbcfe51_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/obx---count.gif)
+[![[c3173bf2e032fffa1e0c3a093fbcfe51_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/obx---count.gif)
 
 ### 自定义类案例
 
@@ -723,7 +723,7 @@ bottomsheet退出时的动画时间
 
 #### 效果展示
 
-[![[前端开发/Flutter/第三方包/状态管理-GetX/assets/827d76f763097cd95d718e2cdfb7b5a4_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/getx_obx_customclass.gif)
+[![[827d76f763097cd95d718e2cdfb7b5a4_MD5.gif]]](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog-video/getx_obx_customclass.gif)
 
 ## 总结
 

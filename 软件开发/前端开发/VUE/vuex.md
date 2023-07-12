@@ -81,7 +81,7 @@ export default store;
 
 ### 1.目录结构
 
-![image-20220408160312541](assets/image-20220408160312541.png)
+![image-20220408160312541](image-20220408160312541.png)
 
 ### 2.index.js
 

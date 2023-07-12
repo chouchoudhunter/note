@@ -47,18 +47,18 @@ SQL查询 address 为北京市的人：
 ```sql
 explain select name, address from student where address like "北京市%";
 ```
-[[编程开发/SQL/assets/e480798e54009ba463ff7981825f370c_MD5.png|Open: Pasted image 20230711100209.png]]
-![[编程开发/SQL/assets/e480798e54009ba463ff7981825f370c_MD5.png]]
+[[e480798e54009ba463ff7981825f370c_MD5.png|Open: Pasted image 20230711100209.png]]
+![[e480798e54009ba463ff7981825f370c_MD5.png]]
 在 student 表上加索引:
 ```sql
 alter table student add index (address(9));
 ```
-[[编程开发/SQL/assets/ff0230705d3c38800de1aaa345d74011_MD5.png|Open: Pasted image 20230711100023.png]]
-![[编程开发/SQL/assets/ff0230705d3c38800de1aaa345d74011_MD5.png]]
+[[ff0230705d3c38800de1aaa345d74011_MD5.png|Open: Pasted image 20230711100023.png]]
+![[ff0230705d3c38800de1aaa345d74011_MD5.png]]
 为了加快索引，我们采用前缀索引，因为一个汉字在UTF-8编码下占3个字节，因此选择对address字段的前9位加索引。
 再次执行上面的SQL查询语句：
-[[编程开发/SQL/assets/13bd93911facda171ed1c005d2ad5667_MD5.png|Open: Pasted image 20230711100054.png]]
-![[编程开发/SQL/assets/13bd93911facda171ed1c005d2ad5667_MD5.png]]
+[[13bd93911facda171ed1c005d2ad5667_MD5.png|Open: Pasted image 20230711100054.png]]
+![[13bd93911facda171ed1c005d2ad5667_MD5.png]]
 
 ## 2.3解释Explain得到的结果
 ### 2.3.1 type 反应查询语句的性能

@@ -24,7 +24,7 @@
 
 栈是内存中一块用于存储局部变量和函数参数的线性结构，遵循着先进后出的原则。数据只能顺序的入栈，顺序的出栈。当然，栈只是内存中一片连续区域一种形式化的描述，数据入栈和出栈的操作仅仅是栈指针在内存地址上的上下移动而已。如下图所示（以 `C` 语言为例）：
 
-![[前端开发/Javascript/js小知识点/assets/bf2a5686ab2d4cb877c315d26a093e2f_MD5.jpg]]
+![[bf2a5686ab2d4cb877c315d26a093e2f_MD5.jpg]]
 
 变量在栈中存储
 
@@ -101,7 +101,7 @@ function test () {
 
 伴随着 `test` 的调用，为了保证变量不被销毁，在堆中先生成一个对象就叫 `Scope` 吧，把变量作为 `Scope` 的属性给存起来。堆中的数据结构大致如下所示：
 
-![[前端开发/Javascript/js小知识点/assets/bc520825c11182a9adedb9ce1ff17ee3_MD5.jpg]]
+![[bc520825c11182a9adedb9ce1ff17ee3_MD5.jpg]]
 
 使用 Scope 保存变量
 
@@ -109,7 +109,7 @@ function test () {
 
 当然可以，由于 `Scope` 对象是存储在堆中，因此返回的 `log` 函数完全可以拥有 `Scope` 对象 的访问。下图是该段代码在 `Chrome` 中的执行效果：
 
-![[前端开发/Javascript/js小知识点/assets/d121ff084f4142a7434e4a9d7bc0601c_MD5.jpg]]
+![[d121ff084f4142a7434e4a9d7bc0601c_MD5.jpg]]
 
 Chrome 中 Scope 的表示
 
@@ -201,7 +201,7 @@ console.dir(() => {})
 
 复制到 `Chrome` 有以下结果：
 
-![[前端开发/Javascript/js小知识点/assets/b53964f0d36c543afafa8366eb59197b_MD5.jpg]]
+![[b53964f0d36c543afafa8366eb59197b_MD5.jpg]]
 
 let/const 全局变量
 
@@ -225,7 +225,7 @@ let/const 全局变量
 
 那么你一定想问，`Chrome` 的 `V8` 能否判断出，从结果看应该是可以的。
 
-![[前端开发/Javascript/js小知识点/assets/cf61353ed18de4095ccf23c029f79b8f_MD5.jpg]]
+![[cf61353ed18de4095ccf23c029f79b8f_MD5.jpg]]
 
 Chrome 下的局部变量
 
@@ -237,7 +237,7 @@ Chrome 下的局部变量
 
 其实不论变量是存在栈内，还是存在堆里（反正都是在内存里），其结构和存值方式是差不多的，都有如下的结构：
 
-![[前端开发/Javascript/js小知识点/assets/c6a15cd672d2c6ac1a700e89b7e76389_MD5.jpg]]
+![[c6a15cd672d2c6ac1a700e89b7e76389_MD5.jpg]]
 
 变量存储
 
@@ -255,7 +255,7 @@ let foo = 1;
 
 `JavaScript`  声明了一个变量 `foo`，且让它的值为 `1`，内存中就会发生如下变化
 
-![[前端开发/Javascript/js小知识点/assets/2ea0ec245e1fc03435196761e3aecfe1_MD5.jpg]]
+![[2ea0ec245e1fc03435196761e3aecfe1_MD5.jpg]]
 
 常量储存
 
@@ -267,7 +267,7 @@ let bar = 2;
 
 那么内存中就会变成这样：
 
-![[前端开发/Javascript/js小知识点/assets/e38e8d94b7499a3395bb9f01463a73e9_MD5.jpg]]
+![[e38e8d94b7499a3395bb9f01463a73e9_MD5.jpg]]
 
 foo & bar
 
@@ -284,7 +284,7 @@ let obj = {
 
 内存模型如下：
 
-![[前端开发/Javascript/js小知识点/assets/1aeccc9a0d5cbc288b3b42245a32b5ff_MD5.jpg]]
+![[1aeccc9a0d5cbc288b3b42245a32b5ff_MD5.jpg]]
 
 JavaScript Object存储
 
@@ -300,7 +300,7 @@ JavaScript Object存储
 let x = foo;
 ```
 
-![[前端开发/Javascript/js小知识点/assets/b9cc249ce156c5e248ac93f7f89937c5_MD5.jpg]]
+![[b9cc249ce156c5e248ac93f7f89937c5_MD5.jpg]]
 
 x 赋值为 foo 变量
 
@@ -318,7 +318,7 @@ x 赋值为 foo 变量
 foo = 'foo';
 ```
 
-![[前端开发/Javascript/js小知识点/assets/e2386e8662a1b1ba6592a16682bdad15_MD5.jpg]]
+![[e2386e8662a1b1ba6592a16682bdad15_MD5.jpg]]
 
 foo 变量修改为另一常量
 
@@ -330,7 +330,7 @@ foo 变量修改为另一常量
 foo = bar;
 ```
 
-![[前端开发/Javascript/js小知识点/assets/0aa7368106558ce56b3cde87d37c08ab_MD5.jpg]]
+![[0aa7368106558ce56b3cde87d37c08ab_MD5.jpg]]
 
 foo 变量修改为另一变量
 
@@ -349,7 +349,7 @@ const foo = 'foo';
 foo = 'bar'; // Error
 ```
 
-![[前端开发/Javascript/js小知识点/assets/6b04910983f6910eddac41b1eeb8f089_MD5.png]]
+![[6b04910983f6910eddac41b1eeb8f089_MD5.png]]
 
 const 不允许重新赋值
 
@@ -367,7 +367,7 @@ obj.foo = 2;
 
 其 `obj` 所引用的地址并没有发生变化，发生变的部分为另一区域。如下图所示
 
-![[前端开发/Javascript/js小知识点/assets/46efb1cd4731de67ebc7e42c860cad48_MD5.jpg]]
+![[46efb1cd4731de67ebc7e42c860cad48_MD5.jpg]]
 
 const 对象类型修改
 
@@ -399,7 +399,7 @@ console.log(obj1.foo === 'foofoo');
 
 我们不讨论结果，先看看内存中的结构。
 
-![[前端开发/Javascript/js小知识点/assets/796321cea303e344ef6c305e588e3ae1_MD5.jpg]]
+![[796321cea303e344ef6c305e588e3ae1_MD5.jpg]]
 
 js 中对象存储
 

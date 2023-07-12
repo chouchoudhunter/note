@@ -360,7 +360,7 @@ Time: 53925 Milliseconds
 
 如果能看到如上就证明通过`Cli`创建工程成功了。
 
-[![](%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/Flutter/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86-GetX/assets/0327ae9258072dd8b5e79f04f2a48158_MD5.png)](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog/getx_create_project.png)
+[![](0327ae9258072dd8b5e79f04f2a48158_MD5.png)](https://gz-ljm-blog.oss-cn-guangzhou.aliyuncs.com/blog/getx_create_project.png)
 
 ## Cli创建页面
 
