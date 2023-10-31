@@ -1,6 +1,6 @@
 {
   "settings": {
-    "migrated": true,
+    "migrated": 3,
     "iconPacksPath": ".obsidian/plugins/obsidian-icon-folder/icons",
     "fontSize": 16,
     "iconColor": null,
@@ -20,7 +20,9 @@
       "left": 0
     },
     "emojiStyle": "twemoji",
-    "iconInTabsEnabled": false
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconsBackgroundCheckEnabled": false
   },
   "项目": "🥯",
   "游戏开发": "🎲",
