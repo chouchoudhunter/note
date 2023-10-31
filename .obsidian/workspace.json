@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "25d3ff7a9c742e24",
+        "id": "3e140dab55b5070a",
         "type": "tabs",
         "children": [
           {
-            "id": "2089425d48d9ad64",
+            "id": "40347dab5d795e09",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Excalidraw/Drawing 2023-10-31 21.44.12.excalidraw.md"
               }
             }
           }
@@ -156,15 +150,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
       "obsidian-local-images-plus:Local Images Plus  0.15.9\r\nLocalize attachments (plugin folder)": false,
-      "remotely-save:Remotely Save": false
+      "remotely-save:Remotely Save": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "2089425d48d9ad64",
+  "active": "633c23678d3bc9f9",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2023-10-31 21.44.12.excalidraw.md",
+    "Excalidraw",
     "README.md",
+    "assets",
     "我的/游戏/伊始之地 Terra Nil.md",
     "我的/游戏/assets/c2bc2999053069707c170c0570fb2cc7_MD5.png",
-    "assets",
     "我的/书籍.md",
     "我的/游戏-清单.md",
     "我的/游戏.md",

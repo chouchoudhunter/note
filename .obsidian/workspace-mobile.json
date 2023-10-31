@@ -1,0 +1,189 @@
+{
+  "main": {
+    "id": "e8aedb0009f7c5d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c031c8aebf4ec1f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c4fec6e5bc9828df",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4d225891f97d3121",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "b7c7c3909ce454f6",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "fd70d175df0d2acc",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "c8842c94ea799993",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "95b4999df8009adc",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "7016aab19eea8f7e",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "8b69f70faf0febe5",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "befa1310c8b0087f",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "990ac05adc85e635",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {}
+        }
+      },
+      {
+        "id": "0c66c0c3e4905295",
+        "type": "leaf",
+        "state": {
+          "type": "calendar",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "templater-obsidian:Templater": false,
+      "audio-recorder:开始/结束录音": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "remotely-save:Remotely Save": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "c4fec6e5bc9828df",
+  "lastOpenFiles": [
+    "Excalidraw/Drawing 2023-10-31 21.44.12.excalidraw.md",
+    "README.md",
+    "未命名.md",
+    "未命名",
+    "Excalidraw",
+    "游戏开发/unity3d/素材.md",
+    "assets",
+    "服务器运维/Nginx/Laravel项目nginx配置.md",
+    "软件开发/前端开发/Javascript/js小知识点/详解URLSearchParams.md",
+    "软件开发/前端开发/Flutter/Futter配置相关/Flutter常用命令.md",
+    "软件开发/前端开发/Flutter/第三方包/sqflite.md",
+    "软件开发/前端开发/Flutter/第三方包/shared_preferences.md",
+    "软件开发/前端开发/Flutter/Flutter基础/未命名.md",
+    "我的/书籍.md",
+    "随笔/账号.md",
+    "我的/游戏.md",
+    "我的/影视.md",
+    "我的/书籍/眠.md",
+    "我的/书籍/它.md",
+    "随笔/散乱灵感.md",
+    "随笔/临时记录.md",
+    "我的/书籍/默读.md",
+    "我的/书籍/阴兽.md",
+    "我的/书籍/雪人.md",
+    "我的/书籍/边城.md",
+    "我的/书籍/绝叫.md",
+    "我的/书籍/赎罪.md",
+    "我的/书籍/环界.md",
+    "我的/书籍/理由.md",
+    "随笔/Blender.py",
+    "随笔/assets/640.jpeg",
+    "项目/Abyss/Xmind/互动.xmind",
+    "项目/LoTai App/设计/整体规划.xmind",
+    "随笔/assets/page_bg_schinese.gif",
+    "项目/Abyss/173020194吴之宇论文译文.pdf",
+    "项目/Abyss/173020194吴之宇论文译文.docx",
+    "随笔/assets/640-16677256262474.jpeg",
+    "随笔/assets/640-16677256262475.jpeg",
+    "随笔/assets/640-16677256262488.jpeg",
+    "随笔/assets/640-16677256262472.jpeg",
+    "随笔/assets/640-16677256262486.jpeg",
+    "随笔/assets/640-16677256262471.jpeg",
+    "随笔/assets/640-16677256262487.jpeg",
+    "随笔/assets/640-16677256262473.jpeg",
+    "软件开发/前端开发/electron/electron笔记.docx",
+    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "项目/Abyss/173020194吴之宇基于Unity 3D的恐怖游戏设计与实现.docx"
+  ]
+}
