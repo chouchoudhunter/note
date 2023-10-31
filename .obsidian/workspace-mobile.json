@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5c031c8aebf4ec1f",
+        "id": "f02e1682229c9283",
         "type": "tabs",
         "children": [
           {
-            "id": "c4fec6e5bc9828df",
+            "id": "3a849d721da1a869",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -123,9 +123,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "templater-obsidian:Templater": false,
       "audio-recorder:开始/结束录音": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -136,8 +134,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c4fec6e5bc9828df",
+  "active": "b7c7c3909ce454f6",
   "lastOpenFiles": [
+    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "我的/书籍/凤于九天.md",
+    "我的/书籍.md",
     "Excalidraw/Drawing 2023-10-31 21.44.12.excalidraw.md",
     "README.md",
     "未命名.md",
@@ -151,7 +152,6 @@
     "软件开发/前端开发/Flutter/第三方包/sqflite.md",
     "软件开发/前端开发/Flutter/第三方包/shared_preferences.md",
     "软件开发/前端开发/Flutter/Flutter基础/未命名.md",
-    "我的/书籍.md",
     "随笔/账号.md",
     "我的/游戏.md",
     "我的/影视.md",
@@ -165,8 +165,6 @@
     "我的/书籍/边城.md",
     "我的/书籍/绝叫.md",
     "我的/书籍/赎罪.md",
-    "我的/书籍/环界.md",
-    "我的/书籍/理由.md",
     "随笔/Blender.py",
     "随笔/assets/640.jpeg",
     "项目/Abyss/Xmind/互动.xmind",
@@ -183,7 +181,6 @@
     "随笔/assets/640-16677256262487.jpeg",
     "随笔/assets/640-16677256262473.jpeg",
     "软件开发/前端开发/electron/electron笔记.docx",
-    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "项目/Abyss/173020194吴之宇基于Unity 3D的恐怖游戏设计与实现.docx"
   ]
 }

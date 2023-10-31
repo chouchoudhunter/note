@@ -22,7 +22,8 @@
     "emojiStyle": "twemoji",
     "iconInTabsEnabled": false,
     "iconInTitleEnabled": false,
-    "iconsBackgroundCheckEnabled": false
+    "iconsBackgroundCheckEnabled": false,
+    "iconInFrontmatterEnabled": false
   },
   "项目": "🥯",
   "游戏开发": "🎲",
