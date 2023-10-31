@@ -5,7 +5,11 @@
   "devMode": false,
   "templateFolderPath": "模板",
   "announceUpdates": true,
+<<<<<<< Updated upstream
   "version": "1.4.0",
+=======
+  "version": "1.2.1",
+>>>>>>> Stashed changes
   "disableOnlineFeatures": true,
   "ai": {
     "OpenAIApiKey": "",

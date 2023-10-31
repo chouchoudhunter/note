@@ -1,7 +1,12 @@
 {
   "id": "obsidian-icon-folder",
+<<<<<<< Updated upstream
   "name": "Iconize",
   "version": "2.6.1",
+=======
+  "name": "Icon Folder",
+  "version": "2.1.2",
+>>>>>>> Stashed changes
   "minAppVersion": "0.9.12",
   "description": "Add icons to anything you desire in Obsidian, including files, folders, and text.",
   "author": "Florian Woelki",
