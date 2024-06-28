@@ -1,7 +1,6 @@
 {
-  "theme": "moonstone",
   "lightStyle": "minimal-light",
-  "darkStyle": "minimal-dark",
+  "darkStyle": "minimal-dark-tonal",
   "lightScheme": "minimal-atom-light",
   "darkScheme": "minimal-atom-dark",
   "editorFont": "",
@@ -28,9 +27,10 @@
   "focusMode": false,
   "underlineInternal": true,
   "underlineExternal": true,
-  "useSystemTheme": false,
   "folding": true,
   "lineNumbers": false,
   "readableLineLength": true,
-  "devBlockWidth": false
+  "devBlockWidth": false,
+  "theme": "moonstone",
+  "useSystemTheme": false
 }

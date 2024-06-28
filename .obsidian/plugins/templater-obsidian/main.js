@@ -70,7 +70,9 @@ var TemplaterError = class extends Error {
     super(msg);
     this.console_msg = console_msg;
     this.name = this.constructor.name;
-    Error.captureStackTrace(this, this.constructor);
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, this.constructor);
+    }
   }
 };
 async function errorWrapper(fn2, msg) {
@@ -1669,7 +1671,7 @@ var FolderSuggest = class extends TextInputSuggest {
         folders.push(folder);
       }
     });
-    return folders;
+    return folders.slice(0, 1e3);
   }
   renderSuggestion(file, el) {
     el.setText(file.path);
@@ -1741,6 +1743,12 @@ function arraymove(arr, fromIndex, toIndex) {
 function get_active_file(app2) {
   return app2.workspace.activeEditor?.file ?? app2.workspace.getActiveFile();
 }
+function get_folder_path_from_file_path(path) {
+  const path_separator = path.lastIndexOf("/");
+  if (path_separator !== -1)
+    return path.slice(0, path_separator);
+  return "";
+}
 
 // src/settings/suggesters/FileSuggester.ts
 var FileSuggestMode;
@@ -1783,7 +1791,7 @@ var FileSuggest = class extends TextInputSuggest {
         files.push(file);
       }
     });
-    return files;
+    return files.slice(0, 1e3);
   }
   renderSuggestion(file, el) {
     el.setText(file.path);
@@ -1837,7 +1845,7 @@ var TemplaterSettingTab = class extends import_obsidian6.PluginSettingTab {
     this.add_donating_setting();
   }
   add_general_setting_header() {
-    this.containerEl.createEl("h2", { text: "General Settings" });
+    this.containerEl.createEl("h2", { text: "General settings" });
   }
   add_template_folder_setting() {
     new import_obsidian6.Setting(this.containerEl).setName("Template folder location").setDesc("Files in this folder will be available as templates.").addSearch((cb) => {
@@ -1855,21 +1863,21 @@ var TemplaterSettingTab = class extends import_obsidian6.PluginSettingTab {
       href: "https://silentvoid13.github.io/Templater/",
       text: "documentation"
     }), " to get a list of all the available internal variables / functions.");
-    new import_obsidian6.Setting(this.containerEl).setName("Internal Variables and Functions").setDesc(desc);
+    new import_obsidian6.Setting(this.containerEl).setName("Internal variables and functions").setDesc(desc);
   }
   add_syntax_highlighting_settings() {
     const desktopDesc = document.createDocumentFragment();
     desktopDesc.append("Adds syntax highlighting for Templater commands in edit mode.");
     const mobileDesc = document.createDocumentFragment();
     mobileDesc.append("Adds syntax highlighting for Templater commands in edit mode on mobile. Use with caution: this may break live preview on mobile platforms.");
-    new import_obsidian6.Setting(this.containerEl).setName("Syntax Highlighting on Desktop").setDesc(desktopDesc).addToggle((toggle) => {
+    new import_obsidian6.Setting(this.containerEl).setName("Syntax highlighting on desktop").setDesc(desktopDesc).addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.syntax_highlighting).onChange((syntax_highlighting) => {
         this.plugin.settings.syntax_highlighting = syntax_highlighting;
         this.plugin.save_settings();
         this.plugin.event_handler.update_syntax_highlighting();
       });
     });
-    new import_obsidian6.Setting(this.containerEl).setName("Syntax Highlighting on Mobile").setDesc(mobileDesc).addToggle((toggle) => {
+    new import_obsidian6.Setting(this.containerEl).setName("Syntax highlighting on mobile").setDesc(mobileDesc).addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.syntax_highlighting_mobile).onChange((syntax_highlighting_mobile) => {
         this.plugin.settings.syntax_highlighting_mobile = syntax_highlighting_mobile;
         this.plugin.save_settings();
@@ -1919,9 +1927,9 @@ var TemplaterSettingTab = class extends import_obsidian6.PluginSettingTab {
     });
   }
   add_templates_hotkeys_setting() {
-    this.containerEl.createEl("h2", { text: "Template Hotkeys" });
+    this.containerEl.createEl("h2", { text: "Template hotkeys" });
     const desc = document.createDocumentFragment();
-    desc.append("Template Hotkeys allows you to bind a template to a hotkey.");
+    desc.append("Template hotkeys allows you to bind a template to a hotkey.");
     new import_obsidian6.Setting(this.containerEl).setDesc(desc);
     this.plugin.settings.enabled_templates_hotkeys.forEach((template, index) => {
       const s = new import_obsidian6.Setting(this.containerEl).addSearch((cb) => {
@@ -2042,9 +2050,9 @@ var TemplaterSettingTab = class extends import_obsidian6.PluginSettingTab {
     });
   }
   add_startup_templates_setting() {
-    this.containerEl.createEl("h2", { text: "Startup Templates" });
+    this.containerEl.createEl("h2", { text: "Startup templates" });
     const desc = document.createDocumentFragment();
-    desc.append("Startup Templates are templates that will get executed once when Templater starts.", desc.createEl("br"), "These templates won't output anything.", desc.createEl("br"), "This can be useful to set up templates adding hooks to obsidian events for example.");
+    desc.append("Startup templates are templates that will get executed once when Templater starts.", desc.createEl("br"), "These templates won't output anything.", desc.createEl("br"), "This can be useful to set up templates adding hooks to Obsidian events for example.");
     new import_obsidian6.Setting(this.containerEl).setDesc(desc);
     this.plugin.settings.startup_templates.forEach((template, index) => {
       const s = new import_obsidian6.Setting(this.containerEl).addSearch((cb) => {
@@ -2076,7 +2084,7 @@ var TemplaterSettingTab = class extends import_obsidian6.PluginSettingTab {
     });
   }
   add_user_script_functions_setting() {
-    this.containerEl.createEl("h2", { text: "User Script Functions" });
+    this.containerEl.createEl("h2", { text: "User script functions" });
     let desc = document.createDocumentFragment();
     desc.append("All JavaScript files in this folder will be loaded as CommonJS modules, to import custom user functions.", desc.createEl("br"), "The folder needs to be accessible from the vault.", desc.createEl("br"), "Check the ", desc.createEl("a", {
       href: "https://silentvoid13.github.io/Templater/",
@@ -2093,11 +2101,11 @@ var TemplaterSettingTab = class extends import_obsidian6.PluginSettingTab {
     desc = document.createDocumentFragment();
     let name;
     if (!this.plugin.settings.user_scripts_folder) {
-      name = "No User Scripts folder set";
+      name = "No user scripts folder set";
     } else {
-      const files = errorWrapperSync(() => get_tfiles_from_folder(this.plugin.settings.user_scripts_folder), `User Scripts folder doesn't exist`);
+      const files = errorWrapperSync(() => get_tfiles_from_folder(this.plugin.settings.user_scripts_folder), `User scripts folder doesn't exist`);
       if (!files || files.length === 0) {
-        name = "No User Scripts detected";
+        name = "No user scripts detected";
       } else {
         let count = 0;
         for (const file of files) {
@@ -2123,9 +2131,9 @@ var TemplaterSettingTab = class extends import_obsidian6.PluginSettingTab {
       text: "Warning: "
     }), "It can be dangerous to execute arbitrary system commands from untrusted sources. Only run system commands that you understand, from trusted sources.");
     this.containerEl.createEl("h2", {
-      text: "User System Command Functions"
+      text: "User system command functions"
     });
-    new import_obsidian6.Setting(this.containerEl).setName("Enable User System Command Functions").setDesc(desc).addToggle((toggle) => {
+    new import_obsidian6.Setting(this.containerEl).setName("Enable user system command functions").setDesc(desc).addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.enable_system_commands).onChange((enable_system_commands) => {
         this.plugin.settings.enable_system_commands = enable_system_commands;
         this.plugin.save_settings();
@@ -2287,7 +2295,7 @@ var UNSUPPORTED_MOBILE_TEMPLATE = "Error_MobileUnsupportedTemplate";
 var ICON_DATA = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.1328 28.7"><path d="M0 15.14 0 10.15 18.67 1.51 18.67 6.03 4.72 12.33 4.72 12.76 18.67 19.22 18.67 23.74 0 15.14ZM33.6928 1.84C33.6928 1.84 33.9761 2.1467 34.5428 2.76C35.1094 3.38 35.3928 4.56 35.3928 6.3C35.3928 8.0466 34.8195 9.54 33.6728 10.78C32.5261 12.02 31.0995 12.64 29.3928 12.64C27.6862 12.64 26.2661 12.0267 25.1328 10.8C23.9928 9.5733 23.4228 8.0867 23.4228 6.34C23.4228 4.6 23.9995 3.1066 25.1528 1.86C26.2994.62 27.7261 0 29.4328 0C31.1395 0 32.5594.6133 33.6928 1.84M49.8228.67 29.5328 28.38 24.4128 28.38 44.7128.67 49.8228.67M31.0328 8.38C31.0328 8.38 31.1395 8.2467 31.3528 7.98C31.5662 7.7067 31.6728 7.1733 31.6728 6.38C31.6728 5.5867 31.4461 4.92 30.9928 4.38C30.5461 3.84 29.9995 3.57 29.3528 3.57C28.7061 3.57 28.1695 3.84 27.7428 4.38C27.3228 4.92 27.1128 5.5867 27.1128 6.38C27.1128 7.1733 27.3361 7.84 27.7828 8.38C28.2361 8.9267 28.7861 9.2 29.4328 9.2C30.0795 9.2 30.6128 8.9267 31.0328 8.38M49.4328 17.9C49.4328 17.9 49.7161 18.2067 50.2828 18.82C50.8495 19.4333 51.1328 20.6133 51.1328 22.36C51.1328 24.1 50.5594 25.59 49.4128 26.83C48.2595 28.0766 46.8295 28.7 45.1228 28.7C43.4228 28.7 42.0028 28.0833 40.8628 26.85C39.7295 25.6233 39.1628 24.1366 39.1628 22.39C39.1628 20.65 39.7361 19.16 40.8828 17.92C42.0361 16.6733 43.4628 16.05 45.1628 16.05C46.8694 16.05 48.2928 16.6667 49.4328 17.9M46.8528 24.52C46.8528 24.52 46.9595 24.3833 47.1728 24.11C47.3795 23.8367 47.4828 23.3033 47.4828 22.51C47.4828 21.7167 47.2595 21.05 46.8128 20.51C46.3661 19.97 45.8162 19.7 45.1628 19.7C44.5161 19.7 43.9828 19.97 43.5628 20.51C43.1428 21.05 42.9328 21.7167 42.9328 22.51C42.9328 23.3033 43.1561 23.9733 43.6028 24.52C44.0494 25.06 44.5961 25.33 45.2428 25.33C45.8895 25.33 46.4261 25.06 46.8528 24.52Z" fill="currentColor"/></svg>`;
 
 // src/core/Templater.ts
-var import_obsidian13 = __toModule(require("obsidian"));
+var import_obsidian12 = __toModule(require("obsidian"));
 
 // src/core/functions/internal_functions/InternalModule.ts
 var InternalModule = class {
@@ -2326,6 +2334,8 @@ var InternalModuleDate = class extends InternalModule {
     this.static_functions.set("yesterday", this.generate_yesterday());
   }
   async create_dynamic_templates() {
+  }
+  async teardown() {
   }
   generate_now() {
     return (format = "YYYY-MM-DD", offset2, reference2, reference_format) => {
@@ -2392,6 +2402,8 @@ var InternalModuleFile = class extends InternalModule {
     this.dynamic_functions.set("tags", this.generate_tags());
     this.dynamic_functions.set("title", this.generate_title());
   }
+  async teardown() {
+  }
   async generate_content() {
     return await app.vault.read(this.config.target_file);
   }
@@ -2431,8 +2443,8 @@ var InternalModuleFile = class extends InternalModule {
     };
   }
   generate_exists() {
-    return async (filename) => {
-      const path = (0, import_obsidian8.normalizePath)(filename);
+    return async (filepath) => {
+      const path = (0, import_obsidian8.normalizePath)(filepath);
       return await app.vault.exists(path);
     };
   }
@@ -2583,6 +2595,8 @@ var InternalModuleWeb = class extends InternalModule {
   }
   async create_dynamic_templates() {
   }
+  async teardown() {
+  }
   async getRequest(url) {
     try {
       const response = await fetch(url);
@@ -2601,8 +2615,8 @@ var InternalModuleWeb = class extends InternalModule {
         const json = await response.json();
         const author = json.author;
         const quote = json.content;
-        const new_content = `> ${quote}
-> \u2014 <cite>${author}</cite>`;
+        const new_content = `> [!quote] ${quote}
+> \u2014 ${author}`;
         return new_content;
       } catch (error) {
         new TemplaterError("Error generating daily quote");
@@ -2635,6 +2649,37 @@ var InternalModuleWeb = class extends InternalModule {
   }
 };
 
+// src/core/functions/internal_functions/hooks/InternalModuleHooks.ts
+var InternalModuleHooks = class extends InternalModule {
+  constructor() {
+    super(...arguments);
+    this.name = "hooks";
+    this.event_refs = [];
+  }
+  async create_static_templates() {
+    this.static_functions.set("on_all_templates_executed", this.generate_on_all_templates_executed());
+  }
+  async create_dynamic_templates() {
+  }
+  async teardown() {
+    this.event_refs.forEach((eventRef) => {
+      eventRef.e.offref(eventRef);
+    });
+    this.event_refs = [];
+  }
+  generate_on_all_templates_executed() {
+    return (callback_function) => {
+      const event_ref = app.workspace.on("templater:all-templates-executed", async () => {
+        await delay(1);
+        callback_function();
+      });
+      if (event_ref) {
+        this.event_refs.push(event_ref);
+      }
+    };
+  }
+};
+
 // src/core/functions/internal_functions/frontmatter/InternalModuleFrontmatter.ts
 var InternalModuleFrontmatter = class extends InternalModule {
   constructor() {
@@ -2647,10 +2692,9 @@ var InternalModuleFrontmatter = class extends InternalModule {
     const cache = app.metadataCache.getFileCache(this.config.target_file);
     this.dynamic_functions = new Map(Object.entries(cache?.frontmatter || {}));
   }
+  async teardown() {
+  }
 };
-
-// src/core/functions/internal_functions/system/InternalModuleSystem.ts
-var import_obsidian11 = __toModule(require("obsidian"));
 
 // src/core/functions/internal_functions/system/PromptModal.ts
 var import_obsidian9 = __toModule(require("obsidian"));
@@ -2669,7 +2713,7 @@ var PromptModal = class extends import_obsidian9.Modal {
   onClose() {
     this.contentEl.empty();
     if (!this.submitted) {
-      this.reject();
+      this.reject(new TemplaterError("Cancelled prompt"));
     }
   }
   createForm() {
@@ -2696,16 +2740,11 @@ var PromptModal = class extends import_obsidian9.Modal {
     textInput.inputEl.addEventListener("keydown", (evt) => this.enterCallback(evt));
   }
   enterCallback(evt) {
+    if (evt.isComposing || evt.keyCode === 229)
+      return;
     if (this.multi_line) {
-      if (import_obsidian9.Platform.isDesktop) {
-        if (evt.shiftKey && evt.key === "Enter") {
-        } else if (evt.key === "Enter") {
-          this.resolveAndClose(evt);
-        }
-      } else {
-        if (evt.key === "Enter") {
-          evt.preventDefault();
-        }
+      if (import_obsidian9.Platform.isDesktop && evt.key === "Enter" && !evt.shiftKey) {
+        this.resolveAndClose(evt);
       }
     } else {
       if (evt.key === "Enter") {
@@ -2779,11 +2818,10 @@ var InternalModuleSystem = class extends InternalModule {
   }
   async create_dynamic_templates() {
   }
+  async teardown() {
+  }
   generate_clipboard() {
     return async () => {
-      if (import_obsidian11.Platform.isMobileApp) {
-        return UNSUPPORTED_MOBILE_TEMPLATE;
-      }
       return await navigator.clipboard.readText();
     };
   }
@@ -2827,6 +2865,8 @@ var InternalModuleConfig = class extends InternalModule {
   }
   async create_dynamic_templates() {
   }
+  async teardown() {
+  }
   async generate_object(config) {
     return config;
   }
@@ -2841,12 +2881,18 @@ var InternalFunctions = class {
     this.modules_array.push(new InternalModuleFile(this.plugin));
     this.modules_array.push(new InternalModuleWeb(this.plugin));
     this.modules_array.push(new InternalModuleFrontmatter(this.plugin));
+    this.modules_array.push(new InternalModuleHooks(this.plugin));
     this.modules_array.push(new InternalModuleSystem(this.plugin));
     this.modules_array.push(new InternalModuleConfig(this.plugin));
   }
   async init() {
     for (const mod of this.modules_array) {
       await mod.init();
+    }
+  }
+  async teardown() {
+    for (const mod of this.modules_array) {
+      await mod.teardown();
     }
   }
   async generate_object(config) {
@@ -2861,11 +2907,11 @@ var InternalFunctions = class {
 // src/core/functions/user_functions/UserSystemFunctions.ts
 var import_child_process = __toModule(require("child_process"));
 var import_util = __toModule(require("util"));
-var import_obsidian12 = __toModule(require("obsidian"));
+var import_obsidian11 = __toModule(require("obsidian"));
 var UserSystemFunctions = class {
   constructor(plugin) {
     this.plugin = plugin;
-    if (import_obsidian12.Platform.isMobileApp || !(app.vault.adapter instanceof import_obsidian12.FileSystemAdapter)) {
+    if (import_obsidian11.Platform.isMobileApp || !(app.vault.adapter instanceof import_obsidian11.FileSystemAdapter)) {
       this.cwd = "";
     } else {
       this.cwd = app.vault.adapter.getBasePath();
@@ -2881,7 +2927,7 @@ var UserSystemFunctions = class {
       if (!template || !cmd) {
         continue;
       }
-      if (import_obsidian12.Platform.isMobileApp) {
+      if (import_obsidian11.Platform.isMobileApp) {
         user_system_functions.set(template, () => {
           return new Promise((resolve) => resolve(UNSUPPORTED_MOBILE_TEMPLATE));
         });
@@ -2944,8 +2990,8 @@ var UserScriptFunctions = class {
       exports: exp
     };
     const file_content = await app.vault.read(file);
-    const wrapping_fn = window.eval("(function anonymous(require, module, exports){" + file_content + "\n})");
     try {
+      const wrapping_fn = window.eval("(function anonymous(require, module, exports){" + file_content + "\n})");
       wrapping_fn(req, mod, exp);
     } catch (err) {
       throw new TemplaterError(`Failed to load user script at "${file.path}".`, err.message);
@@ -3003,6 +3049,9 @@ var FunctionsGenerator = class {
   }
   async init() {
     await this.internal_functions.init();
+  }
+  async teardown() {
+    await this.internal_functions.teardown();
   }
   additional_functions() {
     return {
@@ -3484,6 +3533,7 @@ var Templater = class {
     this.parser = new Parser();
   }
   async setup() {
+    this.files_with_pending_templates = new Set();
     await this.parser.init();
     await this.functions_generator.init();
     this.plugin.registerMarkdownPostProcessor((el, ctx) => this.process_dynamic_templates(el, ctx));
@@ -3507,6 +3557,16 @@ var Templater = class {
     const content = await this.parser.parse_commands(template_content, functions_object);
     return content;
   }
+  start_templater_task(path) {
+    this.files_with_pending_templates.add(path);
+  }
+  async end_templater_task(path) {
+    this.files_with_pending_templates.delete(path);
+    if (this.files_with_pending_templates.size === 0) {
+      app.workspace.trigger("templater:all-templates-executed");
+      await this.functions_generator.teardown();
+    }
+  }
   async create_new_note_from_template(template, folder, filename, open_new_note = true) {
     if (!folder) {
       const new_file_location = app.vault.getConfig("newFileLocation");
@@ -3528,10 +3588,24 @@ var Templater = class {
           break;
       }
     }
-    const created_note = await app.fileManager.createNewMarkdownFile(folder, filename ?? "Untitled");
+    const extension = template instanceof import_obsidian12.TFile ? template.extension || "md" : "md";
+    const created_note = await errorWrapper(async () => {
+      const folderPath = folder instanceof import_obsidian12.TFolder ? folder.path : folder;
+      const path2 = app.vault.getAvailablePath((0, import_obsidian12.normalizePath)(`${folderPath ?? ""}/${filename || "Untitled"}`), extension);
+      const folder_path = get_folder_path_from_file_path(path2);
+      if (folder_path && !app.vault.getAbstractFileByPathInsensitive(folder_path)) {
+        await app.vault.createFolder(folder_path);
+      }
+      return app.vault.create(path2, "");
+    }, `Couldn't create ${extension} file.`);
+    if (created_note == null) {
+      return;
+    }
+    const { path } = created_note;
+    this.start_templater_task(path);
     let running_config;
     let output_content;
-    if (template instanceof import_obsidian13.TFile) {
+    if (template instanceof import_obsidian12.TFile) {
       running_config = this.create_running_config(template, created_note, 0);
       output_content = await errorWrapper(async () => this.read_and_parse_template(running_config), "Template parsing error, aborting.");
     } else {
@@ -3540,6 +3614,7 @@ var Templater = class {
     }
     if (output_content == null) {
       await app.vault.delete(created_note);
+      await this.end_templater_task(path);
       return;
     }
     await app.vault.modify(created_note, output_content);
@@ -3561,24 +3636,31 @@ var Templater = class {
         rename: "all"
       });
     }
+    await this.end_templater_task(path);
     return created_note;
   }
   async append_template_to_active_file(template_file) {
-    const active_view = app.workspace.getActiveViewOfType(import_obsidian13.MarkdownView);
+    const active_view = app.workspace.getActiveViewOfType(import_obsidian12.MarkdownView);
     const active_editor = app.workspace.activeEditor;
     if (!active_editor || !active_editor.file || !active_editor.editor) {
       log_error(new TemplaterError("No active editor, can't append templates."));
       return;
     }
+    const { path } = active_editor.file;
+    this.start_templater_task(path);
     const running_config = this.create_running_config(template_file, active_editor.file, 1);
     const output_content = await errorWrapper(async () => this.read_and_parse_template(running_config), "Template parsing error, aborting.");
     if (output_content == null) {
+      await this.end_templater_task(path);
       return;
     }
     const editor = active_editor.editor;
     const doc = editor.getDoc();
     const oldSelections = doc.listSelections();
     doc.replaceSelection(output_content);
+    if (active_editor.file) {
+      await app.vault.append(active_editor.file, "");
+    }
     app.workspace.trigger("templater:template-appended", {
       view: active_view,
       editor: active_editor,
@@ -3587,19 +3669,30 @@ var Templater = class {
       newSelections: doc.listSelections()
     });
     await this.plugin.editor_handler.jump_to_next_cursor_location(active_editor.file, true);
+    await this.end_templater_task(path);
   }
   async write_template_to_file(template_file, file) {
+    const { path } = file;
+    this.start_templater_task(path);
+    const active_editor = app.workspace.activeEditor;
+    const active_file = get_active_file(app);
     const running_config = this.create_running_config(template_file, file, 2);
     const output_content = await errorWrapper(async () => this.read_and_parse_template(running_config), "Template parsing error, aborting.");
     if (output_content == null) {
+      await this.end_templater_task(path);
       return;
     }
     await app.vault.modify(file, output_content);
+    if (active_file?.path === file.path && active_editor && active_editor.editor) {
+      const editor = active_editor.editor;
+      editor.setSelection({ line: 0, ch: 0 }, { line: 0, ch: 0 });
+    }
     app.workspace.trigger("templater:new-note-from-template", {
       file,
       content: output_content
     });
     await this.plugin.editor_handler.jump_to_next_cursor_location(file, true);
+    await this.end_templater_task(path);
   }
   overwrite_active_file_commands() {
     const active_editor = app.workspace.activeEditor;
@@ -3610,9 +3703,12 @@ var Templater = class {
     this.overwrite_file_commands(active_editor.file, true);
   }
   async overwrite_file_commands(file, active_file = false) {
+    const { path } = file;
+    this.start_templater_task(path);
     const running_config = this.create_running_config(file, file, active_file ? 3 : 2);
     const output_content = await errorWrapper(async () => this.read_and_parse_template(running_config), "Template parsing error, aborting.");
     if (output_content == null) {
+      await this.end_templater_task(path);
       return;
     }
     await app.vault.modify(file, output_content);
@@ -3621,6 +3717,7 @@ var Templater = class {
       content: output_content
     });
     await this.plugin.editor_handler.jump_to_next_cursor_location(file, true);
+    await this.end_templater_task(path);
   }
   async process_dynamic_templates(el, ctx) {
     const dynamic_command_regex = generate_dynamic_command_regex();
@@ -3634,7 +3731,7 @@ var Templater = class {
         let match = dynamic_command_regex.exec(content);
         if (match !== null) {
           const file = app.metadataCache.getFirstLinkpathDest("", ctx.sourcePath);
-          if (!file || !(file instanceof import_obsidian13.TFile)) {
+          if (!file || !(file instanceof import_obsidian12.TFile)) {
             return;
           }
           if (!pass) {
@@ -3672,14 +3769,17 @@ var Templater = class {
     } while (folder);
   }
   static async on_file_creation(templater, file) {
-    if (!(file instanceof import_obsidian13.TFile) || file.extension !== "md") {
+    if (!(file instanceof import_obsidian12.TFile) || file.extension !== "md") {
       return;
     }
-    const template_folder = (0, import_obsidian13.normalizePath)(templater.plugin.settings.templates_folder);
+    const template_folder = (0, import_obsidian12.normalizePath)(templater.plugin.settings.templates_folder);
     if (file.path.includes(template_folder) && template_folder !== "/") {
       return;
     }
     await delay(300);
+    if (templater.files_with_pending_templates.has(file.path)) {
+      return;
+    }
     if (file.stat.size == 0 && templater.plugin.settings.enable_folder_templates) {
       const folder_template_match = templater.get_new_file_template_for_folder(file.parent);
       if (!folder_template_match) {
@@ -3709,14 +3809,17 @@ var Templater = class {
       if (!file) {
         continue;
       }
+      const { path } = file;
+      this.start_templater_task(path);
       const running_config = this.create_running_config(file, file, 5);
       await errorWrapper(async () => this.read_and_parse_template(running_config), `Startup Template parsing error, aborting.`);
+      await this.end_templater_task(path);
     }
   }
 };
 
 // src/handlers/EventHandler.ts
-var import_obsidian14 = __toModule(require("obsidian"));
+var import_obsidian13 = __toModule(require("obsidian"));
 var EventHandler = class {
   constructor(plugin, templater, settings) {
     this.plugin = plugin;
@@ -3724,7 +3827,7 @@ var EventHandler = class {
     this.settings = settings;
   }
   setup() {
-    app.workspace.onLayoutReady(() => {
+    this.plugin.app.workspace.onLayoutReady(() => {
       this.update_trigger_file_on_creation();
     });
     this.update_syntax_highlighting();
@@ -3734,36 +3837,25 @@ var EventHandler = class {
     const desktopShouldHighlight = this.plugin.editor_handler.desktopShouldHighlight();
     const mobileShouldHighlight = this.plugin.editor_handler.mobileShouldHighlight();
     if (desktopShouldHighlight || mobileShouldHighlight) {
-      this.syntax_highlighting_event = app.workspace.on("codemirror", (cm) => {
-        cm.setOption("mode", "templater");
-      });
-      app.workspace.iterateCodeMirrors((cm) => {
-        cm.setOption("mode", "templater");
-      });
-      this.plugin.registerEvent(this.syntax_highlighting_event);
+      this.plugin.editor_handler.enable_highlighter();
     } else {
-      if (this.syntax_highlighting_event) {
-        app.vault.offref(this.syntax_highlighting_event);
-      }
-      app.workspace.iterateCodeMirrors((cm) => {
-        cm.setOption("mode", "hypermd");
-      });
+      this.plugin.editor_handler.disable_highlighter();
     }
   }
   update_trigger_file_on_creation() {
     if (this.settings.trigger_on_file_creation) {
-      this.trigger_on_file_creation_event = app.vault.on("create", (file) => Templater.on_file_creation(this.templater, file));
+      this.trigger_on_file_creation_event = this.plugin.app.vault.on("create", (file) => Templater.on_file_creation(this.templater, file));
       this.plugin.registerEvent(this.trigger_on_file_creation_event);
     } else {
       if (this.trigger_on_file_creation_event) {
-        app.vault.offref(this.trigger_on_file_creation_event);
+        this.plugin.app.vault.offref(this.trigger_on_file_creation_event);
         this.trigger_on_file_creation_event = void 0;
       }
     }
   }
   update_file_menu() {
-    this.plugin.registerEvent(app.workspace.on("file-menu", (menu, file) => {
-      if (file instanceof import_obsidian14.TFolder) {
+    this.plugin.registerEvent(this.plugin.app.workspace.on("file-menu", (menu, file) => {
+      if (file instanceof import_obsidian13.TFolder) {
         menu.addItem((item) => {
           item.setTitle("Create new note from template").setIcon("templater-icon").onClick(() => {
             this.plugin.fuzzy_suggester.create_new_note_from_template(file);
@@ -3783,6 +3875,7 @@ var CommandHandler = class {
     this.plugin.addCommand({
       id: "insert-templater",
       name: "Open Insert Template modal",
+      icon: "templater-icon",
       hotkeys: [
         {
           modifiers: ["Alt"],
@@ -3796,6 +3889,7 @@ var CommandHandler = class {
     this.plugin.addCommand({
       id: "replace-in-file-templater",
       name: "Replace templates in the active file",
+      icon: "templater-icon",
       hotkeys: [
         {
           modifiers: ["Alt"],
@@ -3809,6 +3903,7 @@ var CommandHandler = class {
     this.plugin.addCommand({
       id: "jump-to-next-cursor-location",
       name: "Jump to next cursor location",
+      icon: "text-cursor",
       hotkeys: [
         {
           modifiers: ["Alt"],
@@ -3822,6 +3917,7 @@ var CommandHandler = class {
     this.plugin.addCommand({
       id: "create-new-note-from-template",
       name: "Create new note from template",
+      icon: "templater-icon",
       hotkeys: [
         {
           modifiers: ["Alt"],
@@ -3847,6 +3943,7 @@ var CommandHandler = class {
       this.plugin.addCommand({
         id: new_template,
         name: `Insert ${new_template}`,
+        icon: "templater-icon",
         callback: () => {
           const template = errorWrapperSync(() => resolve_tfile(new_template), `Couldn't find the template file associated with this hotkey`);
           if (!template) {
@@ -3868,6 +3965,7 @@ var CommandHandler = class {
 var import_obsidian16 = __toModule(require("obsidian"));
 
 // src/editor/CursorJumper.ts
+var import_obsidian14 = __toModule(require("obsidian"));
 var CursorJumper = class {
   constructor() {
   }
@@ -3879,7 +3977,16 @@ var CursorJumper = class {
     const content = active_editor.editor.getValue();
     const { new_content, positions } = this.replace_and_get_cursor_positions(content);
     if (positions) {
+      const fold_info = active_editor instanceof import_obsidian14.MarkdownView ? active_editor.currentMode.getFoldInfo() : null;
       active_editor.editor.setValue(new_content);
+      if (fold_info && Array.isArray(fold_info.folds)) {
+        positions.forEach((position) => {
+          fold_info.folds = fold_info.folds.filter((fold) => fold.from > position.line || fold.to < position.line);
+        });
+        if (active_editor instanceof import_obsidian14.MarkdownView) {
+          active_editor.currentMode.applyFoldInfo(fold_info);
+        }
+      }
       this.set_cursor_location(positions);
     }
     if (app.vault.getConfig("vimMode")) {
@@ -3949,7 +4056,7 @@ var CursorJumper = class {
 var import_obsidian15 = __toModule(require("obsidian"));
 
 // toml:/home/runner/work/Templater/Templater/docs/documentation.toml
-var tp = { config: { name: "config", description: "This module exposes Templater's running configuration.\n\nThis is mostly useful when writing scripts requiring some context information.\n", functions: { template_file: { name: "template_file", description: "The `TFile` object representing the template file.", definition: "tp.config.template_file" }, target_file: { name: "target_file", description: "The `TFile` object representing the target file where the template will be inserted.", definition: "tp.config.target_file" }, run_mode: { name: "run_mode", description: "The `RunMode`, representing the way Templater was launched (Create new from template, Append to active file, ...)", definition: "tp.config.run_mode" }, active_file: { name: "active_file", description: "The active file (if existing) when launching Templater.", definition: "tp.config.active_file?" } } }, date: { name: "date", description: "This module contains every internal function related to dates.", functions: { now: { name: "now", description: "Retrieves the date.", definition: 'tp.date.now(format: string = "YYYY-MM-DD", offset?: number\u23AEstring, reference?: string, reference_format?: string)', args: [{ name: "format", description: "Format for the date, refer to [format reference](https://momentjs.com/docs/#/displaying/format/)" }, { name: "offset", description: "Offset for the day, e.g. set this to `-7` to get last week's date. You can also specify the offset as a string using the ISO 8601 format" }, { name: "reference", description: "The date referential, e.g. set this to the note's title" }, { name: "reference_format", description: "The date reference format." }] }, tomorrow: { name: "tomorrow", description: "Retrieves tomorrow's date.", definition: 'tp.date.tomorrow(format: string = "YYYY-MM-DD")', args: [{ name: "format", description: "Format for the date, refer to [format reference](https://momentjs.com/docs/#/displaying/format/)" }] }, yesterday: { name: "yesterday", description: "Retrieves yesterday's date.", definition: 'tp.date.yesterday(format: string = "YYYY-MM-DD")', args: [{ name: "format", description: "Format for the date, refer to [format reference](https://momentjs.com/docs/#/displaying/format/)" }] }, weekday: { name: "weekday", description: "", definition: 'tp.date.weekday(format: string = "YYYY-MM-DD", weekday: number, reference?: string, reference_format?: string)', args: [{ name: "format", description: "Format for the date, refer to [format reference](https://momentjs.com/docs/#/displaying/format/)" }, { name: "weekday", description: "Week day number. If the locale assigns Monday as the first day of the week, `0` will be Monday, `-7` will be last week's day." }, { name: "reference", description: "The date referential, e.g. set this to the note's title" }, { name: "reference_format", description: "The date reference format." }] } } }, file: { name: "file", description: "This module contains every internal function related to files.", functions: { content: { name: "content", description: "Retrieves the file's content", definition: "tp.file.content" }, create_new: { name: "create_new", description: "Creates a new file using a specified template or with a specified content.", definition: "tp.file.create_new(template: TFile \u23AE string, filename?: string, open_new: boolean = false, folder?: TFolder)", args: [{ name: "template", description: "Either the template used for the new file content, or the file content as a string. If it is the template to use, you retrieve it with `tp.file.find_tfile(TEMPLATENAME)`" }, { name: "filename", description: 'The filename of the new file, defaults to "Untitled".' }, { name: "open_new", description: "Whether to open or not the newly created file. Warning: if you use this option, since commands are executed asynchronously, the file can be opened first and then other commands are appended to that new file and not the previous file." }, { name: "folder", description: 'The folder to put the new file in, defaults to obsidian\'s default location. If you want the file to appear in a different folder, specify it with `app.vault.getAbstractFileByPath("FOLDERNAME")`' }] }, creation_date: { name: "creation_date", description: "Retrieves the file's creation date.", definition: 'tp.file.creation_date(format: string = "YYYY-MM-DD HH:mm")', args: [{ name: "format", description: "Format for the date, refer to format reference" }] }, cursor: { name: "cursor", description: "Sets the cursor to this location after the template has been inserted. \n\nYou can navigate between the different tp.file.cursor using the configured hotkey in obsidian settings.\n", definition: "tp.file.cursor(order?: number)", args: [{ name: "order", description: "The order of the different cursors jump, e.g. it will jump from 1 to 2 to 3, and so on.\nIf you specify multiple tp.file.cursor with the same order, the editor will switch to multi-cursor.\n" }] }, cursor_append: { name: "cursor_append", description: "Appends some content after the active cursor in the file.", definition: "tp.file.cursor_append(content: string)", args: [{ name: "content", description: "The content to append after the active cursor" }] }, exists: { name: "exists", description: "The filename of the file we want to check existence. The fullpath to the file, relative to the Vault and containing the extension, must be provided. e.g. MyFolder/SubFolder/MyFile.", definition: "tp.file.exists(filename: string)", args: [{ name: "filename", description: "The filename of the file we want to check existence, e.g. MyFile." }] }, find_tfile: { name: "find_tfile", description: "Search for a file and returns its `TFile` instance", definition: "tp.file.find_tfile(filename: string)", args: [{ name: "filename", description: "The filename we want to search and resolve as a `TFile`" }] }, folder: { name: "folder", description: "Retrieves the file's folder name.", definition: "tp.file.folder(relative: boolean = false)", args: [{ name: "relative", description: "If set to true, appends the vault relative path to the folder name." }] }, include: { name: "include", description: "Includes the file's link content. Templates in the included content will be resolved.", definition: "tp.file.include(include_link: string \u23AE TFile)", args: [{ name: "include_link", description: "The link to the file to include, e.g. [[MyFile]], or a TFile object. Also supports sections or blocks inclusions, e.g. [[MyFile#Section1]]" }] }, last_modified_date: { name: "last_modified_date", description: "Retrieves the file's last modification date.", definition: 'tp.file.last_modified_date(format: string = "YYYY-MM-DD HH:mm")', args: [{ name: "format", description: "Format for the date, refer to format reference." }] }, move: { name: "functions.move", description: "Moves the file to the desired vault location.", definition: "tp.file.move(new_path: string, file_to_move?: TFile)", example: '<% tp.file.move("/Notes/MyNote") %>', args: [{ name: "new_path", description: 'The new vault relative path of the file, without the file extension. Note: the new path needs to include the folder and the filename, e.g. `"/Notes/MyNote"`' }, { name: "file_to_move", description: "The file to move, defaults to the current file." }] }, path: { name: "path", description: "Retrieves the file's absolute path on the system.", definition: "tp.file.path(relative: boolean = false)", args: [{ name: "relative", description: "If set to true, only retrieves the vault's relative path." }] }, rename: { name: "rename", description: "Renames the file (keeps the same file extension).", definition: "tp.file.rename(new_title: string)", args: [{ name: "new_title", description: "The new file title." }] }, selection: { name: "selection", description: "Retrieves the active file's text selection.", definition: "tp.file.selection()" }, tags: { name: "tags", description: "Retrieves the file's tags (array of string)", definition: "tp.file.tags" }, title: { name: "title", definition: "tp.file.title", description: "Retrieves the file's title." } } }, frontmatter: { name: "frontmatter", description: "This modules exposes all the frontmatter variables of a file as variables." }, obsidian: { name: "obsidian", description: "This module exposes all the functions and classes from the obsidian API." }, system: { name: "system", description: "This module contains system related functions.", functions: { clipboard: { name: "clipboard", description: "Retrieves the clipboard's content", definition: "tp.system.clipboard()" }, prompt: { name: "prompt", description: "Spawns a prompt modal and returns the user's input.", definition: "tp.system.prompt(prompt_text?: string, default_value?: string, throw_on_cancel: boolean = false, multiline?: boolean = false)", args: [{ name: "prompt_text", description: "Text placed above the input field" }, { name: "default_value", description: "A default value for the input field" }, { name: "throw_on_cancel", description: "Throws an error if the prompt is canceled, instead of returning a `null` value" }, { name: "multiline", description: "If set to true, the input field will be a multiline textarea" }] }, suggester: { name: "suggester", description: "Spawns a suggester prompt and returns the user's chosen item.", definition: 'tp.system.suggester(text_items: string[] \u23AE ((item: T) => string), items: T[], throw_on_cancel: boolean = false, placeholder: string = "", limit?: number = undefined)', args: [{ name: "text_items", description: "Array of strings representing the text that will be displayed for each item in the suggester prompt. This can also be a function that maps an item to its text representation." }, { name: "items", description: "Array containing the values of each item in the correct order." }, { name: "throw_on_cancel", description: "Throws an error if the prompt is canceled, instead of returning a `null` value" }, { name: "placeholder", description: "Placeholder string of the prompt" }, { name: "limit", description: "Limit the number of items rendered at once (useful to improve performance when displaying large lists)" }] } } }, web: { name: "web", description: "This modules contains every internal function related to the web (making web requests).", functions: { daily_quote: { name: "daily_quote", description: "Retrieves and parses the daily quote from the API https://api.quotable.io", definition: "tp.web.daily_quote()" }, random_picture: { name: "random_picture", description: "Gets a random image from https://unsplash.com/", definition: "tp.web.random_picture(size?: string, query?: string, include_size?: boolean)", args: [{ name: "size", description: "Image size in the format `<width>x<height>`" }, { name: "query", description: "Limits selection to photos matching a search term. Multiple search terms can be passed separated by a comma `,`" }, { name: "include_size", description: "Optional argument to include the specified size in the image link markdown. Defaults to false" }] } } } };
+var tp = { config: { name: "config", description: "This module exposes Templater's running configuration.\n\nThis is mostly useful when writing scripts requiring some context information.\n", functions: { template_file: { name: "template_file", description: "The `TFile` object representing the template file.", definition: "tp.config.template_file" }, target_file: { name: "target_file", description: "The `TFile` object representing the target file where the template will be inserted.", definition: "tp.config.target_file" }, run_mode: { name: "run_mode", description: "The `RunMode`, representing the way Templater was launched (Create new from template, Append to active file, ...).", definition: "tp.config.run_mode" }, active_file: { name: "active_file", description: "The active file (if existing) when launching Templater.", definition: "tp.config.active_file?" } } }, date: { name: "date", description: "This module contains every internal function related to dates.", functions: { now: { name: "now", description: "Retrieves the date.", definition: 'tp.date.now(format: string = "YYYY-MM-DD", offset?: number\u23AEstring, reference?: string, reference_format?: string)', args: [{ name: "format", description: 'The format for the date. Defaults to `"YYYY-MM-DD"`. Refer to [format reference](https://momentjs.com/docs/#/displaying/format/).' }, { name: "offset", description: "Duration to offset the date from. If a number is provided, duration will be added to the date in days. You can also specify the offset as a string using the ISO 8601 format." }, { name: "reference", description: "The date referential, e.g. set this to the note's title." }, { name: "reference_format", description: "The format for the reference date. Refer to [format reference](https://momentjs.com/docs/#/displaying/format/)." }], examples: [{ name: "Date now", example: "<% tp.date.now() %>" }, { name: "Date now with format", example: '<% tp.date.now("Do MMMM YYYY") %>' }, { name: "Last week", example: '<% tp.date.now("YYYY-MM-DD", -7) %>' }, { name: "Next week", example: '<% tp.date.now("YYYY-MM-DD", 7) %>' }, { name: "Last month", example: '<% tp.date.now("YYYY-MM-DD", "P-1M") %>' }, { name: "Next year", example: '<% tp.date.now("YYYY-MM-DD", "P1Y") %>' }, { name: "File's title date + 1 day (tomorrow)", example: '<% tp.date.now("YYYY-MM-DD", 1, tp.file.title, "YYYY-MM-DD") %>' }, { name: "File's title date - 1 day (yesterday)", example: '<% tp.date.now("YYYY-MM-DD", -1, tp.file.title, "YYYY-MM-DD") %>' }] }, tomorrow: { name: "tomorrow", description: "Retrieves tomorrow's date.", definition: 'tp.date.tomorrow(format: string = "YYYY-MM-DD")', args: [{ name: "format", description: 'The format for the date. Defaults to `"YYYY-MM-DD"`. Refer to [format reference](https://momentjs.com/docs/#/displaying/format/).' }], examples: [{ name: "Date tomorrow", example: "<% tp.date.tomorrow() %>" }, { name: "Date tomorrow with format", example: '<% tp.date.tomorrow("Do MMMM YYYY") %>' }] }, yesterday: { name: "yesterday", description: "Retrieves yesterday's date.", definition: 'tp.date.yesterday(format: string = "YYYY-MM-DD")', args: [{ name: "format", description: 'The format for the date. Defaults to `"YYYY-MM-DD"`. Refer to [format reference](https://momentjs.com/docs/#/displaying/format/).' }], examples: [{ name: "Date yesterday", example: "<% tp.date.yesterday() %>" }, { name: "Date yesterday with format", example: '<% tp.date.yesterday("Do MMMM YYYY") %>' }] }, weekday: { name: "weekday", description: "", definition: 'tp.date.weekday(format: string = "YYYY-MM-DD", weekday: number, reference?: string, reference_format?: string)', args: [{ name: "format", description: 'The format for the date. Defaults to `"YYYY-MM-DD"`. Refer to [format reference](https://momentjs.com/docs/#/displaying/format/).' }, { name: "weekday", description: "Week day number. If the locale assigns Monday as the first day of the week, `0` will be Monday, `-7` will be last week's day." }, { name: "reference", description: "The date referential, e.g. set this to the note's title." }, { name: "reference_format", description: "The format for the reference date. Refer to [format reference](https://momentjs.com/docs/#/displaying/format/)." }], examples: [{ name: "This week's Monday", example: '<% tp.date.weekday("YYYY-MM-DD", 0) %>' }, { name: "Next Monday", example: '<% tp.date.weekday("YYYY-MM-DD", 7) %>' }, { name: "File's title Monday", example: '<% tp.date.weekday("YYYY-MM-DD", 0, tp.file.title, "YYYY-MM-DD") %>' }, { name: "File's title previous Monday", example: '<% tp.date.weekday("YYYY-MM-DD", -7, tp.file.title, "YYYY-MM-DD") %>' }] } }, momentjs: { examples: [{ name: "Date now", example: '<% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>' }, { name: "Get start of month from note title", example: '<% moment(tp.file.title, "YYYY-MM-DD").startOf("month").format("YYYY-MM-DD") %>' }, { name: "Get end of month from note title", example: '<% moment(tp.file.title, "YYYY-MM-DD").endOf("month").format("YYYY-MM-DD") %>' }] } }, file: { name: "file", description: "This module contains every internal function related to files.", functions: { content: { name: "content", description: "The string contents of the file at the time that Templater was executed. Manipulating this string will *not* update the current file.", definition: "tp.file.content", examples: [{ name: "Retrieve file content", example: "<% tp.file.content %>" }] }, create_new: { name: "create_new", description: "Creates a new file using a specified template or with a specified content.", definition: "tp.file.create_new(template: TFile \u23AE string, filename?: string, open_new: boolean = false, folder?: TFolder | string)", args: [{ name: "template", description: "Either the template used for the new file content, or the file content as a string. If it is the template to use, you retrieve it with `tp.file.find_tfile(TEMPLATENAME)`." }, { name: "filename", description: 'The filename of the new file, defaults to "Untitled".' }, { name: "open_new", description: "Whether to open or not the newly created file. Warning: if you use this option, since commands are executed asynchronously, the file can be opened first and then other commands are appended to that new file and not the previous file." }, { name: "folder", description: 'The folder to put the new file in, defaults to Obsidian\'s default location. If you want the file to appear in a different folder, specify it with `"PATH/TO/FOLDERNAME"` or `app.vault.getAbstractFileByPath("PATH/TO/FOLDERNAME")`.' }], examples: [{ name: "File creation", example: '<%* await tp.file.create_new("MyFileContent", "MyFilename") %>' }, { name: "File creation with template", example: '<%* await tp.file.create_new(tp.file.find_tfile("MyTemplate"), "MyFilename") %>' }, { name: "File creation and open created note", example: '<%* await tp.file.create_new("MyFileContent", "MyFilename", true) %>' }, { name: "File creation in current folder", example: '<%* await tp.file.create_new("MyFileContent", "MyFilename", false, tp.file.folder(true)) %>' }, { name: "File creation in specified folder with string path", example: '<%* await tp.file.create_new("MyFileContent", "MyFilename", false, "Path/To/MyFolder") %>' }, { name: "File creation in specified folder with TFolder", example: '<%* await tp.file.create_new("MyFileContent", "MyFilename", false, app.vault.getAbstractFileByPath("MyFolder")) %>' }, { name: "File creation and append link to current note", example: '[[<% (await tp.file.create_new("MyFileContent", "MyFilename")).basename %>]]' }] }, creation_date: { name: "creation_date", description: "Retrieves the file's creation date.", definition: 'tp.file.creation_date(format: string = "YYYY-MM-DD HH:mm")', args: [{ name: "format", description: 'The format for the date. Defaults to `"YYYY-MM-DD HH:mm"`. Refer to [format reference](https://momentjs.com/docs/#/displaying/format/).' }], examples: [{ name: "File creation date", example: "<% tp.file.creation_date() %>" }, { name: "File creation date with format", example: '<% tp.file.creation_date("dddd Do MMMM YYYY HH:mm") %>' }] }, cursor: { name: "cursor", description: "Sets the cursor to this location after the template has been inserted. \n\nYou can navigate between the different cursors using the configured hotkey in Obsidian settings.\n", definition: "tp.file.cursor(order?: number)", args: [{ name: "order", description: "The order of the different cursors jump, e.g. it will jump from 1 to 2 to 3, and so on.\nIf you specify multiple tp.file.cursor with the same order, the editor will switch to multi-cursor.\n" }], examples: [{ name: "File cursor", example: "<% tp.file.cursor() %>" }, { name: "File multi-cursor", example: "<% tp.file.cursor(1) %>Content<% tp.file.cursor(1) %>" }] }, cursor_append: { name: "cursor_append", description: "Appends some content after the active cursor in the file.", definition: "tp.file.cursor_append(content: string)", args: [{ name: "content", description: "The content to append after the active cursor." }], examples: [{ name: "File cursor append", example: '<% tp.file.cursor_append("Some text") %>' }] }, exists: { name: "exists", description: "Check to see if a file exists by it's file path. The full path to the file, relative to the Vault and containing the extension, must be provided.", definition: "tp.file.exists(filepath: string)", args: [{ name: "filepath", description: "The full file path of the file we want to check existence for." }], examples: [{ name: "File existence", example: '<% await tp.file.exists("MyFolder/MyFile.md") %>' }, { name: "File existence of current file", example: '<% await tp.file.exists(tp.file.folder(true) + "/" + tp.file.title + ".md") %>' }] }, find_tfile: { name: "find_tfile", description: "Search for a file and returns its `TFile` instance.", definition: "tp.file.find_tfile(filename: string)", args: [{ name: "filename", description: "The filename we want to search and resolve as a `TFile`." }], examples: [{ name: "File find TFile", example: '<% tp.file.find_tfile("MyFile").basename %>' }] }, folder: { name: "folder", description: "Retrieves the file's folder name.", definition: "tp.file.folder(relative: boolean = false)", args: [{ name: "relative", description: "If set to `true`, appends the vault relative path to the folder name. If `false`, only retrieves name of folder. Defaults to `false`." }], examples: [{ name: "File folder (Folder)", example: "<% tp.file.folder() %>" }, { name: "File folder with relative path (Path/To/Folder)", example: "<% tp.file.folder(true) %>" }] }, include: { name: "include", description: "Includes the file's link content. Templates in the included content will be resolved.", definition: "tp.file.include(include_link: string \u23AE TFile)", args: [{ name: "include_link", description: 'The link to the file to include, e.g. `"[[MyFile]]"`, or a TFile object. Also supports sections or blocks inclusions.' }], examples: [{ name: "File include", example: '<% tp.file.include("[[Template1]]") %>' }, { name: "File include TFile", example: '<% tp.file.include(tp.file.find_tfile("MyFile")) %>' }, { name: "File include section", example: '<% tp.file.include("[[MyFile#Section1]]") %>' }, { name: "File include block", example: '<% tp.file.include("[[MyFile#^block1]]") %>' }] }, last_modified_date: { name: "last_modified_date", description: "Retrieves the file's last modification date.", definition: 'tp.file.last_modified_date(format: string = "YYYY-MM-DD HH:mm")', args: [{ name: "format", description: 'The format for the date. Defaults to `"YYYY-MM-DD HH:mm"`. Refer to [format reference](https://momentjs.com/docs/#/displaying/format/).' }], examples: [{ name: "File last modified date", example: "<% tp.file.last_modified_date() %>" }, { name: "File last modified date with format", example: '<% tp.file.last_modified_date("dddd Do MMMM YYYY HH:mm") %>' }] }, move: { name: "move", description: "Moves the file to the desired vault location.", definition: "tp.file.move(new_path: string, file_to_move?: TFile)", args: [{ name: "new_path", description: 'The new vault relative path of the file, without the file extension. Note: the new path needs to include the folder and the filename, e.g. `"/Notes/MyNote"`.' }, { name: "file_to_move", description: "The file to move, defaults to the current file." }], examples: [{ name: "File move", example: '<% await tp.file.move("/A/B/" + tp.file.title) %>' }, { name: "File move and rename", example: '<% await tp.file.move("/A/B/NewTitle") %>' }] }, path: { name: "path", description: "Retrieves the file's absolute path on the system.", definition: "tp.file.path(relative: boolean = false)", args: [{ name: "relative", description: "If set to `true`, only retrieves the vault's relative path." }], examples: [{ name: "File path", example: "<% tp.file.path() %>" }, { name: "File relative path (relative to vault root)", example: "<% tp.file.path(true) %>" }] }, rename: { name: "rename", description: "Renames the file (keeps the same file extension).", definition: "tp.file.rename(new_title: string)", args: [{ name: "new_title", description: "The new file title." }], examples: [{ name: "File rename", example: '<% await tp.file.rename("MyNewName") %>' }, { name: "File append a 2 to the file name", example: '<% await tp.file.rename(tp.file.title + "2") %>' }] }, selection: { name: "selection", description: "Retrieves the active file's text selection.", definition: "tp.file.selection()", examples: [{ name: "File selection", example: "<% tp.file.selection() %>" }] }, tags: { name: "tags", description: "Retrieves the file's tags (array of string).", definition: "tp.file.tags", examples: [{ name: "File tags", example: "<% tp.file.tags %>" }] }, title: { name: "title", definition: "tp.file.title", description: "Retrieves the file's title.", examples: [{ name: "File title", example: "<% tp.file.title %>" }, { name: "Strip the Zettelkasten ID of title (if space separated)", example: '<% tp.file.title.split(" ")[1] %>' }] } } }, frontmatter: { name: "frontmatter", description: "This modules exposes all the frontmatter variables of a file as variables." }, hooks: { name: "hooks", description: "This module exposes hooks that allow you to execute code when a Templater event occurs.", functions: { on_all_templates_executed: { name: "on_all_templates_executed", description: "Hooks into when all actively running templates have finished executing. Most of the time this will be a single template, unless you are using `tp.file.include` or `tp.file.create_new`.\n\nMultiple invokations of this method will have their callback functions run in parallel.", definition: "tp.hooks.on_all_templates_executed(callback_function: () => any)", args: [{ name: "callback_function", description: "Callback function that will be executed when all actively running templates have finished executing." }] } } }, obsidian: { name: "obsidian", description: "This module exposes all the functions and classes from the Obsidian API." }, system: { name: "system", description: "This module contains system related functions.", functions: { clipboard: { name: "clipboard", description: "Retrieves the clipboard's content.", definition: "tp.system.clipboard()", examples: [{ name: "Clipboard", example: "<% tp.system.clipboard() %>" }] }, prompt: { name: "prompt", description: "Spawns a prompt modal and returns the user's input.", definition: "tp.system.prompt(prompt_text?: string, default_value?: string, throw_on_cancel: boolean = false, multiline?: boolean = false)", args: [{ name: "prompt_text", description: "Text placed above the input field." }, { name: "default_value", description: "A default value for the input field." }, { name: "throw_on_cancel", description: "Throws an error if the prompt is canceled, instead of returning a `null` value." }, { name: "multiline", description: "If set to `true`, the input field will be a multiline textarea. Defaults to `false`." }], examples: [{ name: "Prompt", example: '<% tp.system.prompt("Please enter a value") %>' }, { name: "Prompt with default value", example: '<% tp.system.prompt("What is your mood today?", "happy") %>' }, { name: "Multiline prompt", example: '<% tp.system.prompt("What is your mood today?", null, false, true) %>' }] }, suggester: { name: "suggester", description: "Spawns a suggester prompt and returns the user's chosen item.", definition: 'tp.system.suggester(text_items: string[] \u23AE ((item: T) => string), items: T[], throw_on_cancel: boolean = false, placeholder: string = "", limit?: number = undefined)', args: [{ name: "text_items", description: "Array of strings representing the text that will be displayed for each item in the suggester prompt. This can also be a function that maps an item to its text representation." }, { name: "items", description: "Array containing the values of each item in the correct order." }, { name: "throw_on_cancel", description: "Throws an error if the prompt is canceled, instead of returning a `null` value." }, { name: "placeholder", description: "Placeholder string of the prompt." }, { name: "limit", description: "Limit the number of items rendered at once (useful to improve performance when displaying large lists)." }], examples: [{ name: "Suggester", example: '<% tp.system.suggester(["Happy", "Sad", "Confused"], ["Happy", "Sad", "Confused"]) %>' }, { name: "Suggester with mapping function (same as above example)", example: '<% tp.system.suggester((item) => item, ["Happy", "Sad", "Confused"]) %>' }, { name: "Suggester for files", example: "[[<% (await tp.system.suggester((item) => item.basename, app.vault.getMarkdownFiles())).basename %>]]" }, { name: "Suggester for tags", example: '<% tp.system.suggester(item => item, Object.keys(app.metadataCache.getTags()).map(x => x.replace("#", ""))) %>' }] } } }, web: { name: "web", description: "This modules contains every internal function related to the web (making web requests).", functions: { daily_quote: { name: "daily_quote", description: "Retrieves and parses the daily quote from the API `https://api.quotable.io` as a callout.", definition: "tp.web.daily_quote()", examples: [{ name: "Daily quote", example: "<% tp.web.daily_quote() %>" }] }, random_picture: { name: "random_picture", description: "Gets a random image from `https://unsplash.com/`.", definition: "tp.web.random_picture(size?: string, query?: string, include_size?: boolean)", args: [{ name: "size", description: "Image size in the format `<width>x<height>`." }, { name: "query", description: "Limits selection to photos matching a search term. Multiple search terms can be passed separated by a comma." }, { name: "include_size", description: "Optional argument to include the specified size in the image link markdown. Defaults to false." }], examples: [{ name: "Random picture", example: "<% tp.web.random_picture() %>" }, { name: "Random picture with size", example: '<% tp.web.random_picture("200x200") %>' }, { name: "Random picture with size and query", example: '<% tp.web.random_picture("200x200", "landscape,water") %>' }] } } } };
 var documentation_default = { tp };
 
 // src/editor/TpDocumentation.ts
@@ -3958,6 +4065,7 @@ var module_names = [
   "date",
   "file",
   "frontmatter",
+  "hooks",
   "obsidian",
   "system",
   "user",
@@ -4378,4 +4486,1161 @@ var Autocomplete = class extends import_obsidian15.EditorSuggest {
         state.lexical.align = true;
       while (true) {
         var combinator = cc.length ? cc.pop() : jsonMode ? expression : statement;
-        if (combinator(
+        if (combinator(type2, content2)) {
+          while (cc.length && cc[cc.length - 1].lex)
+            cc.pop()();
+          if (cx.marked)
+            return cx.marked;
+          if (type2 == "variable" && inScope(state, content2))
+            return "variable-2";
+          return style;
+        }
+      }
+    }
+    var cx = { state: null, column: null, marked: null, cc: null };
+    function pass() {
+      for (var i = arguments.length - 1; i >= 0; i--)
+        cx.cc.push(arguments[i]);
+    }
+    function cont() {
+      pass.apply(null, arguments);
+      return true;
+    }
+    function inList(name, list) {
+      for (var v = list; v; v = v.next)
+        if (v.name == name)
+          return true;
+      return false;
+    }
+    function register(varname) {
+      var state = cx.state;
+      cx.marked = "def";
+      if (!trackScope)
+        return;
+      if (state.context) {
+        if (state.lexical.info == "var" && state.context && state.context.block) {
+          var newContext = registerVarScoped(varname, state.context);
+          if (newContext != null) {
+            state.context = newContext;
+            return;
+          }
+        } else if (!inList(varname, state.localVars)) {
+          state.localVars = new Var(varname, state.localVars);
+          return;
+        }
+      }
+      if (parserConfig.globalVars && !inList(varname, state.globalVars))
+        state.globalVars = new Var(varname, state.globalVars);
+    }
+    function registerVarScoped(varname, context) {
+      if (!context) {
+        return null;
+      } else if (context.block) {
+        var inner = registerVarScoped(varname, context.prev);
+        if (!inner)
+          return null;
+        if (inner == context.prev)
+          return context;
+        return new Context(inner, context.vars, true);
+      } else if (inList(varname, context.vars)) {
+        return context;
+      } else {
+        return new Context(context.prev, new Var(varname, context.vars), false);
+      }
+    }
+    function isModifier(name) {
+      return name == "public" || name == "private" || name == "protected" || name == "abstract" || name == "readonly";
+    }
+    function Context(prev, vars, block2) {
+      this.prev = prev;
+      this.vars = vars;
+      this.block = block2;
+    }
+    function Var(name, next) {
+      this.name = name;
+      this.next = next;
+    }
+    var defaultVars = new Var("this", new Var("arguments", null));
+    function pushcontext() {
+      cx.state.context = new Context(cx.state.context, cx.state.localVars, false);
+      cx.state.localVars = defaultVars;
+    }
+    function pushblockcontext() {
+      cx.state.context = new Context(cx.state.context, cx.state.localVars, true);
+      cx.state.localVars = null;
+    }
+    function popcontext() {
+      cx.state.localVars = cx.state.context.vars;
+      cx.state.context = cx.state.context.prev;
+    }
+    popcontext.lex = true;
+    function pushlex(type2, info) {
+      var result = function() {
+        var state = cx.state, indent = state.indented;
+        if (state.lexical.type == "stat")
+          indent = state.lexical.indented;
+        else
+          for (var outer = state.lexical; outer && outer.type == ")" && outer.align; outer = outer.prev)
+            indent = outer.indented;
+        state.lexical = new JSLexical(indent, cx.stream.column(), type2, null, state.lexical, info);
+      };
+      result.lex = true;
+      return result;
+    }
+    function poplex() {
+      var state = cx.state;
+      if (state.lexical.prev) {
+        if (state.lexical.type == ")")
+          state.indented = state.lexical.indented;
+        state.lexical = state.lexical.prev;
+      }
+    }
+    poplex.lex = true;
+    function expect(wanted) {
+      function exp(type2) {
+        if (type2 == wanted)
+          return cont();
+        else if (wanted == ";" || type2 == "}" || type2 == ")" || type2 == "]")
+          return pass();
+        else
+          return cont(exp);
+      }
+      return exp;
+    }
+    function statement(type2, value) {
+      if (type2 == "var")
+        return cont(pushlex("vardef", value), vardef, expect(";"), poplex);
+      if (type2 == "keyword a")
+        return cont(pushlex("form"), parenExpr, statement, poplex);
+      if (type2 == "keyword b")
+        return cont(pushlex("form"), statement, poplex);
+      if (type2 == "keyword d")
+        return cx.stream.match(/^\s*$/, false) ? cont() : cont(pushlex("stat"), maybeexpression, expect(";"), poplex);
+      if (type2 == "debugger")
+        return cont(expect(";"));
+      if (type2 == "{")
+        return cont(pushlex("}"), pushblockcontext, block, poplex, popcontext);
+      if (type2 == ";")
+        return cont();
+      if (type2 == "if") {
+        if (cx.state.lexical.info == "else" && cx.state.cc[cx.state.cc.length - 1] == poplex)
+          cx.state.cc.pop()();
+        return cont(pushlex("form"), parenExpr, statement, poplex, maybeelse);
+      }
+      if (type2 == "function")
+        return cont(functiondef);
+      if (type2 == "for")
+        return cont(pushlex("form"), pushblockcontext, forspec, statement, popcontext, poplex);
+      if (type2 == "class" || isTS && value == "interface") {
+        cx.marked = "keyword";
+        return cont(pushlex("form", type2 == "class" ? type2 : value), className, poplex);
+      }
+      if (type2 == "variable") {
+        if (isTS && value == "declare") {
+          cx.marked = "keyword";
+          return cont(statement);
+        } else if (isTS && (value == "module" || value == "enum" || value == "type") && cx.stream.match(/^\s*\w/, false)) {
+          cx.marked = "keyword";
+          if (value == "enum")
+            return cont(enumdef);
+          else if (value == "type")
+            return cont(typename, expect("operator"), typeexpr, expect(";"));
+          else
+            return cont(pushlex("form"), pattern, expect("{"), pushlex("}"), block, poplex, poplex);
+        } else if (isTS && value == "namespace") {
+          cx.marked = "keyword";
+          return cont(pushlex("form"), expression, statement, poplex);
+        } else if (isTS && value == "abstract") {
+          cx.marked = "keyword";
+          return cont(statement);
+        } else {
+          return cont(pushlex("stat"), maybelabel);
+        }
+      }
+      if (type2 == "switch")
+        return cont(pushlex("form"), parenExpr, expect("{"), pushlex("}", "switch"), pushblockcontext, block, poplex, poplex, popcontext);
+      if (type2 == "case")
+        return cont(expression, expect(":"));
+      if (type2 == "default")
+        return cont(expect(":"));
+      if (type2 == "catch")
+        return cont(pushlex("form"), pushcontext, maybeCatchBinding, statement, poplex, popcontext);
+      if (type2 == "export")
+        return cont(pushlex("stat"), afterExport, poplex);
+      if (type2 == "import")
+        return cont(pushlex("stat"), afterImport, poplex);
+      if (type2 == "async")
+        return cont(statement);
+      if (value == "@")
+        return cont(expression, statement);
+      return pass(pushlex("stat"), expression, expect(";"), poplex);
+    }
+    function maybeCatchBinding(type2) {
+      if (type2 == "(")
+        return cont(funarg, expect(")"));
+    }
+    function expression(type2, value) {
+      return expressionInner(type2, value, false);
+    }
+    function expressionNoComma(type2, value) {
+      return expressionInner(type2, value, true);
+    }
+    function parenExpr(type2) {
+      if (type2 != "(")
+        return pass();
+      return cont(pushlex(")"), maybeexpression, expect(")"), poplex);
+    }
+    function expressionInner(type2, value, noComma) {
+      if (cx.state.fatArrowAt == cx.stream.start) {
+        var body = noComma ? arrowBodyNoComma : arrowBody;
+        if (type2 == "(")
+          return cont(pushcontext, pushlex(")"), commasep(funarg, ")"), poplex, expect("=>"), body, popcontext);
+        else if (type2 == "variable")
+          return pass(pushcontext, pattern, expect("=>"), body, popcontext);
+      }
+      var maybeop = noComma ? maybeoperatorNoComma : maybeoperatorComma;
+      if (atomicTypes.hasOwnProperty(type2))
+        return cont(maybeop);
+      if (type2 == "function")
+        return cont(functiondef, maybeop);
+      if (type2 == "class" || isTS && value == "interface") {
+        cx.marked = "keyword";
+        return cont(pushlex("form"), classExpression, poplex);
+      }
+      if (type2 == "keyword c" || type2 == "async")
+        return cont(noComma ? expressionNoComma : expression);
+      if (type2 == "(")
+        return cont(pushlex(")"), maybeexpression, expect(")"), poplex, maybeop);
+      if (type2 == "operator" || type2 == "spread")
+        return cont(noComma ? expressionNoComma : expression);
+      if (type2 == "[")
+        return cont(pushlex("]"), arrayLiteral, poplex, maybeop);
+      if (type2 == "{")
+        return contCommasep(objprop, "}", null, maybeop);
+      if (type2 == "quasi")
+        return pass(quasi, maybeop);
+      if (type2 == "new")
+        return cont(maybeTarget(noComma));
+      return cont();
+    }
+    function maybeexpression(type2) {
+      if (type2.match(/[;\}\)\],]/))
+        return pass();
+      return pass(expression);
+    }
+    function maybeoperatorComma(type2, value) {
+      if (type2 == ",")
+        return cont(maybeexpression);
+      return maybeoperatorNoComma(type2, value, false);
+    }
+    function maybeoperatorNoComma(type2, value, noComma) {
+      var me = noComma == false ? maybeoperatorComma : maybeoperatorNoComma;
+      var expr = noComma == false ? expression : expressionNoComma;
+      if (type2 == "=>")
+        return cont(pushcontext, noComma ? arrowBodyNoComma : arrowBody, popcontext);
+      if (type2 == "operator") {
+        if (/\+\+|--/.test(value) || isTS && value == "!")
+          return cont(me);
+        if (isTS && value == "<" && cx.stream.match(/^([^<>]|<[^<>]*>)*>\s*\(/, false))
+          return cont(pushlex(">"), commasep(typeexpr, ">"), poplex, me);
+        if (value == "?")
+          return cont(expression, expect(":"), expr);
+        return cont(expr);
+      }
+      if (type2 == "quasi") {
+        return pass(quasi, me);
+      }
+      if (type2 == ";")
+        return;
+      if (type2 == "(")
+        return contCommasep(expressionNoComma, ")", "call", me);
+      if (type2 == ".")
+        return cont(property, me);
+      if (type2 == "[")
+        return cont(pushlex("]"), maybeexpression, expect("]"), poplex, me);
+      if (isTS && value == "as") {
+        cx.marked = "keyword";
+        return cont(typeexpr, me);
+      }
+      if (type2 == "regexp") {
+        cx.state.lastType = cx.marked = "operator";
+        cx.stream.backUp(cx.stream.pos - cx.stream.start - 1);
+        return cont(expr);
+      }
+    }
+    function quasi(type2, value) {
+      if (type2 != "quasi")
+        return pass();
+      if (value.slice(value.length - 2) != "${")
+        return cont(quasi);
+      return cont(maybeexpression, continueQuasi);
+    }
+    function continueQuasi(type2) {
+      if (type2 == "}") {
+        cx.marked = "string-2";
+        cx.state.tokenize = tokenQuasi;
+        return cont(quasi);
+      }
+    }
+    function arrowBody(type2) {
+      findFatArrow(cx.stream, cx.state);
+      return pass(type2 == "{" ? statement : expression);
+    }
+    function arrowBodyNoComma(type2) {
+      findFatArrow(cx.stream, cx.state);
+      return pass(type2 == "{" ? statement : expressionNoComma);
+    }
+    function maybeTarget(noComma) {
+      return function(type2) {
+        if (type2 == ".")
+          return cont(noComma ? targetNoComma : target);
+        else if (type2 == "variable" && isTS)
+          return cont(maybeTypeArgs, noComma ? maybeoperatorNoComma : maybeoperatorComma);
+        else
+          return pass(noComma ? expressionNoComma : expression);
+      };
+    }
+    function target(_, value) {
+      if (value == "target") {
+        cx.marked = "keyword";
+        return cont(maybeoperatorComma);
+      }
+    }
+    function targetNoComma(_, value) {
+      if (value == "target") {
+        cx.marked = "keyword";
+        return cont(maybeoperatorNoComma);
+      }
+    }
+    function maybelabel(type2) {
+      if (type2 == ":")
+        return cont(poplex, statement);
+      return pass(maybeoperatorComma, expect(";"), poplex);
+    }
+    function property(type2) {
+      if (type2 == "variable") {
+        cx.marked = "property";
+        return cont();
+      }
+    }
+    function objprop(type2, value) {
+      if (type2 == "async") {
+        cx.marked = "property";
+        return cont(objprop);
+      } else if (type2 == "variable" || cx.style == "keyword") {
+        cx.marked = "property";
+        if (value == "get" || value == "set")
+          return cont(getterSetter);
+        var m;
+        if (isTS && cx.state.fatArrowAt == cx.stream.start && (m = cx.stream.match(/^\s*:\s*/, false)))
+          cx.state.fatArrowAt = cx.stream.pos + m[0].length;
+        return cont(afterprop);
+      } else if (type2 == "number" || type2 == "string") {
+        cx.marked = jsonldMode ? "property" : cx.style + " property";
+        return cont(afterprop);
+      } else if (type2 == "jsonld-keyword") {
+        return cont(afterprop);
+      } else if (isTS && isModifier(value)) {
+        cx.marked = "keyword";
+        return cont(objprop);
+      } else if (type2 == "[") {
+        return cont(expression, maybetype, expect("]"), afterprop);
+      } else if (type2 == "spread") {
+        return cont(expressionNoComma, afterprop);
+      } else if (value == "*") {
+        cx.marked = "keyword";
+        return cont(objprop);
+      } else if (type2 == ":") {
+        return pass(afterprop);
+      }
+    }
+    function getterSetter(type2) {
+      if (type2 != "variable")
+        return pass(afterprop);
+      cx.marked = "property";
+      return cont(functiondef);
+    }
+    function afterprop(type2) {
+      if (type2 == ":")
+        return cont(expressionNoComma);
+      if (type2 == "(")
+        return pass(functiondef);
+    }
+    function commasep(what, end2, sep) {
+      function proceed(type2, value) {
+        if (sep ? sep.indexOf(type2) > -1 : type2 == ",") {
+          var lex = cx.state.lexical;
+          if (lex.info == "call")
+            lex.pos = (lex.pos || 0) + 1;
+          return cont(function(type3, value2) {
+            if (type3 == end2 || value2 == end2)
+              return pass();
+            return pass(what);
+          }, proceed);
+        }
+        if (type2 == end2 || value == end2)
+          return cont();
+        if (sep && sep.indexOf(";") > -1)
+          return pass(what);
+        return cont(expect(end2));
+      }
+      return function(type2, value) {
+        if (type2 == end2 || value == end2)
+          return cont();
+        return pass(what, proceed);
+      };
+    }
+    function contCommasep(what, end2, info) {
+      for (var i = 3; i < arguments.length; i++)
+        cx.cc.push(arguments[i]);
+      return cont(pushlex(end2, info), commasep(what, end2), poplex);
+    }
+    function block(type2) {
+      if (type2 == "}")
+        return cont();
+      return pass(statement, block);
+    }
+    function maybetype(type2, value) {
+      if (isTS) {
+        if (type2 == ":")
+          return cont(typeexpr);
+        if (value == "?")
+          return cont(maybetype);
+      }
+    }
+    function maybetypeOrIn(type2, value) {
+      if (isTS && (type2 == ":" || value == "in"))
+        return cont(typeexpr);
+    }
+    function mayberettype(type2) {
+      if (isTS && type2 == ":") {
+        if (cx.stream.match(/^\s*\w+\s+is\b/, false))
+          return cont(expression, isKW, typeexpr);
+        else
+          return cont(typeexpr);
+      }
+    }
+    function isKW(_, value) {
+      if (value == "is") {
+        cx.marked = "keyword";
+        return cont();
+      }
+    }
+    function typeexpr(type2, value) {
+      if (value == "keyof" || value == "typeof" || value == "infer" || value == "readonly") {
+        cx.marked = "keyword";
+        return cont(value == "typeof" ? expressionNoComma : typeexpr);
+      }
+      if (type2 == "variable" || value == "void") {
+        cx.marked = "type";
+        return cont(afterType);
+      }
+      if (value == "|" || value == "&")
+        return cont(typeexpr);
+      if (type2 == "string" || type2 == "number" || type2 == "atom")
+        return cont(afterType);
+      if (type2 == "[")
+        return cont(pushlex("]"), commasep(typeexpr, "]", ","), poplex, afterType);
+      if (type2 == "{")
+        return cont(pushlex("}"), typeprops, poplex, afterType);
+      if (type2 == "(")
+        return cont(commasep(typearg, ")"), maybeReturnType, afterType);
+      if (type2 == "<")
+        return cont(commasep(typeexpr, ">"), typeexpr);
+      if (type2 == "quasi") {
+        return pass(quasiType, afterType);
+      }
+    }
+    function maybeReturnType(type2) {
+      if (type2 == "=>")
+        return cont(typeexpr);
+    }
+    function typeprops(type2) {
+      if (type2.match(/[\}\)\]]/))
+        return cont();
+      if (type2 == "," || type2 == ";")
+        return cont(typeprops);
+      return pass(typeprop, typeprops);
+    }
+    function typeprop(type2, value) {
+      if (type2 == "variable" || cx.style == "keyword") {
+        cx.marked = "property";
+        return cont(typeprop);
+      } else if (value == "?" || type2 == "number" || type2 == "string") {
+        return cont(typeprop);
+      } else if (type2 == ":") {
+        return cont(typeexpr);
+      } else if (type2 == "[") {
+        return cont(expect("variable"), maybetypeOrIn, expect("]"), typeprop);
+      } else if (type2 == "(") {
+        return pass(functiondecl, typeprop);
+      } else if (!type2.match(/[;\}\)\],]/)) {
+        return cont();
+      }
+    }
+    function quasiType(type2, value) {
+      if (type2 != "quasi")
+        return pass();
+      if (value.slice(value.length - 2) != "${")
+        return cont(quasiType);
+      return cont(typeexpr, continueQuasiType);
+    }
+    function continueQuasiType(type2) {
+      if (type2 == "}") {
+        cx.marked = "string-2";
+        cx.state.tokenize = tokenQuasi;
+        return cont(quasiType);
+      }
+    }
+    function typearg(type2, value) {
+      if (type2 == "variable" && cx.stream.match(/^\s*[?:]/, false) || value == "?")
+        return cont(typearg);
+      if (type2 == ":")
+        return cont(typeexpr);
+      if (type2 == "spread")
+        return cont(typearg);
+      return pass(typeexpr);
+    }
+    function afterType(type2, value) {
+      if (value == "<")
+        return cont(pushlex(">"), commasep(typeexpr, ">"), poplex, afterType);
+      if (value == "|" || type2 == "." || value == "&")
+        return cont(typeexpr);
+      if (type2 == "[")
+        return cont(typeexpr, expect("]"), afterType);
+      if (value == "extends" || value == "implements") {
+        cx.marked = "keyword";
+        return cont(typeexpr);
+      }
+      if (value == "?")
+        return cont(typeexpr, expect(":"), typeexpr);
+    }
+    function maybeTypeArgs(_, value) {
+      if (value == "<")
+        return cont(pushlex(">"), commasep(typeexpr, ">"), poplex, afterType);
+    }
+    function typeparam() {
+      return pass(typeexpr, maybeTypeDefault);
+    }
+    function maybeTypeDefault(_, value) {
+      if (value == "=")
+        return cont(typeexpr);
+    }
+    function vardef(_, value) {
+      if (value == "enum") {
+        cx.marked = "keyword";
+        return cont(enumdef);
+      }
+      return pass(pattern, maybetype, maybeAssign, vardefCont);
+    }
+    function pattern(type2, value) {
+      if (isTS && isModifier(value)) {
+        cx.marked = "keyword";
+        return cont(pattern);
+      }
+      if (type2 == "variable") {
+        register(value);
+        return cont();
+      }
+      if (type2 == "spread")
+        return cont(pattern);
+      if (type2 == "[")
+        return contCommasep(eltpattern, "]");
+      if (type2 == "{")
+        return contCommasep(proppattern, "}");
+    }
+    function proppattern(type2, value) {
+      if (type2 == "variable" && !cx.stream.match(/^\s*:/, false)) {
+        register(value);
+        return cont(maybeAssign);
+      }
+      if (type2 == "variable")
+        cx.marked = "property";
+      if (type2 == "spread")
+        return cont(pattern);
+      if (type2 == "}")
+        return pass();
+      if (type2 == "[")
+        return cont(expression, expect("]"), expect(":"), proppattern);
+      return cont(expect(":"), pattern, maybeAssign);
+    }
+    function eltpattern() {
+      return pass(pattern, maybeAssign);
+    }
+    function maybeAssign(_type, value) {
+      if (value == "=")
+        return cont(expressionNoComma);
+    }
+    function vardefCont(type2) {
+      if (type2 == ",")
+        return cont(vardef);
+    }
+    function maybeelse(type2, value) {
+      if (type2 == "keyword b" && value == "else")
+        return cont(pushlex("form", "else"), statement, poplex);
+    }
+    function forspec(type2, value) {
+      if (value == "await")
+        return cont(forspec);
+      if (type2 == "(")
+        return cont(pushlex(")"), forspec1, poplex);
+    }
+    function forspec1(type2) {
+      if (type2 == "var")
+        return cont(vardef, forspec2);
+      if (type2 == "variable")
+        return cont(forspec2);
+      return pass(forspec2);
+    }
+    function forspec2(type2, value) {
+      if (type2 == ")")
+        return cont();
+      if (type2 == ";")
+        return cont(forspec2);
+      if (value == "in" || value == "of") {
+        cx.marked = "keyword";
+        return cont(expression, forspec2);
+      }
+      return pass(expression, forspec2);
+    }
+    function functiondef(type2, value) {
+      if (value == "*") {
+        cx.marked = "keyword";
+        return cont(functiondef);
+      }
+      if (type2 == "variable") {
+        register(value);
+        return cont(functiondef);
+      }
+      if (type2 == "(")
+        return cont(pushcontext, pushlex(")"), commasep(funarg, ")"), poplex, mayberettype, statement, popcontext);
+      if (isTS && value == "<")
+        return cont(pushlex(">"), commasep(typeparam, ">"), poplex, functiondef);
+    }
+    function functiondecl(type2, value) {
+      if (value == "*") {
+        cx.marked = "keyword";
+        return cont(functiondecl);
+      }
+      if (type2 == "variable") {
+        register(value);
+        return cont(functiondecl);
+      }
+      if (type2 == "(")
+        return cont(pushcontext, pushlex(")"), commasep(funarg, ")"), poplex, mayberettype, popcontext);
+      if (isTS && value == "<")
+        return cont(pushlex(">"), commasep(typeparam, ">"), poplex, functiondecl);
+    }
+    function typename(type2, value) {
+      if (type2 == "keyword" || type2 == "variable") {
+        cx.marked = "type";
+        return cont(typename);
+      } else if (value == "<") {
+        return cont(pushlex(">"), commasep(typeparam, ">"), poplex);
+      }
+    }
+    function funarg(type2, value) {
+      if (value == "@")
+        cont(expression, funarg);
+      if (type2 == "spread")
+        return cont(funarg);
+      if (isTS && isModifier(value)) {
+        cx.marked = "keyword";
+        return cont(funarg);
+      }
+      if (isTS && type2 == "this")
+        return cont(maybetype, maybeAssign);
+      return pass(pattern, maybetype, maybeAssign);
+    }
+    function classExpression(type2, value) {
+      if (type2 == "variable")
+        return className(type2, value);
+      return classNameAfter(type2, value);
+    }
+    function className(type2, value) {
+      if (type2 == "variable") {
+        register(value);
+        return cont(classNameAfter);
+      }
+    }
+    function classNameAfter(type2, value) {
+      if (value == "<")
+        return cont(pushlex(">"), commasep(typeparam, ">"), poplex, classNameAfter);
+      if (value == "extends" || value == "implements" || isTS && type2 == ",") {
+        if (value == "implements")
+          cx.marked = "keyword";
+        return cont(isTS ? typeexpr : expression, classNameAfter);
+      }
+      if (type2 == "{")
+        return cont(pushlex("}"), classBody, poplex);
+    }
+    function classBody(type2, value) {
+      if (type2 == "async" || type2 == "variable" && (value == "static" || value == "get" || value == "set" || isTS && isModifier(value)) && cx.stream.match(/^\s+[\w$\xa1-\uffff]/, false)) {
+        cx.marked = "keyword";
+        return cont(classBody);
+      }
+      if (type2 == "variable" || cx.style == "keyword") {
+        cx.marked = "property";
+        return cont(classfield, classBody);
+      }
+      if (type2 == "number" || type2 == "string")
+        return cont(classfield, classBody);
+      if (type2 == "[")
+        return cont(expression, maybetype, expect("]"), classfield, classBody);
+      if (value == "*") {
+        cx.marked = "keyword";
+        return cont(classBody);
+      }
+      if (isTS && type2 == "(")
+        return pass(functiondecl, classBody);
+      if (type2 == ";" || type2 == ",")
+        return cont(classBody);
+      if (type2 == "}")
+        return cont();
+      if (value == "@")
+        return cont(expression, classBody);
+    }
+    function classfield(type2, value) {
+      if (value == "!")
+        return cont(classfield);
+      if (value == "?")
+        return cont(classfield);
+      if (type2 == ":")
+        return cont(typeexpr, maybeAssign);
+      if (value == "=")
+        return cont(expressionNoComma);
+      var context = cx.state.lexical.prev, isInterface = context && context.info == "interface";
+      return pass(isInterface ? functiondecl : functiondef);
+    }
+    function afterExport(type2, value) {
+      if (value == "*") {
+        cx.marked = "keyword";
+        return cont(maybeFrom, expect(";"));
+      }
+      if (value == "default") {
+        cx.marked = "keyword";
+        return cont(expression, expect(";"));
+      }
+      if (type2 == "{")
+        return cont(commasep(exportField, "}"), maybeFrom, expect(";"));
+      return pass(statement);
+    }
+    function exportField(type2, value) {
+      if (value == "as") {
+        cx.marked = "keyword";
+        return cont(expect("variable"));
+      }
+      if (type2 == "variable")
+        return pass(expressionNoComma, exportField);
+    }
+    function afterImport(type2) {
+      if (type2 == "string")
+        return cont();
+      if (type2 == "(")
+        return pass(expression);
+      if (type2 == ".")
+        return pass(maybeoperatorComma);
+      return pass(importSpec, maybeMoreImports, maybeFrom);
+    }
+    function importSpec(type2, value) {
+      if (type2 == "{")
+        return contCommasep(importSpec, "}");
+      if (type2 == "variable")
+        register(value);
+      if (value == "*")
+        cx.marked = "keyword";
+      return cont(maybeAs);
+    }
+    function maybeMoreImports(type2) {
+      if (type2 == ",")
+        return cont(importSpec, maybeMoreImports);
+    }
+    function maybeAs(_type, value) {
+      if (value == "as") {
+        cx.marked = "keyword";
+        return cont(importSpec);
+      }
+    }
+    function maybeFrom(_type, value) {
+      if (value == "from") {
+        cx.marked = "keyword";
+        return cont(expression);
+      }
+    }
+    function arrayLiteral(type2) {
+      if (type2 == "]")
+        return cont();
+      return pass(commasep(expressionNoComma, "]"));
+    }
+    function enumdef() {
+      return pass(pushlex("form"), pattern, expect("{"), pushlex("}"), commasep(enummember, "}"), poplex, poplex);
+    }
+    function enummember() {
+      return pass(pattern, maybeAssign);
+    }
+    function isContinuedStatement(state, textAfter) {
+      return state.lastType == "operator" || state.lastType == "," || isOperatorChar.test(textAfter.charAt(0)) || /[,.]/.test(textAfter.charAt(0));
+    }
+    function expressionAllowed(stream, state, backUp) {
+      return state.tokenize == tokenBase && /^(?:operator|sof|keyword [bcd]|case|new|export|default|spread|[\[{}\(,;:]|=>)$/.test(state.lastType) || state.lastType == "quasi" && /\{\s*$/.test(stream.string.slice(0, stream.pos - (backUp || 0)));
+    }
+    return {
+      startState: function(basecolumn) {
+        var state = {
+          tokenize: tokenBase,
+          lastType: "sof",
+          cc: [],
+          lexical: new JSLexical((basecolumn || 0) - indentUnit, 0, "block", false),
+          localVars: parserConfig.localVars,
+          context: parserConfig.localVars && new Context(null, null, false),
+          indented: basecolumn || 0
+        };
+        if (parserConfig.globalVars && typeof parserConfig.globalVars == "object")
+          state.globalVars = parserConfig.globalVars;
+        return state;
+      },
+      token: function(stream, state) {
+        if (stream.sol()) {
+          if (!state.lexical.hasOwnProperty("align"))
+            state.lexical.align = false;
+          state.indented = stream.indentation();
+          findFatArrow(stream, state);
+        }
+        if (state.tokenize != tokenComment && stream.eatSpace())
+          return null;
+        var style = state.tokenize(stream, state);
+        if (type == "comment")
+          return style;
+        state.lastType = type == "operator" && (content == "++" || content == "--") ? "incdec" : type;
+        return parseJS(state, style, type, content, stream);
+      },
+      indent: function(state, textAfter) {
+        if (state.tokenize == tokenComment || state.tokenize == tokenQuasi)
+          return CodeMirror.Pass;
+        if (state.tokenize != tokenBase)
+          return 0;
+        var firstChar = textAfter && textAfter.charAt(0), lexical = state.lexical, top2;
+        if (!/^\s*else\b/.test(textAfter))
+          for (var i = state.cc.length - 1; i >= 0; --i) {
+            var c = state.cc[i];
+            if (c == poplex)
+              lexical = lexical.prev;
+            else if (c != maybeelse && c != popcontext)
+              break;
+          }
+        while ((lexical.type == "stat" || lexical.type == "form") && (firstChar == "}" || (top2 = state.cc[state.cc.length - 1]) && (top2 == maybeoperatorComma || top2 == maybeoperatorNoComma) && !/^[,\.=+\-*:?[\(]/.test(textAfter)))
+          lexical = lexical.prev;
+        if (statementIndent && lexical.type == ")" && lexical.prev.type == "stat")
+          lexical = lexical.prev;
+        var type2 = lexical.type, closing = firstChar == type2;
+        if (type2 == "vardef")
+          return lexical.indented + (state.lastType == "operator" || state.lastType == "," ? lexical.info.length + 1 : 0);
+        else if (type2 == "form" && firstChar == "{")
+          return lexical.indented;
+        else if (type2 == "form")
+          return lexical.indented + indentUnit;
+        else if (type2 == "stat")
+          return lexical.indented + (isContinuedStatement(state, textAfter) ? statementIndent || indentUnit : 0);
+        else if (lexical.info == "switch" && !closing && parserConfig.doubleIndentSwitch != false)
+          return lexical.indented + (/^(?:case|default)\b/.test(textAfter) ? indentUnit : 2 * indentUnit);
+        else if (lexical.align)
+          return lexical.column + (closing ? 0 : 1);
+        else
+          return lexical.indented + (closing ? 0 : indentUnit);
+      },
+      electricInput: /^\s*(?:case .*?:|default:|\{|\})$/,
+      blockCommentStart: jsonMode ? null : "/*",
+      blockCommentEnd: jsonMode ? null : "*/",
+      blockCommentContinue: jsonMode ? null : " * ",
+      lineComment: jsonMode ? null : "//",
+      fold: "brace",
+      closeBrackets: "()[]{}''\"\"``",
+      helperType: jsonMode ? "json" : "javascript",
+      jsonldMode,
+      jsonMode,
+      expressionAllowed,
+      skipExpression: function(state) {
+        parseJS(state, "atom", "atom", "true", new CodeMirror.StringStream("", 2, null));
+      }
+    };
+  });
+  CodeMirror.registerHelper("wordChars", "javascript", /[\w$]/);
+  CodeMirror.defineMIME("text/javascript", "javascript");
+  CodeMirror.defineMIME("text/ecmascript", "javascript");
+  CodeMirror.defineMIME("application/javascript", "javascript");
+  CodeMirror.defineMIME("application/x-javascript", "javascript");
+  CodeMirror.defineMIME("application/ecmascript", "javascript");
+  CodeMirror.defineMIME("application/json", {
+    name: "javascript",
+    json: true
+  });
+  CodeMirror.defineMIME("application/x-json", {
+    name: "javascript",
+    json: true
+  });
+  CodeMirror.defineMIME("application/manifest+json", {
+    name: "javascript",
+    json: true
+  });
+  CodeMirror.defineMIME("application/ld+json", {
+    name: "javascript",
+    jsonld: true
+  });
+  CodeMirror.defineMIME("text/typescript", {
+    name: "javascript",
+    typescript: true
+  });
+  CodeMirror.defineMIME("application/typescript", {
+    name: "javascript",
+    typescript: true
+  });
+});
+
+// src/editor/mode/custom_overlay.js
+(function(mod) {
+  mod(window.CodeMirror);
+})(function(CodeMirror) {
+  "use strict";
+  CodeMirror.customOverlayMode = function(base, overlay, combine) {
+    return {
+      startState: function() {
+        return {
+          base: CodeMirror.startState(base),
+          overlay: CodeMirror.startState(overlay),
+          basePos: 0,
+          baseCur: null,
+          overlayPos: 0,
+          overlayCur: null,
+          streamSeen: null
+        };
+      },
+      copyState: function(state) {
+        return {
+          base: CodeMirror.copyState(base, state.base),
+          overlay: CodeMirror.copyState(overlay, state.overlay),
+          basePos: state.basePos,
+          baseCur: null,
+          overlayPos: state.overlayPos,
+          overlayCur: null
+        };
+      },
+      token: function(stream, state) {
+        if (stream != state.streamSeen || Math.min(state.basePos, state.overlayPos) < stream.start) {
+          state.streamSeen = stream;
+          state.basePos = state.overlayPos = stream.start;
+        }
+        if (stream.start == state.basePos) {
+          state.baseCur = base.token(stream, state.base);
+          state.basePos = stream.pos;
+        }
+        if (stream.start == state.overlayPos) {
+          stream.pos = stream.start;
+          state.overlayCur = overlay.token(stream, state.overlay);
+          state.overlayPos = stream.pos;
+        }
+        stream.pos = Math.min(state.basePos, state.overlayPos);
+        if (state.baseCur && state.overlayCur && state.baseCur.contains("line-HyperMD-codeblock")) {
+          state.overlayCur = state.overlayCur.replace("line-templater-inline", "");
+          state.overlayCur += ` line-background-HyperMD-codeblock-bg`;
+        }
+        if (state.overlayCur == null)
+          return state.baseCur;
+        else if (state.baseCur != null && state.overlay.combineTokens || combine && state.overlay.combineTokens == null)
+          return state.baseCur + " " + state.overlayCur;
+        else
+          return state.overlayCur;
+      },
+      indent: base.indent && function(state, textAfter, line) {
+        return base.indent(state.base, textAfter, line);
+      },
+      electricChars: base.electricChars,
+      innerMode: function(state) {
+        return { state: state.base, mode: base };
+      },
+      blankLine: function(state) {
+        let baseToken, overlayToken;
+        if (base.blankLine)
+          baseToken = base.blankLine(state.base);
+        if (overlay.blankLine)
+          overlayToken = overlay.blankLine(state.overlay);
+        return overlayToken == null ? baseToken : combine && baseToken != null ? baseToken + " " + overlayToken : overlayToken;
+      }
+    };
+  };
+});
+
+// src/editor/Editor.ts
+var import_language = __toModule(require("@codemirror/language"));
+var import_state = __toModule(require("@codemirror/state"));
+var TEMPLATER_MODE_NAME = "templater";
+var TP_CMD_TOKEN_CLASS = "templater-command";
+var TP_INLINE_CLASS = "templater-inline";
+var TP_OPENING_TAG_TOKEN_CLASS = "templater-opening-tag";
+var TP_CLOSING_TAG_TOKEN_CLASS = "templater-closing-tag";
+var TP_INTERPOLATION_TAG_TOKEN_CLASS = "templater-interpolation-tag";
+var TP_EXEC_TAG_TOKEN_CLASS = "templater-execution-tag";
+var Editor2 = class {
+  constructor(plugin) {
+    this.plugin = plugin;
+    this.cursor_jumper = new CursorJumper();
+    this.activeEditorExtensions = [];
+  }
+  desktopShouldHighlight() {
+    return import_obsidian16.Platform.isDesktopApp && this.plugin.settings.syntax_highlighting;
+  }
+  mobileShouldHighlight() {
+    return import_obsidian16.Platform.isMobileApp && this.plugin.settings.syntax_highlighting_mobile;
+  }
+  async setup() {
+    this.plugin.registerEditorSuggest(new Autocomplete(this.plugin.settings));
+    await this.registerCodeMirrorMode();
+    this.templaterLanguage = import_state.Prec.high(import_language.StreamLanguage.define(window.CodeMirror.getMode({}, TEMPLATER_MODE_NAME)));
+    if (this.templaterLanguage === void 0) {
+      log_error(new TemplaterError("Unable to enable syntax highlighting. Could not define language."));
+    }
+    this.plugin.registerEditorExtension(this.activeEditorExtensions);
+    if (this.desktopShouldHighlight() || this.mobileShouldHighlight()) {
+      await this.enable_highlighter();
+    }
+  }
+  async enable_highlighter() {
+    if (this.activeEditorExtensions.length === 0 && this.templaterLanguage) {
+      this.activeEditorExtensions.push(this.templaterLanguage);
+      this.plugin.app.workspace.updateOptions();
+    }
+  }
+  async disable_highlighter() {
+    if (this.activeEditorExtensions.length > 0) {
+      this.activeEditorExtensions.pop();
+      this.plugin.app.workspace.updateOptions();
+    }
+  }
+  async jump_to_next_cursor_location(file = null, auto_jump = false) {
+    if (auto_jump && !this.plugin.settings.auto_jump_to_cursor) {
+      return;
+    }
+    if (file && get_active_file(this.plugin.app) !== file) {
+      return;
+    }
+    await this.cursor_jumper.jump_to_next_cursor_location();
+  }
+  async registerCodeMirrorMode() {
+    if (!this.desktopShouldHighlight() && !this.mobileShouldHighlight()) {
+      return;
+    }
+    const js_mode = window.CodeMirror.getMode({}, "javascript");
+    if (js_mode.name === "null") {
+      log_error(new TemplaterError("Javascript syntax mode couldn't be found, can't enable syntax highlighting."));
+      return;
+    }
+    const overlay_mode = window.CodeMirror.customOverlayMode;
+    if (overlay_mode == null) {
+      log_error(new TemplaterError("Couldn't find customOverlayMode, can't enable syntax highlighting."));
+      return;
+    }
+    window.CodeMirror.defineMode(TEMPLATER_MODE_NAME, function(config) {
+      const templaterOverlay = {
+        startState: function() {
+          const js_state = window.CodeMirror.startState(js_mode);
+          return {
+            ...js_state,
+            inCommand: false,
+            tag_class: "",
+            freeLine: false
+          };
+        },
+        copyState: function(state) {
+          const js_state = window.CodeMirror.startState(js_mode);
+          const new_state = {
+            ...js_state,
+            inCommand: state.inCommand,
+            tag_class: state.tag_class,
+            freeLine: state.freeLine
+          };
+          return new_state;
+        },
+        blankLine: function(state) {
+          if (state.inCommand) {
+            return `line-background-templater-command-bg`;
+          }
+          return null;
+        },
+        token: function(stream, state) {
+          if (stream.sol() && state.inCommand) {
+            state.freeLine = true;
+          }
+          if (state.inCommand) {
+            let keywords = "";
+            if (stream.match(/[-_]{0,1}%>/, true)) {
+              state.inCommand = false;
+              state.freeLine = false;
+              const tag_class = state.tag_class;
+              state.tag_class = "";
+              return `line-${TP_INLINE_CLASS} ${TP_CMD_TOKEN_CLASS} ${TP_CLOSING_TAG_TOKEN_CLASS} ${tag_class}`;
+            }
+            const js_result = js_mode.token && js_mode.token(stream, state);
+            if (stream.peek() == null && state.freeLine) {
+              keywords += ` line-background-templater-command-bg`;
+            }
+            if (!state.freeLine) {
+              keywords += ` line-${TP_INLINE_CLASS}`;
+            }
+            return `${keywords} ${TP_CMD_TOKEN_CLASS} ${js_result}`;
+          }
+          const match = stream.match(/<%[-_]{0,1}\s*([*+]{0,1})/, true);
+          if (match != null) {
+            switch (match[1]) {
+              case "*":
+                state.tag_class = TP_EXEC_TAG_TOKEN_CLASS;
+                break;
+              default:
+                state.tag_class = TP_INTERPOLATION_TAG_TOKEN_CLASS;
+                break;
+            }
+            state.inCommand = true;
+            return `line-${TP_INLINE_CLASS} ${TP_CMD_TOKEN_CLASS} ${TP_OPENING_TAG_TOKEN_CLASS} ${state.tag_class}`;
+          }
+          while (stream.next() != null && !stream.match(/<%/, false))
+            ;
+          return null;
+        }
+      };
+      return overlay_mode(window.CodeMirror.getMode(config, "hypermd"), templaterOverlay);
+    });
+  }
+};
+
+// src/main.ts
+var TemplaterPlugin = class extends import_obsidian17.Plugin {
+  async onload() {
+    await this.load_settings();
+    this.templater = new Templater(this);
+    await this.templater.setup();
+    this.editor_handler = new Editor2(this);
+    await this.editor_handler.setup();
+    this.fuzzy_suggester = new FuzzySuggester(this);
+    this.event_handler = new EventHandler(this, this.templater, this.settings);
+    this.event_handler.setup();
+    this.command_handler = new CommandHandler(this);
+    this.command_handler.setup();
+    (0, import_obsidian17.addIcon)("templater-icon", ICON_DATA);
+    if (this.settings.enable_ribbon_icon) {
+      this.addRibbonIcon("templater-icon", "Templater", async () => {
+        this.fuzzy_suggester.insert_template();
+      }).setAttribute("id", "rb-templater-icon");
+    }
+    this.addSettingTab(new TemplaterSettingTab(this));
+    app.workspace.onLayoutReady(() => {
+      this.templater.execute_startup_scripts();
+    });
+  }
+  onunload() {
+    this.templater.functions_generator.teardown();
+  }
+  async save_settings() {
+    await this.saveData(this.settings);
+  }
+  async load_settings() {
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+  }
+};

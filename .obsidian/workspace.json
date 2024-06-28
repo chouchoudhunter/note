@@ -4,17 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "3e140dab55b5070a",
+        "id": "88340447f45a6009",
         "type": "tabs",
         "children": [
           {
-            "id": "40347dab5d795e09",
+            "id": "8691607e27eac7e8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "README.md",
                 "mode": "source",
+                "backlinks": false,
                 "source": false
               }
             }
@@ -80,11 +81,38 @@
         "type": "tabs",
         "children": [
           {
+            "id": "9361f59e091b9e8c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md"
+              }
+            }
+          },
+          {
             "id": "523d2df2b42fd63d",
             "type": "leaf",
             "state": {
               "type": "calendar",
               "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "1de6279e3c64c2e3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "62a4517fb44ecaab",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
             }
           },
           {
@@ -115,34 +143,12 @@
                 "unlinkedCollapsed": true
               }
             }
-          },
-          {
-            "id": "62a4517fb44ecaab",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "9361f59e091b9e8c",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "README.md"
-              }
-            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 333.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -153,35 +159,50 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "audio-recorder:开始/结束录音": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-local-images-plus:Local Images Plus  0.15.9\r\nLocalize attachments (plugin folder)": false,
-      "remotely-save:Remotely Save": false
+      "remotely-save:Remotely Save": false,
+      "obsidian-kanban:创建新看板": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "40347dab5d795e09",
+  "active": "633c23678d3bc9f9",
   "lastOpenFiles": [
+    "软件开发/前端开发/Flutter/Dart语言基础/库.md",
+    "我的/书籍.md",
+    "我的/书籍/凤于九天.md",
+    "README.md",
+    "未命名.md",
+    "随笔/游戏游玩清单.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
+    "随笔/账号.md",
+    "我的/游戏.md",
+    "我的/影视.md",
+    "我的/书籍-清单.md",
+    "随笔/nas配置清单.md",
+    "随笔/assets/Pasted image 20240113164157.png",
+    "随笔/assets/a713328f58f5a9e9e1e216a875d4999d_MD5.jpeg",
+    "随笔/assets/Pasted image 20231219201503.png",
+    "随笔/assets/c835dd1d5d3f441c682f7ff9574b1b94_MD5.jpeg",
+    "随笔/assets/Pasted image 20231219200425.png",
+    "软件开发/前端开发/node/常用node命令.md",
+    "软件开发/前端开发/node/常用Node模块.md",
+    "我的/书籍/十日终焉.md",
     "assets",
     "我的/书籍/未命名.md",
     "Excalidraw/Drawing 2023-10-31 21.44.12.excalidraw.md",
     "Excalidraw",
-    "README.md",
     "我的/游戏/伊始之地 Terra Nil.md",
     "我的/游戏/assets/c2bc2999053069707c170c0570fb2cc7_MD5.png",
-    "我的/书籍.md",
     "我的/游戏-清单.md",
-    "我的/游戏.md",
-    "我的/影视.md",
-    "我的/书籍-清单.md",
     "我的/书籍/新参者.md",
     "我的/assets",
-    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "软件开发/前端开发/Flutter/Dart语言基础/泛型.md",
     "软件开发/前端开发/Flutter/Dart语言基础/运算符.md",
-    "随笔/账号.md",
     "随笔/临时记录.md",
     "设计相关/流程设计/业务流程图案例.md",
     "设计相关/流程设计/业务流程图及数据流程图.md",
-    "随笔/散乱灵感.md",
     "随笔/assets/KYB4I8R)8ZG1[OW%CANL1}V.png"
   ]
 }

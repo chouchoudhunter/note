@@ -4,15 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f02e1682229c9283",
+        "id": "2513ba3e47180580",
         "type": "tabs",
         "children": [
           {
-            "id": "3a849d721da1a869",
+            "id": "2e6dc4a08067350d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "kanban",
+              "state": {
+                "file": "随笔/未命名看板.md"
+              }
             }
           }
         ]
@@ -81,6 +83,7 @@
         "state": {
           "type": "backlink",
           "state": {
+            "file": "随笔/未命名看板.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -97,6 +100,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "随笔/未命名看板.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -107,7 +111,9 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {}
+          "state": {
+            "file": "随笔/未命名看板.md"
+          }
         }
       },
       {
@@ -134,18 +140,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b7c7c3909ce454f6",
+  "active": "2e6dc4a08067350d",
   "lastOpenFiles": [
-    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
-    "我的/书籍/凤于九天.md",
+    "随笔/游戏游玩清单.md",
+    "随笔/未命名看板.md",
+    "assets",
+    "我的/书籍/十日终焉.md",
     "我的/书籍.md",
+    "我的/影视.md",
+    "我的/书籍/同级生.md",
+    "我的/书籍/新参者.md",
+    "我的/书籍/凤于九天.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "Excalidraw/Drawing 2023-10-31 21.44.12.excalidraw.md",
     "README.md",
     "未命名.md",
     "未命名",
     "Excalidraw",
     "游戏开发/unity3d/素材.md",
-    "assets",
     "服务器运维/Nginx/Laravel项目nginx配置.md",
     "软件开发/前端开发/Javascript/js小知识点/详解URLSearchParams.md",
     "软件开发/前端开发/Flutter/Futter配置相关/Flutter常用命令.md",
@@ -154,17 +166,12 @@
     "软件开发/前端开发/Flutter/Flutter基础/未命名.md",
     "随笔/账号.md",
     "我的/游戏.md",
-    "我的/影视.md",
     "我的/书籍/眠.md",
     "我的/书籍/它.md",
     "随笔/散乱灵感.md",
     "随笔/临时记录.md",
     "我的/书籍/默读.md",
     "我的/书籍/阴兽.md",
-    "我的/书籍/雪人.md",
-    "我的/书籍/边城.md",
-    "我的/书籍/绝叫.md",
-    "我的/书籍/赎罪.md",
     "随笔/Blender.py",
     "随笔/assets/640.jpeg",
     "项目/Abyss/Xmind/互动.xmind",
