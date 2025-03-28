@@ -4,22 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "88340447f45a6009",
+        "id": "cf21116d5cc756e7",
         "type": "tabs",
         "children": [
           {
-            "id": "8691607e27eac7e8",
+            "id": "582d4677736f2e91",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "随笔/账号.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "账号"
+              "title": "新标签页"
             }
           }
         ]
@@ -192,7 +187,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 462.5
+    "width": 354.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -203,22 +198,23 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "audio-recorder:开始/结束录音": false,
-      "obsidian-local-images-plus:Local Images Plus  0.15.9\r\nLocalize attachments (plugin folder)": false,
-      "remotely-save:Remotely Save": false,
       "obsidian-kanban:创建新看板": false,
       "templater-obsidian:Templater": false,
       "obsidian-local-images-plus:Local Images Plus  0.16.3\r\nLocalize attachments (plugin folder)": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8691607e27eac7e8",
+  "active": "582d4677736f2e91",
   "lastOpenFiles": [
+    "我的/影视/未命名.md",
+    "我的/影视.md",
+    "我的/影视-清单.md",
+    "随笔/账号.md",
     "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "随笔/散乱灵感.md",
     "随笔/临时记录.md",
     "我的/游戏-清单.md",
     "我的/游戏.md",
-    "我的/影视.md",
     "我的/书籍-清单.md",
     "我的/书籍.md",
     "README.md",
@@ -228,7 +224,6 @@
     "随笔/游戏游玩清单.md",
     "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
     "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
-    "随笔/账号.md",
     "随笔/nas配置清单.md",
     "随笔/assets/Pasted image 20240113164157.png",
     "随笔/assets/a713328f58f5a9e9e1e216a875d4999d_MD5.jpeg",
@@ -247,7 +242,6 @@
     "我的/书籍/新参者.md",
     "我的/assets",
     "软件开发/前端开发/Flutter/Dart语言基础/泛型.md",
-    "软件开发/前端开发/Flutter/Dart语言基础/运算符.md",
     "随笔/assets/KYB4I8R)8ZG1[OW%CANL1}V.png"
   ]
 }
