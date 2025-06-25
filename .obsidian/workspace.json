@@ -13,11 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "随笔/账号.md",
+                "file": "软件开发/前端开发/xpath/xpath入门.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "xpath入门"
             }
           }
         ]
@@ -40,7 +42,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -55,7 +59,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -63,7 +69,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -86,8 +94,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "随笔/账号.md"
-              }
+                "file": "软件开发/前端开发/xpath/xpath入门.md"
+              },
+              "icon": "lucide-list",
+              "title": "xpath入门 的大纲"
             }
           },
           {
@@ -95,7 +105,9 @@
             "type": "leaf",
             "state": {
               "type": "calendar",
-              "state": {}
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
@@ -112,7 +124,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -121,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "随笔/账号.md",
+                "file": "软件开发/前端开发/xpath/xpath入门.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +143,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "xpath入门 的反向链接列表"
             }
           },
           {
@@ -138,10 +154,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "随笔/账号.md",
+                "file": "软件开发/前端开发/xpath/xpath入门.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "xpath入门 的出链列表"
             }
           }
         ]
@@ -165,44 +183,45 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "633c23678d3bc9f9",
+  "active": "8691607e27eac7e8",
   "lastOpenFiles": [
-    "README.md",
+    "软件开发/前端开发/Javascript/js垃圾回收机制.md",
+    "软件开发/前端开发/Javascript/js 原型.md",
+    "软件开发/前端开发/Javascript/ES6小记.md",
+    "软件开发/前端开发/Javascript/数组常用处理方法.md",
+    "软件开发/前端开发/Javascript/web网络安全/XSS CSRF XS-LEAKS.md",
+    "软件开发/前端开发/Javascript/js小知识点/柯里化和偏函数.md",
+    "软件开发/前端开发/Git/Git提交描述规范.md",
+    "软件开发/前端开发/Git/修改本地项目仓库地址.md",
+    "软件开发/前端开发/Git/清除不需要跟踪的文件.md",
+    "软件开发/前端开发/Flutter/Flutter基础/未命名.md",
+    "软件开发/前端开发/Flutter/Flutter基础/生命周期.md",
+    "软件开发/前端开发/Flutter/Flutter基础/路由.md",
+    "软件开发/前端开发/Flutter/Flutter基础/组件状态.md",
+    "软件开发/前端开发/Flutter/Flutter基础/布局组件.md",
+    "软件开发/前端开发/Flutter/Flutter基础/多语言和多主题.md",
+    "软件开发/前端开发/Flutter/Flutter基础/动画.md",
+    "软件开发/前端开发/Flutter/Flutter基础/内容组件.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/运算符.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/类.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/注释.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/泛型.md",
     "软件开发/前端开发/Flutter/Dart语言基础/库.md",
-    "我的/书籍.md",
-    "我的/书籍/凤于九天.md",
-    "未命名.md",
-    "随笔/游戏游玩清单.md",
-    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
-    "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
-    "随笔/账号.md",
-    "我的/游戏.md",
-    "我的/影视.md",
-    "我的/书籍-清单.md",
-    "随笔/nas配置清单.md",
+    "服务器运维/linux/linux初始化配置.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/函数.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/变量声明.md",
+    "软件开发/前端开发/electron/~$ectron笔记.docx",
+    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "随笔/assets/Pasted image 20240113164157.png",
     "随笔/assets/a713328f58f5a9e9e1e216a875d4999d_MD5.jpeg",
     "随笔/assets/Pasted image 20231219201503.png",
     "随笔/assets/c835dd1d5d3f441c682f7ff9574b1b94_MD5.jpeg",
     "随笔/assets/Pasted image 20231219200425.png",
-    "软件开发/前端开发/node/常用node命令.md",
-    "软件开发/前端开发/node/常用Node模块.md",
-    "我的/书籍/十日终焉.md",
     "assets",
-    "我的/书籍/未命名.md",
-    "Excalidraw/Drawing 2023-10-31 21.44.12.excalidraw.md",
     "Excalidraw",
-    "我的/游戏/伊始之地 Terra Nil.md",
     "我的/游戏/assets/c2bc2999053069707c170c0570fb2cc7_MD5.png",
-    "我的/游戏-清单.md",
-    "我的/书籍/新参者.md",
     "我的/assets",
-    "软件开发/前端开发/Flutter/Dart语言基础/泛型.md",
-    "软件开发/前端开发/Flutter/Dart语言基础/运算符.md",
-    "随笔/临时记录.md",
-    "设计相关/流程设计/业务流程图案例.md",
-    "设计相关/流程设计/业务流程图及数据流程图.md",
     "随笔/assets/KYB4I8R)8ZG1[OW%CANL1}V.png"
   ]
 }
