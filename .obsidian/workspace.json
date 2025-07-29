@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "cf21116d5cc756e7",
+        "id": "5d46ae626c6e24b3",
         "type": "tabs",
         "children": [
           {
-            "id": "582d4677736f2e91",
+            "id": "f85e9501d520c562",
             "type": "leaf",
             "state": {
               "type": "canvas",
@@ -16,12 +16,22 @@
                 "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
                 "viewState": {
                   "x": -19.5,
-                  "y": -317,
+                  "y": -224,
                   "zoom": 0
                 }
               },
               "icon": "lucide-layout-dashboard",
               "title": "Dart 知识框架"
+            }
+          },
+          {
+            "id": "d94feca4145cb32c",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
             }
           }
         ]
@@ -98,13 +108,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
+                "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "元数据 的大纲"
+              "title": "Dart 知识框架 的大纲"
             }
           },
           {
@@ -126,13 +136,27 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "59de127c99cadadc",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
           }
         ]
       },
       {
         "id": "1de6279e3c64c2e3",
         "type": "tabs",
-        "dimension": 52.95663600525624,
+        "dimension": 52.956636005256236,
         "children": [
           {
             "id": "62a4517fb44ecaab",
@@ -155,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
+                "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -165,7 +189,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "元数据 的反向链接列表"
+              "title": "Dart 知识框架 的反向链接列表"
             }
           },
           {
@@ -174,12 +198,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
+                "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "元数据 的出链列表"
+              "title": "Dart 知识框架 的出链列表"
             }
           }
         ],
@@ -200,13 +224,16 @@
       "obsidian-kanban:创建新看板": false,
       "templater-obsidian:Templater": false,
       "obsidian-local-images-plus:Local Images Plus  0.16.3\r\nLocalize attachments (plugin folder)": false,
-      "obsidian-git:Open Git source control": false,
-      "workspaces:管理工作区布局": false
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "582d4677736f2e91",
+  "active": "f85e9501d520c562",
   "lastOpenFiles": [
     "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/运算符.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/注释.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
     "软件开发/前端开发/前端Tips/pnpm管理依赖离线使用项目.md",
     "README.md",
     "conflict-files-obsidian-git.md",
@@ -225,8 +252,6 @@
     "我的/书籍/凤于九天.md",
     "未命名.md",
     "随笔/游戏游玩清单.md",
-    "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
-    "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
     "随笔/nas配置清单.md",
     "随笔/assets/Pasted image 20240113164157.png",
     "随笔/assets/a713328f58f5a9e9e1e216a875d4999d_MD5.jpeg",
@@ -237,8 +262,6 @@
     "软件开发/前端开发/node/常用Node模块.md",
     "我的/书籍/十日终焉.md",
     "assets",
-    "我的/书籍/未命名.md",
-    "Excalidraw/Drawing 2023-10-31 21.44.12.excalidraw.md",
     "Excalidraw",
     "我的/游戏/assets/c2bc2999053069707c170c0570fb2cc7_MD5.png",
     "我的/assets",
