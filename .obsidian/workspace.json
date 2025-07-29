@@ -8,33 +8,39 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f85e9501d520c562",
+            "id": "b3a3fdd35c4932fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "数据类型"
+            }
+          },
+          {
+            "id": "1be311f12e9c938e",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
                 "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
                 "viewState": {
-                  "x": -19.5,
-                  "y": -224,
+                  "x": -25,
+                  "y": -477,
                   "zoom": 0
                 }
               },
               "icon": "lucide-layout-dashboard",
               "title": "Dart 知识框架"
             }
-          },
-          {
-            "id": "d94feca4145cb32c",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
-            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -66,7 +72,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"cssClasses\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -100,7 +106,7 @@
       {
         "id": "853fa3a814649b9d",
         "type": "tabs",
-        "dimension": 47.043363994743764,
+        "dimension": 47.04336399474377,
         "children": [
           {
             "id": "9361f59e091b9e8c",
@@ -138,6 +144,26 @@
             }
           },
           {
+            "id": "90f799088db3f7c7",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas"
+              },
+              "icon": "lucide-info",
+              "title": "Dart 知识框架的笔记属性"
+            }
+          }
+        ],
+        "currentTab": 3
+      },
+      {
+        "id": "1de6279e3c64c2e3",
+        "type": "tabs",
+        "dimension": 52.95663600525623,
+        "children": [
+          {
             "id": "59de127c99cadadc",
             "type": "leaf",
             "state": {
@@ -150,14 +176,7 @@
               "icon": "lucide-archive",
               "title": "添加笔记属性"
             }
-          }
-        ]
-      },
-      {
-        "id": "1de6279e3c64c2e3",
-        "type": "tabs",
-        "dimension": 52.956636005256236,
-        "children": [
+          },
           {
             "id": "62a4517fb44ecaab",
             "type": "leaf",
@@ -206,8 +225,7 @@
               "title": "Dart 知识框架 的出链列表"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -227,10 +245,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f85e9501d520c562",
+  "active": "1be311f12e9c938e",
   "lastOpenFiles": [
-    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
+    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "我的/书籍.md",
+    "随笔/游戏游玩清单.md",
+    "随笔/未命名看板.md",
+    "项目/LoTai App/看板.md",
     "软件开发/前端开发/Flutter/Dart语言基础/运算符.md",
     "软件开发/前端开发/Flutter/Dart语言基础/注释.md",
     "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
@@ -247,11 +269,9 @@
     "我的/游戏-清单.md",
     "我的/游戏.md",
     "我的/书籍-清单.md",
-    "我的/书籍.md",
     "软件开发/前端开发/Flutter/Dart语言基础/库.md",
     "我的/书籍/凤于九天.md",
     "未命名.md",
-    "随笔/游戏游玩清单.md",
     "随笔/nas配置清单.md",
     "随笔/assets/Pasted image 20240113164157.png",
     "随笔/assets/a713328f58f5a9e9e1e216a875d4999d_MD5.jpeg",
@@ -259,8 +279,6 @@
     "随笔/assets/c835dd1d5d3f441c682f7ff9574b1b94_MD5.jpeg",
     "随笔/assets/Pasted image 20231219200425.png",
     "软件开发/前端开发/node/常用node命令.md",
-    "软件开发/前端开发/node/常用Node模块.md",
-    "我的/书籍/十日终焉.md",
     "assets",
     "Excalidraw",
     "我的/游戏/assets/c2bc2999053069707c170c0570fb2cc7_MD5.png",
