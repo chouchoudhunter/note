@@ -11,15 +11,17 @@
             "id": "582d4677736f2e91",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
+                "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+                "viewState": {
+                  "x": -19.5,
+                  "y": -317,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-file",
-              "title": "README"
+              "icon": "lucide-layout-dashboard",
+              "title": "Dart 知识框架"
             }
           }
         ]
@@ -88,7 +90,7 @@
       {
         "id": "853fa3a814649b9d",
         "type": "tabs",
-        "dimension": 30.160067396798652,
+        "dimension": 47.043363994743764,
         "children": [
           {
             "id": "9361f59e091b9e8c",
@@ -96,13 +98,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "随笔/账号.md",
+                "file": "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "账号 的大纲"
+              "title": "元数据 的大纲"
             }
           },
           {
@@ -114,15 +116,7 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "3d16f76f8c602d86",
-        "type": "tabs",
-        "dimension": 35.888795282224095,
-        "children": [
+          },
           {
             "id": "dd8dcbe859db4c44",
             "type": "leaf",
@@ -138,7 +132,7 @@
       {
         "id": "1de6279e3c64c2e3",
         "type": "tabs",
-        "dimension": 33.95113732097725,
+        "dimension": 52.95663600525624,
         "children": [
           {
             "id": "62a4517fb44ecaab",
@@ -161,7 +155,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "随笔/账号.md",
+                "file": "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -171,7 +165,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "账号 的反向链接列表"
+              "title": "元数据 的反向链接列表"
             }
           },
           {
@@ -180,15 +174,16 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "随笔/账号.md",
+                "file": "软件开发/前端开发/Flutter/Dart语言基础/元数据.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "账号 的出链列表"
+              "title": "元数据 的出链列表"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -211,21 +206,21 @@
   },
   "active": "582d4677736f2e91",
   "lastOpenFiles": [
+    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "软件开发/前端开发/前端Tips/pnpm管理依赖离线使用项目.md",
+    "README.md",
     "conflict-files-obsidian-git.md",
     "随笔/账号.md",
     "软件开发/前端开发/前端Tips/assets",
-    "软件开发/前端开发/前端Tips/pnpm管理依赖离线使用项目.md",
     "我的/影视/未命名.md",
     "我的/影视.md",
     "我的/影视-清单.md",
-    "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
     "随笔/散乱灵感.md",
     "随笔/临时记录.md",
     "我的/游戏-清单.md",
     "我的/游戏.md",
     "我的/书籍-清单.md",
     "我的/书籍.md",
-    "README.md",
     "软件开发/前端开发/Flutter/Dart语言基础/库.md",
     "我的/书籍/凤于九天.md",
     "未命名.md",
