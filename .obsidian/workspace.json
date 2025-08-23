@@ -26,17 +26,10 @@
             "id": "1be311f12e9c938e",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
-                "viewState": {
-                  "x": -25,
-                  "y": -477,
-                  "zoom": 0
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Dart 知识框架"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
             }
           }
         ],
@@ -114,13 +107,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Dart 知识框架 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -148,11 +140,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "Dart 知识框架的笔记属性"
+              "title": "笔记属性"
             }
           }
         ],
@@ -217,12 +207,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Dart 知识框架 的出链列表"
+              "title": "出链"
             }
           }
         ]
@@ -247,8 +236,8 @@
   },
   "active": "1be311f12e9c938e",
   "lastOpenFiles": [
-    "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
     "软件开发/前端开发/Flutter/Dart语言基础/Dart 知识框架.canvas",
+    "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
     "我的/书籍.md",
     "随笔/游戏游玩清单.md",
     "随笔/未命名看板.md",
