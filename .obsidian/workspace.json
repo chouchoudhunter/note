@@ -26,10 +26,15 @@
             "id": "1be311f12e9c938e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "随笔/账号.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "账号"
             }
           }
         ],
@@ -140,9 +145,11 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {},
+              "state": {
+                "file": "随笔/账号.md"
+              },
               "icon": "lucide-info",
-              "title": "笔记属性"
+              "title": "账号的笔记属性"
             }
           }
         ],
