@@ -26,10 +26,15 @@
             "id": "1be311f12e9c938e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "项目/Alpha/梗概.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "梗概"
             }
           }
         ],
@@ -140,9 +145,11 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {},
+              "state": {
+                "file": "项目/Alpha/梗概.md"
+              },
               "icon": "lucide-info",
-              "title": "笔记属性"
+              "title": "梗概的笔记属性"
             }
           }
         ],
@@ -236,6 +243,8 @@
   },
   "active": "1be311f12e9c938e",
   "lastOpenFiles": [
+    "项目/Alpha/梗概.md",
+    "项目/Alpha",
     "随笔/塔渊/序章.md",
     "随笔/散乱灵感.md",
     "随笔/塔渊/点子.md",
@@ -264,7 +273,6 @@
     "我的/游戏-清单.md",
     "我的/游戏.md",
     "我的/书籍-清单.md",
-    "软件开发/前端开发/Flutter/Dart语言基础/库.md",
     "随笔/assets/Pasted image 20240113164157.png",
     "随笔/assets/a713328f58f5a9e9e1e216a875d4999d_MD5.jpeg",
     "随笔/assets/Pasted image 20231219201503.png",
