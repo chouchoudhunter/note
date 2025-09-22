@@ -36,9 +36,21 @@
               "icon": "lucide-file",
               "title": "梗概"
             }
+          },
+          {
+            "id": "04a2d66d04480f47",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.9.12"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -145,11 +157,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "项目/Alpha/梗概.md"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "梗概的笔记属性"
+              "title": "笔记属性"
             }
           }
         ],
@@ -229,6 +239,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -241,7 +252,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1be311f12e9c938e",
+  "active": "04a2d66d04480f47",
   "lastOpenFiles": [
     "项目/Alpha/梗概.md",
     "项目/Alpha",
