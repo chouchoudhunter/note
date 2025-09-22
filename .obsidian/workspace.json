@@ -41,12 +41,15 @@
             "id": "04a2d66d04480f47",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.9.12"
+                "file": "游戏开发/unity3d/麦田物语教程/01导入素材.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.9.12"
+              "icon": "lucide-file",
+              "title": "01导入素材"
             }
           }
         ],
@@ -157,9 +160,11 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {},
+              "state": {
+                "file": "游戏开发/unity3d/麦田物语教程/01导入素材.md"
+              },
               "icon": "lucide-info",
-              "title": "笔记属性"
+              "title": "01导入素材的笔记属性"
             }
           }
         ],
@@ -254,6 +259,13 @@
   },
   "active": "04a2d66d04480f47",
   "lastOpenFiles": [
+    "游戏开发/unity3d/麦田物语教程/assets/665422179cdc723a3b744411928b1e66_MD5.jpeg",
+    "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250922224151.png",
+    "游戏开发/unity3d/麦田物语教程/assets/ccfdd6706b62d242b8b9b521e26e9c9c_MD5.jpeg",
+    "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250922223514.png",
+    "游戏开发/unity3d/麦田物语教程/assets",
+    "游戏开发/unity3d/麦田物语教程/01导入素材.md",
+    "游戏开发/unity3d/麦田物语教程",
     "项目/Alpha/梗概.md",
     "项目/Alpha",
     "随笔/塔渊/序章.md",
@@ -282,8 +294,6 @@
     "我的/影视-清单.md",
     "随笔/临时记录.md",
     "我的/游戏-清单.md",
-    "我的/游戏.md",
-    "我的/书籍-清单.md",
     "随笔/assets/Pasted image 20240113164157.png",
     "随笔/assets/a713328f58f5a9e9e1e216a875d4999d_MD5.jpeg",
     "随笔/assets/Pasted image 20231219201503.png",
