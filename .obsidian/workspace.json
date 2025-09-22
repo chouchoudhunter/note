@@ -43,13 +43,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "游戏开发/unity3d/麦田物语教程/01导入素材.md",
+                "file": "项目/Alpha/梗概.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "01导入素材"
+              "title": "梗概"
             }
           }
         ],
@@ -161,10 +161,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "游戏开发/unity3d/麦田物语教程/01导入素材.md"
+                "file": "项目/Alpha/梗概.md"
               },
               "icon": "lucide-info",
-              "title": "01导入素材的笔记属性"
+              "title": "梗概的笔记属性"
             }
           }
         ],
@@ -257,14 +257,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "04a2d66d04480f47",
+  "active": "633c23678d3bc9f9",
   "lastOpenFiles": [
+    "游戏开发/unity3d/麦田物语教程/01导入素材.md",
     "游戏开发/unity3d/麦田物语教程/assets/665422179cdc723a3b744411928b1e66_MD5.jpeg",
     "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250922224151.png",
     "游戏开发/unity3d/麦田物语教程/assets/ccfdd6706b62d242b8b9b521e26e9c9c_MD5.jpeg",
     "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250922223514.png",
     "游戏开发/unity3d/麦田物语教程/assets",
-    "游戏开发/unity3d/麦田物语教程/01导入素材.md",
     "游戏开发/unity3d/麦田物语教程",
     "项目/Alpha/梗概.md",
     "项目/Alpha",
@@ -302,7 +302,6 @@
     "assets",
     "Excalidraw",
     "我的/游戏/assets/c2bc2999053069707c170c0570fb2cc7_MD5.png",
-    "我的/assets",
-    "随笔/assets/KYB4I8R)8ZG1[OW%CANL1}V.png"
+    "我的/assets"
   ]
 }
