@@ -43,13 +43,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "项目/Alpha/梗概.md",
+                "file": "游戏开发/unity3d/麦田物语教程/02创建player.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "梗概"
+              "title": "02创建player"
             }
           }
         ],
@@ -161,10 +161,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "项目/Alpha/梗概.md"
+                "file": "游戏开发/unity3d/麦田物语教程/02创建player.md"
               },
               "icon": "lucide-info",
-              "title": "梗概的笔记属性"
+              "title": "02创建player的笔记属性"
             }
           }
         ],
@@ -257,16 +257,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "633c23678d3bc9f9",
+  "active": "04a2d66d04480f47",
   "lastOpenFiles": [
+    "游戏开发/unity3d/麦田物语教程/assets/244d5c73e38b4ec3b46c112af2373707_MD5.jpeg",
+    "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250923220629.png",
     "游戏开发/unity3d/麦田物语教程/01导入素材.md",
+    "游戏开发/unity3d/麦田物语教程/02创建player.md",
+    "项目/Alpha/梗概.md",
     "游戏开发/unity3d/麦田物语教程/assets/665422179cdc723a3b744411928b1e66_MD5.jpeg",
     "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250922224151.png",
     "游戏开发/unity3d/麦田物语教程/assets/ccfdd6706b62d242b8b9b521e26e9c9c_MD5.jpeg",
     "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250922223514.png",
     "游戏开发/unity3d/麦田物语教程/assets",
     "游戏开发/unity3d/麦田物语教程",
-    "项目/Alpha/梗概.md",
     "项目/Alpha",
     "随笔/塔渊/序章.md",
     "随笔/散乱灵感.md",
@@ -293,7 +296,6 @@
     "我的/影视.md",
     "我的/影视-清单.md",
     "随笔/临时记录.md",
-    "我的/游戏-清单.md",
     "随笔/assets/Pasted image 20240113164157.png",
     "随笔/assets/a713328f58f5a9e9e1e216a875d4999d_MD5.jpeg",
     "随笔/assets/Pasted image 20231219201503.png",
@@ -301,7 +303,6 @@
     "随笔/assets/Pasted image 20231219200425.png",
     "assets",
     "Excalidraw",
-    "我的/游戏/assets/c2bc2999053069707c170c0570fb2cc7_MD5.png",
     "我的/assets"
   ]
 }
