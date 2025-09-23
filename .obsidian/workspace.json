@@ -43,13 +43,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "游戏开发/unity3d/麦田物语教程/02创建player.md",
+                "file": "游戏开发/unity3d/麦田物语教程/assets/03 unity生命周期.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "02创建player"
+              "title": "03 unity生命周期"
             }
           }
         ],
@@ -161,10 +161,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "游戏开发/unity3d/麦田物语教程/02创建player.md"
+                "file": "游戏开发/unity3d/麦田物语教程/assets/03 unity生命周期.md"
               },
               "icon": "lucide-info",
-              "title": "02创建player的笔记属性"
+              "title": "03 unity生命周期的笔记属性"
             }
           }
         ],
@@ -259,10 +259,11 @@
   },
   "active": "04a2d66d04480f47",
   "lastOpenFiles": [
+    "游戏开发/unity3d/麦田物语教程/02创建player.md",
+    "游戏开发/unity3d/麦田物语教程/assets/03 unity生命周期.md",
     "游戏开发/unity3d/麦田物语教程/assets/244d5c73e38b4ec3b46c112af2373707_MD5.jpeg",
     "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250923220629.png",
     "游戏开发/unity3d/麦田物语教程/01导入素材.md",
-    "游戏开发/unity3d/麦田物语教程/02创建player.md",
     "项目/Alpha/梗概.md",
     "游戏开发/unity3d/麦田物语教程/assets/665422179cdc723a3b744411928b1e66_MD5.jpeg",
     "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250922224151.png",
@@ -300,7 +301,6 @@
     "随笔/assets/a713328f58f5a9e9e1e216a875d4999d_MD5.jpeg",
     "随笔/assets/Pasted image 20231219201503.png",
     "随笔/assets/c835dd1d5d3f441c682f7ff9574b1b94_MD5.jpeg",
-    "随笔/assets/Pasted image 20231219200425.png",
     "assets",
     "Excalidraw",
     "我的/assets"
