@@ -8,21 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b3a3fdd35c4932fe",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "软件开发/前端开发/Flutter/Dart语言基础/数据类型.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "数据类型"
-            }
-          },
-          {
             "id": "1be311f12e9c938e",
             "type": "leaf",
             "state": {
@@ -43,17 +28,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "游戏开发/unity3d/麦田物语教程/assets/03 unity生命周期.md",
+                "file": "游戏开发/unity3d/麦田物语教程/03unity生命周期.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "03 unity生命周期"
+              "title": "03unity生命周期"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -161,10 +145,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "游戏开发/unity3d/麦田物语教程/assets/03 unity生命周期.md"
+                "file": "项目/Alpha/梗概.md"
               },
               "icon": "lucide-info",
-              "title": "03 unity生命周期的笔记属性"
+              "title": "梗概的笔记属性"
             }
           }
         ],
@@ -257,10 +241,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "04a2d66d04480f47",
+  "active": "1be311f12e9c938e",
   "lastOpenFiles": [
+    "游戏开发/unity3d/麦田物语教程/03unity生命周期.md",
     "游戏开发/unity3d/麦田物语教程/02创建player.md",
-    "游戏开发/unity3d/麦田物语教程/assets/03 unity生命周期.md",
     "游戏开发/unity3d/麦田物语教程/assets/244d5c73e38b4ec3b46c112af2373707_MD5.jpeg",
     "游戏开发/unity3d/麦田物语教程/assets/Pasted image 20250923220629.png",
     "游戏开发/unity3d/麦田物语教程/01导入素材.md",
